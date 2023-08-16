@@ -23,7 +23,7 @@ GOODIES = {
 }
 
 def spawn_villager(type = 'random')
-    if type == 'Villager'
+    if type == 'villager'
         type = GOODIES[:villager] 
     elsif type == 'Cook'
         type = GOODIES[:cook]
@@ -37,6 +37,11 @@ end
 def spawn_pie_wagon
     cords = spawn_location
     { x: cords[0], y: cords[1], type: "Pie Wagon", tile_key: :W, hp: 15, atk: 0}
+end
+
+def spawn_ranger
+    cords = spawn_location
+    { x: cords[0], y: cords[1], type: "Ranger", tile_key: :R, hp: 6, atk: 4, arrows: 0}
 end
 
 def spawn_location

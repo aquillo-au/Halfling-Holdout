@@ -65,6 +65,8 @@ class Level
     args.outputs.labels << @labels
   end
 
+  private
+
   def events(event_random)
     if event_random % 4 == 0
       args.state.walls << $my_game.spawn_tree
@@ -75,9 +77,28 @@ class Level
       args.state.combat_log << "The Enemies have fired a catapult destroying a #{target.tree_type ? "tree": "wall"}"
       args.state.walls.delete(target)
     end
-    if event_random % 5 == 0 
+    if event_random % 5 == 0
       args.state.combat_log << "A pie wagon has arrived, protect it until it reaches the Hot Pot!"
       args.state.goodies << spawn_pie_wagon
     end
+    if event_random % 7 == 0 || event_random % 6 == 0
+      args.state.combat_log << "A wandering ranger aids your cause"
+      args.state.goodies << spawn_ranger
+    end
+    if event_random % 2 == 0
+      args.state.dragon = spawn_dragon
+    end
+  end
+
+  def spawn_dragon
+    size = rand(50).clamp(20, 50)
+    {
+      x: 0 - rand(20),
+      y: rand($gtk.args.grid.h - size),
+      w: size,
+      h: size,
+      path: "sprites/dragon-0.png",
+      alive: true,
+    }
   end
 end

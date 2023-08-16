@@ -19,7 +19,9 @@ class Game
       quiver: 5,
       type: "Hero"
     }
-
+    args.state.dragon = {
+      alive: false
+    }
     args.state.hotpot = {
       y: 20,
       x: 29,
@@ -121,6 +123,15 @@ class Game
       game_turn(args)
     end
   
+    if args.state.dragon.alive
+      dragon_sprite_index = 0.frame_index(count: 6, hold_for: 14, repeat: true)
+      args.state.dragon.path = "sprites/dragon-#{dragon_sprite_index}.png"
+      args.state.dragon.x += 0.45
+      if args.state.dragon.x > args.grid.w
+        args.state.dragon.alive = false
+      end
+    end
+
     check_arrows(args)
     args.state.enemies.reject! { |e| e.dead }
     args.state.goodies.reject! { |g| g.dead }
@@ -139,7 +150,7 @@ class Game
     end   
     args.state.clouds.reject! { |c| c.dead }
     if args.state.clouds.size < 6
-      args.state.clouds << spawn_cloud(args)
+      args.state.clouds << spawn_cloud(false)
     end
     # render game
     args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, '@')
@@ -161,8 +172,8 @@ class Game
     args.outputs.sprites << args.state.walls.map do |w|
       tile_in_game(w[:x], w[:y], w[:tile_key])
     end
-    args.outputs.sprites << args.state.clouds
-  
+    args.outputs.sprites << [ args.state.clouds, args.state.dragon ]
+    
     # render the border
     border_x = PADDING_X - DESTINATION_TILE_SIZE
     border_y = PADDING_Y - DESTINATION_TILE_SIZE
@@ -215,80 +226,48 @@ class Game
     @new_player_y = args.state.player.y
     @player_moved = false
     if args.inputs.keyboard.key_down.up
-      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
       @new_player_y += 1
       @player_direction = "north"
       @player_moved = true
     elsif args.inputs.keyboard.key_down.down
-      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
       @new_player_y -= 1
       @player_direction = "south"
       @player_moved = true
     elsif args.inputs.keyboard.key_down.right
-      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
       @new_player_x += 1
       @player_direction = "east"
       @player_moved = true
     elsif args.inputs.keyboard.key_down.left
-      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
       @new_player_x -= 1
       @player_direction = "west"
       @player_moved = true
     elsif args.inputs.keyboard.key_down.s
       if args.state.player.arrows > 0
-        args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
-        args.state.arrows << {
-          x: args.state.player.x,
-          y: args.state.player.y - 1,
-          tile_key: :sarrow,
-          direction: 's' #down
-        }
+        shoot_arrow(args.state.player, 's')
         @player_moved = true
-        args.state.player.arrows -= 1
       end
     elsif args.inputs.keyboard.key_down.a
       if args.state.player.arrows > 0
-        args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
-        args.state.arrows << {
-          x: args.state.player.x - 1,
-          y: args.state.player.y,
-          tile_key: :aarrow,
-          direction: 'a' #left
-        }
+        shoot_arrow(args.state.player, 'a')
         @player_moved = true
-        args.state.player.arrows -= 1
       end
     elsif args.inputs.keyboard.key_down.w
       if args.state.player.arrows > 0
-        args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
-        args.state.arrows << {
-          x: args.state.player.x,
-          y: args.state.player.y + 1,
-          tile_key: :warrow,
-          direction: 'w' #down
-        }
+        shoot_arrow(args.state.player, 'w')
         @player_moved = true
-        args.state.player.arrows -= 1
       end
     elsif args.inputs.keyboard.key_down.d
       if args.state.player.arrows > 0
-        args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
-        args.state.arrows << {
-          x: args.state.player.x + 1,
-          y: args.state.player.y,
-          tile_key: :darrow,
-          direction: 'd' #down
-        }
+        shoot_arrow(args.state.player, 'd')
         @player_moved = true
-        args.state.player.arrows -= 1
       end
     elsif args.inputs.keyboard.key_down.space
-      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
       @player_moved = true
     end
   end
 
   def game_turn(args)
+    args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
     found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
 
     found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
@@ -332,6 +311,23 @@ class Game
          end
       elsif min_distance && min_distance < 5
         new_spot = BasicPath.new(goody, nearest_target, args.state.walls).move_step
+      elsif goody.type == "Ranger"
+        if goody.arrows.even?
+          shot = rand(4)
+          case shot
+            when 1
+              shoot_arrow(goody, 'd')
+            when 2
+              shoot_arrow(goody, 's')
+            when 3
+              shoot_arrow(goody, 'a')
+            when 4
+              shoot_arrow(goody, 'w')
+          end
+        else 
+          goody.arrows = 0
+        end
+        new_spot = BasicPath.new(goody, goody, args.state.walls).random_direction
       else
         new_spot = BasicPath.new(goody, goody, args.state.walls).random_direction
       end
@@ -368,6 +364,9 @@ class Game
       elsif goody.type == "Pie Wagon"
         goody.x = new_spot.x
         goody.y = new_spot.y
+      elsif goody.type == "Ranger"
+        goody.x = new_spot.x unless (in_village?(new_spot) || !still_in_map?(new_spot.x, new_spot.y))
+        goody.y = new_spot.y unless (in_village?(new_spot) || !still_in_map?(new_spot.x, new_spot.y))
       else
         goody.x = new_spot.x unless !(in_village?(new_spot))
         goody.y = new_spot.y unless !(in_village?(new_spot))
@@ -493,6 +492,16 @@ class Game
       tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
     end
     tree
+  end
+
+  def shoot_arrow(source, d)
+    args.state.arrows << {
+      x: source.x,
+      y: source.y,
+      tile_key: "#{d}arrow".to_sym,
+      direction: d #down
+    }
+    source.arrows -= 1
   end
 end
 
