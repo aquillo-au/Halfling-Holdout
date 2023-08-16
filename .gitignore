@@ -1,0 +1,7 @@
+/tmp/*
+/log/*
+/docs/*
+/builds/*
+dragonruby-httpd.exe
+dragonruby-publish.exe
+dragonruby.exe
