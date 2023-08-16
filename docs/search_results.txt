@@ -1,4 +1,0 @@
-* ~GTK::Args#audio~ [[GTK::Args.docs_audio]]
-** Audio synthesis (Pro only)
-*** Sound source
-*** Example:

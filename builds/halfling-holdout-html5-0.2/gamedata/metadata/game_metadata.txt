@@ -1,6 +1,0 @@
-devid=aquillo
-devtitle=DragonRuby LLC
-gameid=halfling-holdout
-gametitle=Halfing Holdout
-version=0.2
-icon=metadata/icon.png
