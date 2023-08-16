@@ -1,0 +1,131 @@
+$gtk.reset seed: 1692150153
+$gtk.reset seed: 1692149932
+$gtk.reset seed: 1692149866
+$gtk.reset seed: 1692100076
+$gtk.reset seed: 1692099421
+$gtk.reset seed: 1692099376
+$gtk.reset seed: 1692097702
+$gtk.reset seed: 1692096782
+$gtk.grep_source [".reset", '']
+$gtk.reset seed: 1692095929
+$gtk.grep_source [".tile", '']
+$gtk.reset seed: 1692095616
+$gtk.reset seed: 1692095388
+$gtk.reset seed: 1692095046
+$gtk.reset seed: 1692094091
+$gtk.reset seed: 1692093634
+$gtk.reset seed: 1692093575
+$gtk.reset seed: 1692093528
+$gtk.reset seed: 1692093477
+$gtk.reset seed: 1692093415
+$gtk.reset seed: 1692093333
+$gtk.reset seed: 1692092901
+$gtk.reset seed: 1692091936
+$gtk.grep_source [".tile_in_game", '']
+$gtk.reset seed: 1692078197
+$gtk.grep_source [".attacker", '']
+$gtk.grep_source [".height", '']
+$gtk.reset seed: 1692061699
+$gtk.grep_source [".tree", '']
+$gtk.reset seed: 1692060576
+$gtk.reset seed: 1692059397
+$gtk.grep_source [".a", '']
+$gtk.reset seed: 1692054551
+$gtk.grep_source [".me", '']
+$gtk.reset seed: 1692053581
+$gtk.reset seed: 1692053518
+$gtk.reset seed: 1692053399
+$gtk.reset seed: 1692014666
+$gtk.grep_source [".new_spot", '']
+$gtk.reset seed: 1692007174
+$gtk.reset seed: 1692001910
+$gtk.grep_source [".arg", '']
+$gtk.reset seed: 1692000875
+$gtk.reset seed: 1691994735
+$gtk.grep_source [".guard", '']
+$gtk.reset seed: 1691994665
+$gtk.grep_source [".cords", '']
+$gtk.reset seed: 1691994215
+$recording.stop 'replay.txt'
+$gtk.reset seed: 1691992669
+$gtk.grep_source [".d", '']
+$gtk.grep_source [".level", '']
+$gtk.grep_source [".combat", '']
+$gtk.reset seed: 1691992572
+$gtk.reset seed: 1691990236
+$gtk.grep_source [".dead", '']
+$gtk.grep_source [".border_x", '']
+$gtk.reset seed: 1691988216
+$gtk.reset seed: 1691733163
+$wizards.itch.set_dev_id "dragonruby"
+$gtk.reset seed: 1691733038
+$gtk.grep_source [".game_over_tick", '']
+$gtk.grep_source [".gameplay_tick", '']
+$gtk.reset seed: 1691725961
+$gtk.grep_source [".distance", '']
+$gtk.reset seed: 1691703888
+$gtk.reset seed: 1691665013
+$gtk.reset seed: 1691664930
+$gtk.grep_source [".FindPath", '']
+$gtk.reset seed: 1691660195
+$gtk.grep_source [".new_player_x", '']
+$gtk.grep_source [".wall", '']
+$gtk.reset seed: 1691649723
+$gtk.grep_source [".hp", '']
+$gtk.reset seed: 1691647375
+$gtk.grep_source [".labels", '']
+$gtk.grep_source [".spawn_cloud", '']
+$gtk.reset seed: 1691472686
+$gtk.grep_source [".size", '']
+$gtk.reset seed: 1691383987
+$gtk.reset seed: 1691380845
+$gtk.reset seed: 1691384335
+$gtk.reset seed: 1691386105
+args.state.clouds.size
+arg.state.clouds
+spawn_cloud(args)
+args.state.clouds
+$gtk.reset seed: 1691473106
+$gtk.reset seed: 1691648847
+found_enemy.type
+found_enemy
+BADDIES
+baddie
+baddies[goblin].hp
+BADDIES[goblin].hp
+BADDIES[:rat].hp
+args.state.player.atk
+BADDIES[rat].hp
+$gtk.grep_source [".found_enemys", '']
+args
+$gtk.reset seed: 1691665392
+enemy
+$gtk.reset seed: 169170388
+$gtk.grep_source [".goblin", '']
+args.state.budget
+$gtk.grep_source [".args", '']
+$gtk.rese
+combat_log
+args.state.allies
+message
+$gtk.reset seed: 1692001020
+$gtk.reset seed: 1692012623
+args.state.arrows
+GOODIES
+GOODIES[:villager]
+args.grid
+args.grid.h
+args.grid.x
+args.grid.w
+args.state.grid.width
+args.state.player
+args.state
+args.state.info_message
+args.state.hotpot
+args.state.walls
+args.state.combat_log
+args.state.enemies
+args.state.goodies
+args.state.player.maxhp
+defender.maxhp
+$gtk.reset

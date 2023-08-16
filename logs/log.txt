@@ -1,0 +1,2028 @@
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1}, :x=>10, :y=>11}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on hp within args.state, but hp has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>1}, :x=>10, :y=>11}
+
+member: [-]
+attribute: [hp].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>2}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on hp within args.state, but hp has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>3}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [hp].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method - with args [nil] was invoked on hp within args.state, but hp has a
+value of nil (the invocation of - was suppressed). Consider setting
+a default value for hp to avoid null reference exceptions later on."
+
+** app/main.rb:72:in tick_game
+** app/main.rb:8:in tick
+** app/combat.rb:1
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>4}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on hp within args.state, but hp has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>5}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [hp].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>6}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>7}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>8}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on atk within args.state, but atk has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:x==>1, :-=>9}, :x=>10, :y=>11, :hp=>nil}
+
+member: [-]
+attribute: [atk].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{:+=>1}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{:+=>2}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{:+=>3}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method + with args [140] was invoked on padding within args.state, but padding has a
+value of nil (the invocation of + was suppressed). Consider setting
+a default value for padding to avoid null reference exceptions later on."
+
+** app/main.rb:105:in tick_game
+** app/main.rb:104:in tick_game
+** app/main.rb:13:in tick
+** app/pathfinding.rb:266
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{:+=>4}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on padding within args.state, but padding has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :__thrash_count__=>{:+=>5}}
+
+member: [+]
+attribute: [padding].
+
+Set a default value for this property or you might get an exception later on.
+
+* INFO: The .to_s function for type [GTK::Args] probably doesn't look too helpful. Trying calling the .help function or .docs function. #<GTK::Args:0x4ec7850>
+
+* WARNING: FindPath does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class FindPath
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>647, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east."}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>648, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :-=>1, :>=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east.", :timer=>nil, :score=>{:entity_id=>3, :entity_name=>:score, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>649, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :-=>2, :>=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east.", :timer=>nil, :score=>{:entity_id=>3, :entity_name=>:score, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>650, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :-=>3, :>=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east.", :timer=>nil, :score=>{:entity_id=>3, :entity_name=>:score, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method - with args [1] was invoked on timer within args.state, but timer has a
+value of nil (the invocation of - was suppressed). Consider setting
+a default value for timer to avoid null reference exceptions later on."
+
+** app/main.rb:19:in tick
+** app/game_over.rb:1
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>651, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :-=>4, :>=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east.", :timer=>nil, :score=>{:entity_id=>3, :entity_name=>:score, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method - was invoked on timer within args.state, but timer has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>652, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :-=>5, :>=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10]}}, :scene=>"game_over", :high_score=>0, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :player=>{:y=>1, :x=>22, :hp=>16, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>0, :atk=>0, :dead=>true}, :walls=>[{:x=>19, :y=>16, :tile_key=>:wall}, {:x=>19, :y=>17, :tile_key=>:wall}, {:x=>19, :y=>18, :tile_key=>:wall}, {:x=>19, :y=>19, :tile_key=>:wall}, {:x=>19, :y=>20, :tile_key=>:wall}], :enemies=>[{:x=>29, :y=>20, :type=>:rat, :tile_key=>:R, :hp=>2, :atk=>2}], :info_message=>"You moved east.", :timer=>nil, :score=>{:entity_id=>3, :entity_name=>:score, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [-]
+attribute: [timer].
+
+Set a default value for this property or you might get an exception later on.
+
+================
+* INFO: Starting Itch Wizard.
+* INFO: Running Itch Wizard Step: ~$wizards.itch.check_metadata~
+* INFO: Contents of metadata/game_metadata.txt:
+#+begin_src txt
+  devid=dragonruby
+
+  devtitle=DragonRuby LLC
+
+  gameid=sample-app
+
+  gametitle=Sample App
+
+  version=1.0
+
+  icon=sprites/icon.png
+
+#+end_src
+* PROMPT: Please provide your username for Itch.
+* INFO: Exiting wizard. :need_dev_id
+================
+* INFO: Starting Itch Wizard.
+* INFO: Running Itch Wizard Step: ~$wizards.itch.check_metadata~
+* INFO: Contents of metadata/game_metadata.txt:
+#+begin_src txt
+  devid=dragonruby
+
+  devtitle=DragonRuby LLC
+
+  gameid=sample-app
+
+  gametitle=Sample App
+
+  version=1.0
+
+  icon=sprites/icon.png
+
+#+end_src
+* PROMPT: Please provide your username for Itch.
+* INFO: Exiting wizard. :need_dev_id
+================
+* INFO: Starting Itch Wizard.
+* INFO: Running Itch Wizard Step: ~$wizards.itch.check_metadata~
+* INFO: Contents of metadata/game_metadata.txt:
+#+begin_src txt
+  devid=dragonruby
+
+  devtitle=DragonRuby LLC
+
+  gameid=sample-app
+
+  gametitle=Sample App
+
+  version=1.0
+
+  icon=sprites/icon.png
+
+#+end_src
+* PROMPT: Please provide your username for Itch.
+* INFO: Exiting wizard. :need_dev_id
+================
+* INFO: Starting Itch Wizard.
+* INFO: Running Itch Wizard Step: ~$wizards.itch.check_metadata~
+* INFO: Contents of metadata/game_metadata.txt:
+#+begin_src txt
+  devid=dragonruby
+
+  devtitle=DragonRuby LLC
+
+  gameid=sample-app
+
+  gametitle=Sample App
+
+  version=1.0
+
+  icon=sprites/icon.png
+
+#+end_src
+* PROMPT: Please provide your username for Itch.
+* INFO: Exiting wizard. :need_dev_id
+
+* WARNING: BasicPath does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class BasicPath
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+* INFO: 
+  #+BEGIN:
+  Recording has begun with RNG seed value set to 100.
+  To stop recording use stop_recording(filename).
+  The recording will stop without saving a file if a filename is nil.
+  
+  #+END:
+  
+
+* INFO: 
+  #+BEGIN:
+  Recording has begun with RNG seed value set to 100.
+  To stop recording use stop_recording(filename).
+  The recording will stop without saving a file if a filename is nil.
+  
+  #+END:
+  
+
+* INFO: 
+  #+BEGIN:
+  Recording has begun with RNG seed value set to 100.
+  To stop recording use stop_recording(filename).
+  The recording will stop without saving a file if a filename is nil.
+  
+  #+END:
+  
+
+* INFO: The search results above has been seen in logs/puts.txt and docs/search_results.txt.
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>487, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :budget=>4, :level=>1, :score=>0, :player=>{:y=>18, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>650, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1, :find=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>1, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>60, :y=>17, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :budget=>3, :level=>1, :score=>0, :player=>{:y=>17, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>676, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1, :find=>2}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>2, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>59, :y=>17, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>41, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>1, :level=>1, :score=>0, :player=>{:y=>16, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>698, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1, :find=>3}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>3, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>58, :y=>17, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>41, :y=>1, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>27, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>15, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>15, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method find with args [] was invoked on allies within args.state, but allies has a
+value of nil (the invocation of find was suppressed). Consider setting
+a default value for allies to avoid null reference exceptions later on."
+
+** app/game.rb:180:in gameplay_tick
+** app/main.rb:20:in tick
+** app/game.rb:297
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>720, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1, :find=>4}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>4, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>57, :y=>17, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>41, :y=>2, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>27, :y=>1, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>14, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>15, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>740, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :<=>1, :find=>5}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>34, :y=>5, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>56, :y=>17, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>40, :y=>2, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>27, :y=>2, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>13, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>490, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>53, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>3, :level=>1, :score=>0, :player=>{:y=>19, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved south."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>526, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>52, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>60, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>1, :level=>1, :score=>0, :player=>{:y=>19, :x=>28, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>13, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>548, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>2}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>51, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>59, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>0, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>27, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>13, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>569, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>3}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>50, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>58, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>1, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>26, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method find with args [] was invoked on allies within args.state, but allies has a
+value of nil (the invocation of find was suppressed). Consider setting
+a default value for allies to avoid null reference exceptions later on."
+
+** app/game.rb:180:in gameplay_tick
+** app/main.rb:20:in tick
+** app/village.rb:14
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>588, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>4}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>49, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>57, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>2, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>25, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>28, :y=>13, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>606, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>5}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>48, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>56, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>3, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>24, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>13, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method find was invoked on allies within args.state, but allies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>770, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :find=>6}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13]}}, :scene=>"gameplay", :high_score=>1, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>48, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>56, :y=>16, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}, {:x=>3, :y=>0, :type=>"goblin", :tile_key=>:G, :hp=>5, :atk=>2}], :combat_log=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>25, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>13, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved east."}
+
+member: [find]
+attribute: [allies].
+
+Set a default value for this property or you might get an exception later on.
+
+* INFO: The search results above has been seen in logs/puts.txt and docs/search_results.txt.
+* INFO: The search results above has been seen in logs/puts.txt and docs/search_results.txt.
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33285, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33286, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>1}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33287, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>2}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33288, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>3}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method map with args [] was invoked on arrows within args.state, but arrows has a
+value of nil (the invocation of map was suppressed). Consider setting
+a default value for arrows to avoid null reference exceptions later on."
+
+** app/main.rb:16:in tick
+** app/game.rb:366
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33289, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>4}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>33290, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>5}, :scene=>"gameplay", :high_score=>13, :reserved=>{:entity_id=>7, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :grid=>{:entity_id=>8, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>39, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}, {:x=>39, :y=>17, :type=>"goblin", :tile_key=>:G, :hp=>1, :atk=>2}, {:x=>42, :y=>12, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>["goblin swings at the You for 2 damage, leaving it with 18 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps"], :arrows=>nil, :budget=>-1, :level=>1, :score=>0, :player=>{:y=>19, :x=>19, :hp=>14, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>29, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>31, :y=>10, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>39, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>2, :atk=>1}, {:x=>38, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>34, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>30, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>21, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>198, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>199, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>200, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>2}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>201, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>3}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method map with args [] was invoked on arrows within args.state, but arrows has a
+value of nil (the invocation of map was suppressed). Consider setting
+a default value for arrows to avoid null reference exceptions later on."
+
+** app/main.rb:16:in tick
+** app/village.rb:14
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>202, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>4}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method map was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>203, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>5}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>43}, :enemies=>[{:x=>58, :y=>0, :type=>"rat", :tile_key=>:R, :hp=>2, :atk=>1}], :combat_log=>[], :arrows=>nil, :budget=>4, :level=>1, :score=>0, :player=>{:y=>20, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>27, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>14, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>22, :y=>23, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"Welcome to Level 1."}
+
+member: [map]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>44413, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>6}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>44}, :enemies=>[], :combat_log=>["rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "rat swings at the Guard for 1 damage, leaving it with 8 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "rat swings at the Guard for 1 damage, leaving it with 6 hps", "rat swings at the Guard for 1 damage, leaving it with 5 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the Guard for 2 damage, leaving it with 8 hps", "Guard swings at the goblin for 1 damage, leaving it with 3 hps", "goblin swings at the Guard for 2 damage, leaving it with 4 hps", "Guard swings at the goblin for 1 damage, leaving it with 1 hps", "goblin swings at the Guard for 2 damage, leaving it with 0 hps", "Guard swings at the goblin for 1 damage, leaving it with 0 hps"], :arrows=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>17, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>39, :y=>11, :type=>"Guard", :tile_key=>:h, :hp=>5, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>12, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>20, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>40, :y=>22, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>40, :y=>15, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [each]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>44413, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1, :map=>6, :each=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"gameplay", :high_score=>13, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>44}, :enemies=>[], :combat_log=>["rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "rat swings at the Guard for 1 damage, leaving it with 8 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "rat swings at the Guard for 1 damage, leaving it with 6 hps", "rat swings at the Guard for 1 damage, leaving it with 5 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the Guard for 2 damage, leaving it with 8 hps", "Guard swings at the goblin for 1 damage, leaving it with 3 hps", "goblin swings at the Guard for 2 damage, leaving it with 4 hps", "Guard swings at the goblin for 1 damage, leaving it with 1 hps", "goblin swings at the Guard for 2 damage, leaving it with 0 hps", "Guard swings at the goblin for 1 damage, leaving it with 0 hps"], :arrows=>[], :budget=>-1, :level=>1, :score=>0, :player=>{:y=>17, :x=>29, :hp=>20, :atk=>2, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>39, :y=>11, :type=>"Guard", :tile_key=>:h, :hp=>5, :atk=>1}, {:x=>24, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>37, :y=>18, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>12, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>32, :y=>20, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>40, :y=>22, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>40, :y=>15, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [reject!]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* INFO: The search results above has been seen in logs/puts.txt and docs/search_results.txt.
+* Warning: Method invoked with block.
+The method + was invoked on info_message within args.state, but info_message has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>24389, :__thrash_count__=>{:sprite_lookup==>1, :padding_x==>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[4, 0], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"level", :high_score=>13, :clouds=>[{:x=>65.75, :y=>306, :w=>44, :h=>44, :path=>"sprites/cloud_2.png"}, {:x=>160.75, :y=>388, :w=>45, :h=>45, :path=>"sprites/cloud.png"}, {:x=>167.75, :y=>499, :w=>20, :h=>20, :path=>"sprites/cloud_2.png"}, {:x=>213.75, :y=>307, :w=>20, :h=>20, :path=>"sprites/cloud.png"}], :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>44}, :enemies=>[], :combat_log=>["goblin swings at the Guard for 2 damage, leaving it with 8 hps", "Guard swings at the goblin for 1 damage, leaving it with 3 hps", "goblin swings at the Guard for 2 damage, leaving it with 4 hps", "rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the goblin for 1 damage, leaving it with 1 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the Guard for 2 damage, leaving it with 0 hps", "Guard swings at the goblin for 1 damage, leaving it with 0 hps", "rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the You for 2 damage, leaving it with 23 hps", "goblin swings at the You for 2 damage, leaving it with 19 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "rat swings at the Guard for 1 damage, leaving it with 7 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "goblin swings at the You for 2 damage, leaving it with 15 hps", "rat swings at the Guard for 1 damage, leaving it with 5 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 1 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "Guard swings at the goblin for 1 damage, leaving it with 1 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "rat swings at the Guard for 1 damage, leaving it with 5 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the You for 2 damage, leaving it with 18 hps", "rat swings at the Guard for 1 damage, leaving it with 8 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the You for 2 damage, leaving it with 16 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 4 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 0 hps", "goblin swings at the Guard for 2 damage, leaving it with -2 hps", "Guard swings at the goblin for 1 damage, leaving it with 3 hps", "Guard swings at the goblin for 1 damage, leaving it with 4 hps", "goblin swings at the Guard for 2 damage, leaving it with 6 hps", "Guard swings at the goblin for 1 damage, leaving it with 2 hps", "goblin swings at the Guard for 2 damage, leaving it with 2 hps", "Guard swings at the goblin for 1 damage, leaving it with 0 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "rat swings at the Guard for 1 damage, leaving it with 0 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the You for 2 damage, leaving it with 14 hps", "goblin swings at the You for 2 damage, leaving it with 12 hps", "Guard swings at the rat for 1 damage, leaving it with 1 hps", "rat swings at the Guard for 1 damage, leaving it with 8 hps"], :arrows=>[], :budget=>0, :level=>3, :score=>8, :player=>{:y=>18, :x=>29, :hp=>12, :atk=>3, :type=>"You"}, :hotpot=>{:y=>20, :x=>30, :hp=>22, :atk=>0, :type=>"hotpot!"}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}], :goodies=>[{:x=>30, :y=>19, :type=>"Guard", :tile_key=>:h, :hp=>9, :atk=>1}, {:x=>31, :y=>15, :type=>"Guard", :tile_key=>:h, :hp=>8, :atk=>1}, {:x=>34, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>24, :type=>"Guard", :tile_key=>:h, :hp=>5, :atk=>1}], :info_message=>"You moved south."}
+
+member: [+]
+attribute: [info_message].
+
+Set a default value for this property or you might get an exception later on.
+
+* INFO: The .to_s function for type [GTK::Grid] probably doesn't look too helpful. Trying calling the .help function or .docs function. #<GTK::Grid:0x27224d0>
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>1}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>2}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>3}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method + with args [63] was invoked on size within args.state, but size has a
+value of nil (the invocation of + was suppressed). Consider setting
+a default value for size to avoid null reference exceptions later on."
+
+** app/title.rb:15:in title_tick
+** app/main.rb:17:in tick
+** app/game.rb:450
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>4}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>5}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on saved_high_score within args.state, but saved_high_score has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>24054, :__thrash_count__=>{:sprite_lookup==>1, :size=>1}, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :scene=>"level", :high_score=>20, :grid=>{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>6}, :padding_x=>40, :padding_y=>60, :size=>602, :width=>61, :height=>44}, :clouds=>[{:x=>690.75, :y=>356, :w=>20, :h=>20, :path=>"sprites/cloud_2.png"}, {:x=>691.0, :y=>52, :w=>20, :h=>20, :path=>"sprites/cloud_3.png"}, {:x=>691.25, :y=>221, :w=>24, :h=>24, :path=>"sprites/cloud.png"}, {:x=>691.5, :y=>209, :w=>26, :h=>26, :path=>"sprites/cloud_2.png"}, {:x=>691.75, :y=>187, :w=>39, :h=>39, :path=>"sprites/cloud.png"}, {:x=>692.0, :y=>149, :w=>20, :h=>20, :path=>"sprites/cloud_3.png"}], :enemies=>[], :combat_log=>["goblin swings at the  for 2 damage, leaving it with 16 hps", "rat swings at the Guard for 1 damage, leaving it with 9 hps", "Guard swings at the rat for 1 damage, leaving it with 0 hps", "goblin swings at the Guard for 2 damage, leaving it with 8 hps", "Guard swings at the goblin for 1 damage, leaving it with 3 hps", "goblin swings at the Guard for 2 damage, leaving it with 4 hps", "Guard swings at the goblin for 1 damage, leaving it with 1 hps", "goblin swings at the Guard for 2 damage, leaving it with 0 hps", "Guard swings at the goblin for 1 damage, leaving it with 0 hps", "rat swings at the  for 1 damage, leaving it with 15 hps"], :arrows=>[], :budget=>-1, :level=>1, :score=>1, :player=>{:y=>8, :x=>26, :hp=>15, :atk=>2}, :hotpot=>{:y=>20, :x=>30, :hp=>20, :atk=>0}, :walls=>[{:x=>22, :y=>14, :tile_key=>:secorn}, {:x=>22, :y=>15, :tile_key=>:wall}, {:x=>22, :y=>16, :tile_key=>:wall}, {:x=>22, :y=>17, :tile_key=>:wall}, {:x=>22, :y=>24, :tile_key=>:wall}, {:x=>22, :y=>25, :tile_key=>:wall}, {:x=>22, :y=>26, :tile_key=>:wall}, {:x=>22, :y=>27, :tile_key=>:necorn}, {:x=>23, :y=>27, :tile_key=>:hwall}, {:x=>24, :y=>27, :tile_key=>:hwall}, {:x=>25, :y=>27, :tile_key=>:hwall}, {:x=>26, :y=>27, :tile_key=>:hwall}, {:x=>33, :y=>27, :tile_key=>:hwall}, {:x=>34, :y=>27, :tile_key=>:hwall}, {:x=>35, :y=>27, :tile_key=>:hwall}, {:x=>36, :y=>27, :tile_key=>:hwall}, {:x=>37, :y=>27, :tile_key=>:nwcorn}, {:x=>37, :y=>26, :tile_key=>:wall}, {:x=>37, :y=>25, :tile_key=>:wall}, {:x=>37, :y=>24, :tile_key=>:wall}, {:x=>37, :y=>17, :tile_key=>:wall}, {:x=>37, :y=>16, :tile_key=>:wall}, {:x=>37, :y=>15, :tile_key=>:wall}, {:x=>37, :y=>14, :tile_key=>:swcorn}, {:x=>36, :y=>14, :tile_key=>:hwall}, {:x=>35, :y=>14, :tile_key=>:hwall}, {:x=>34, :y=>14, :tile_key=>:hwall}, {:x=>33, :y=>14, :tile_key=>:hwall}, {:x=>23, :y=>14, :tile_key=>:hwall}, {:x=>24, :y=>14, :tile_key=>:hwall}, {:x=>25, :y=>14, :tile_key=>:hwall}, {:x=>26, :y=>14, :tile_key=>:hwall}, {:x=>8, :y=>3, :tile_key=>:tree}, {:x=>23, :y=>17, :tile_key=>:tree}, {:x=>56, :y=>35, :tile_key=>:tree}, {:x=>32, :y=>31, :tile_key=>:tree}, {:x=>30, :y=>13, :tile_key=>:tree}, {:x=>2, :y=>41, :tile_key=>:tree}, {:x=>8, :y=>24, :tile_key=>:tree}, {:x=>53, :y=>21, :tile_key=>:tree}, {:x=>33, :y=>2, :tile_key=>:tree}, {:x=>52, :y=>40, :tile_key=>:tree}, {:x=>46, :y=>22, :tile_key=>:tree}, {:x=>37, :y=>25, :tile_key=>:tree}, {:x=>31, :y=>42, :tile_key=>:tree}, {:x=>39, :y=>10, :tile_key=>:tree}, {:x=>13, :y=>11, :tile_key=>:tree}, {:x=>53, :y=>0, :tile_key=>:tree}], :goodies=>[{:x=>38, :y=>11, :type=>"Guard", :tile_key=>:h, :hp=>9, :atk=>1}, {:x=>34, :y=>22, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>38, :y=>16, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>26, :y=>28, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>27, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>27, :y=>22, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}, {:x=>24, :y=>26, :type=>"Guard", :tile_key=>:h, :hp=>10, :atk=>1}], :info_message=>"You moved west."}
+
+member: [+]
+attribute: [saved_high_score].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>1}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>2}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>3}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method + with args [66] was invoked on size within args.state, but size has a
+value of nil (the invocation of + was suppressed). Consider setting
+a default value for size to avoid null reference exceptions later on."
+
+** app/title.rb:18:in title_tick
+** app/main.rb:17:in tick
+** app/level.rb:14
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>4}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method + was invoked on size within args.state, but size has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{:+=>5}}
+
+member: [+]
+attribute: [size].
+
+Set a default value for this property or you might get an exception later on.
+
+* INFO: The search results above has been seen in logs/puts.txt and docs/search_results.txt.
+* INFO: 
+  #+BEGIN:
+  Recording has begun with RNG seed value set to 100.
+  To stop recording use stop_recording(filename).
+  The recording will stop without saving a file if a filename is nil.
+  
+  #+END:
+  
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1, :each=>1, :x=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>121, :__thrash_count__=>{:sprite_lookup==>1, :each=>3, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method * was invoked on y within args.state, but y has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [y].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>122, :__thrash_count__=>{:sprite_lookup==>1, :each=>3, :x=>1, :reject!=>3, :dead=>1, :size=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>4, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>5, :entity_name=>:size, :entity_keys_by_ref=>{}}}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method each with args [] was invoked on goodies within args.state, but goodies has a
+value of nil (the invocation of each was suppressed). Consider setting
+a default value for goodies to avoid null reference exceptions later on."
+
+** app/main.rb:19:in tick
+** app/game.rb:1
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>122, :__thrash_count__=>{:sprite_lookup==>1, :each=>4, :x=>1, :reject!=>3, :dead=>1, :size=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>4, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>5, :entity_name=>:size, :entity_keys_by_ref=>{}}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>122, :__thrash_count__=>{:sprite_lookup==>1, :each=>5, :x=>1, :reject!=>3, :dead=>1, :size=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>4, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>5, :entity_name=>:size, :entity_keys_by_ref=>{}}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method reject! with args [] was invoked on arrows within args.state, but arrows has a
+value of nil (the invocation of reject! was suppressed). Consider setting
+a default value for arrows to avoid null reference exceptions later on."
+
+** app/game.rb:273:in tick
+** app/main.rb:19:in tick
+** app/game.rb:1
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :tick_count=>122, :__thrash_count__=>{:sprite_lookup==>1, :each=>5, :x=>1, :reject!=>4, :dead=>1, :size=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>4, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>5, :entity_name=>:size, :entity_keys_by_ref=>{}}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1, :each=>1, :x=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>6, :tick_count=>182, :__thrash_count__=>{:sprite_lookup==>1, :each=>3, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>0, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method * was invoked on y within args.state, but y has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [y].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method * was invoked on height within args.state, but height has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>3, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [height].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{:each=>1, :x=>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{:each=>2, :x=>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{:each=>2, :x=>1, :reject!=>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{:each=>2, :x=>1, :reject!=>2, :dead=>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>0, :__thrash_count__=>{:each=>3, :x=>1, :reject!=>2, :dead=>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method * was invoked on y within args.state, but y has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [y].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>1, :__thrash_count__=>{:each=>3, :x=>1, :reject!=>3, :dead=>1, :size=>1, :sprite_lookup==>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>3, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>4, :entity_name=>:size, :entity_keys_by_ref=>{}}}, :reserved=>{:entity_id=>5, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method each with args [] was invoked on goodies within args.state, but goodies has a
+value of nil (the invocation of each was suppressed). Consider setting
+a default value for goodies to avoid null reference exceptions later on."
+
+** app/main.rb:19:in tick
+** app/level.rb:1
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>1, :__thrash_count__=>{:each=>4, :x=>1, :reject!=>3, :dead=>1, :size=>1, :sprite_lookup==>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>3, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>4, :entity_name=>:size, :entity_keys_by_ref=>{}}}, :reserved=>{:entity_id=>5, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>1, :__thrash_count__=>{:each=>5, :x=>1, :reject!=>3, :dead=>1, :size=>1, :sprite_lookup==>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>3, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>4, :entity_name=>:size, :entity_keys_by_ref=>{}}}, :reserved=>{:entity_id=>5, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* WARNING: Method invocation on a nil value detected.
+The method reject! with args [] was invoked on arrows within args.state, but arrows has a
+value of nil (the invocation of reject! was suppressed). Consider setting
+a default value for arrows to avoid null reference exceptions later on."
+
+** app/game.rb:273:in tick
+** app/main.rb:19:in tick
+** app/level.rb:1
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>4, :tick_count=>1, :__thrash_count__=>{:each=>5, :x=>1, :reject!=>4, :dead=>1, :size=>1, :sprite_lookup==>1}, :player=>{:entity_id=>1, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{:*=>1}}, :hotpot=>{:entity_id=>2, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :clouds=>{:entity_id=>3, :entity_name=>:clouds, :entity_keys_by_ref=>{}, :__thrash_count__=>{:<=>1}, :size=>{:entity_id=>4, :entity_name=>:size, :entity_keys_by_ref=>{}}}, :reserved=>{:entity_id=>5, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+* Warning: Method invoked with block.
+The method * was invoked on height within args.state, but height has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:grid, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [height].
+
+Set a default value for this property or you might get an exception later on.
+
+
+* WARNING: Level does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Level
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+
+* WARNING: Game does not support serialization. Returning nil.
+Please override the :serialize method and return a hash so that
+Class can be persisted to disk in the event of an exception.
+Here is an example of what you need to do:
+#+begin_src ruby
+class Game
+  # 1. Create a serialize method that returns a hash with all of
+  #    the values you care about.
+  def serialize
+    { }
+  end
+
+  # 2. Override the inspect method and return ~serialize.to_s~.
+  def inspect
+    serialize.to_s
+  end
+
+  # 3. Override to_s and return ~serialize.to_s~.
+  def to_s
+    serialize.to_s
+  end
+end
+#+end_src
+
+[Message ID: []]
+
+* Warning: Method invoked with block.
+The method each was invoked on goodies within args.state, but goodies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}}
+
+member: [each]
+attribute: [goodies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1, :each=>1, :x=>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on arrows within args.state, but arrows has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [arrows].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on enemies within args.state, but enemies has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [enemies].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method each was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1, :each=>2, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [each]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method reject! was invoked on clouds within args.state, but clouds has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :tick_count=>128, :__thrash_count__=>{:sprite_lookup==>1, :each=>3, :x=>1, :reject!=>2, :dead=>1}, :scene=>"gameplay", :high_score=>15, :reserved=>{:entity_id=>1, :entity_name=>:reserved, :entity_keys_by_ref=>{}, :sprite_lookup=>{0=>[3, 0], 1=>[3, 1], 2=>[3, 2], 3=>[3, 3], 4=>[3, 4], 5=>[3, 5], 6=>[3, 6], 7=>[3, 7], 8=>[3, 8], 9=>[3, 9], "@"=>[0, 2], :A=>[4, 1], :B=>[4, 2], :C=>[4, 3], :D=>[4, 4], :E=>[4, 5], :F=>[4, 6], :G=>[4, 7], :H=>[4, 8], :I=>[4, 9], :J=>[4, 10], :K=>[4, 11], :L=>[4, 12], :M=>[4, 13], :N=>[4, 14], :O=>[4, 15], :P=>[5, 0], :Q=>[5, 1], :R=>[5, 2], :S=>[5, 3], :T=>[5, 4], :U=>[5, 5], :V=>[5, 6], :W=>[5, 7], :X=>[5, 8], :Y=>[5, 9], :Z=>[5, 10], :a=>[6, 1], :b=>[6, 2], :c=>[6, 3], :d=>[6, 4], :e=>[6, 5], :f=>[6, 6], :g=>[6, 7], :h=>[6, 8], :i=>[6, 9], :j=>[6, 10], :k=>[6, 11], :l=>[6, 12], :m=>[6, 13], :n=>[6, 14], :o=>[6, 15], :p=>[7, 0], :q=>[7, 1], :r=>[7, 2], :s=>[7, 3], :t=>[7, 4], :u=>[7, 5], :v=>[7, 6], :w=>[7, 7], :x=>[7, 8], :y=>[7, 9], :z=>[7, 10], "|"=>[7, 12], :wall=>[11, 10], :tree=>[1, 3], :necorn=>[12, 9], :secorn=>[12, 8], :nwcorn=>[11, 11], :swcorn=>[11, 12], :hwall=>[12, 13], :sarrow=>[1, 9], :warrow=>[1, 8], :darrow=>[1, 10], :aarrow=>[1, 11]}}, :player=>{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}, :hotpot=>{:entity_id=>3, :entity_name=>:hotpot, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}}
+
+member: [reject!]
+attribute: [clouds].
+
+Set a default value for this property or you might get an exception later on.
+
+* Warning: Method invoked with block.
+The method * was invoked on y within args.state, but y has
+a value of nil.
+
+Here are the details:
+
+object:
+{:entity_id=>2, :entity_name=>:player, :entity_keys_by_ref=>{}, :__thrash_count__=>{}}
+
+member: [*]
+attribute: [y].
+
+Set a default value for this property or you might get an exception later on.
+
