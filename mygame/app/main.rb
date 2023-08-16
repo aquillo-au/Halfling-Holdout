@@ -12,6 +12,7 @@ require 'app/level.rb'
 
 def tick args
   # tick_game args 
+  $sprite_tiles ||= SpriteGrid.new
   args.state.scene ||= "title"
   if args.state.scene == "gameplay"
     $my_game ||= Game.new(args)
@@ -24,7 +25,7 @@ def tick args
   else
     send("#{args.state.scene}_tick", args)
   end
-  # tick_legend args
+   tick_legend args
 end
 
 

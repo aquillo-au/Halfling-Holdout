@@ -1,15 +1,16 @@
 class BasicPath
 
-  def initialize(mover, target, walls)
+  def initialize(mover, target, walls, friends = nil)
     @walls = walls.to_h {|wall| [[wall.x, wall.y], true] }
     @me = [mover.x, mover.y]
     @target = [target.x, target.y]
+    @friends = friends.to_h {|friend| [[friend.x, friend.y], true] }
   end
 
   def move_step
     axis = x_or_y
     new_postion = check_direction(axis)
-    if @walls.key?(new_postion) 
+    if @walls.key?(new_postion)  || @friends.key?(new_postion)
       axis == 'x'? new_postion = check_direction('y') : new_postion = check_direction('x')
     end
     new_postion

@@ -1,12 +1,12 @@
 class Game
   attr_gtk
   def initialize(args)
-    args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.budget = 5
     args.state.enemies = []
     Baddies.new.spawn_baddie
     args.state.arrows = []
     args.state.level = 1
+    args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.score = 0
     args.state.combat_log = []
     args.state.player = {
@@ -127,6 +127,7 @@ class Game
       dragon_sprite_index = 0.frame_index(count: 6, hold_for: 14, repeat: true)
       args.state.dragon.path = "sprites/dragon-#{dragon_sprite_index}.png"
       args.state.dragon.x += 0.45
+      args.state.dragon.y += 0.25
       if args.state.dragon.x > args.grid.w
         args.state.dragon.alive = false
       end
@@ -142,7 +143,8 @@ class Game
       end
   
     args.state.clouds.each do |cloud|
-      cloud.x -= 0.25
+      cloud.x -= rand(5)/10
+      cloud.y += (rand(10) - 4) / 20
       if cloud.x < 0
         cloud.dead = true
         next
@@ -289,6 +291,7 @@ class Game
         blocking_friend.y = args.state.player.y
         args.state.player.x = @new_player_x
         args.state.player.y = @new_player_y
+        message = "You swapped places with #{blocking_friend.type}."
       else
         message = "You can't move through walls or the hotpot!"
       end
@@ -310,7 +313,7 @@ class Game
           goody.moved = true
          end
       elsif min_distance && min_distance < 5
-        new_spot = BasicPath.new(goody, nearest_target, args.state.walls).move_step
+        new_spot = BasicPath.new(goody, nearest_target, args.state.walls, @allies).move_step
       elsif goody.type == "Ranger"
         if goody.arrows.even?
           shot = rand(4)
@@ -376,7 +379,7 @@ class Game
     args.state.enemies.each do |enemy|
       ally_distances = @allies.map { |ally| [ally, proximity_to_target(enemy, ally)] }
       nearest_target, min_distance = ally_distances.min_by { |_, distance| distance } 
-      new_spot = BasicPath.new(enemy, nearest_target, args.state.walls).move_step
+      new_spot = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies).move_step
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
@@ -401,7 +404,7 @@ class Game
   end
 
   def tile_in_game(x, y, tile_key)
-    SpriteGrid.new.tile(PADDING_X + x * DESTINATION_TILE_SIZE,
+    $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE,
          PADDING_Y + y * DESTINATION_TILE_SIZE,
          tile_key)
   end

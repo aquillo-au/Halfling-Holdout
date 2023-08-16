@@ -85,7 +85,7 @@ def title_tick args
     labels << {
       x: 40,
       y: 120,
-      text: "Arrows to move | ASDW to fire an arrow | Mouse Over to inspect (coming soon) | gamepad works too",
+      text: "Arrows to move or attack | ASDW to fire an arrow | Mouse Over to inspect | gamepad works too",
     }
     labels << {
       x: 40,

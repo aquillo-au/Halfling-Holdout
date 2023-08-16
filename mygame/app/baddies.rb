@@ -5,14 +5,14 @@ class Baddies
             hp: 5,
             atk: 2,
             value: 3,
-            name: "goblin",
+            name: "Goblin",
             tile_key: :g
             },
             rat: {
             hp: 2,
             atk: 1,
             value: 1,
-            name: "rat",
+            name: "Rat",
             tile_key: :r
             }
         }
