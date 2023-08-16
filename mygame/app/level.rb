@@ -40,6 +40,8 @@ class Level
     args.state.hotpot.hp +=1
     args.state.player.arrows = args.state.player.quiver
     spawn_villager('villager')
+    event_random = rand(100)
+    events(event_random)
     Baddies.new.spawn_baddie
     args.state.scene = "gameplay"
     return
@@ -63,4 +65,19 @@ class Level
     args.outputs.labels << @labels
   end
 
+  def events(event_random)
+    if event_random % 4 == 0
+      args.state.walls << $my_game.spawn_tree
+      args.state.combat_log << "A new tree has grown at [#{args.state.walls[-1].x}, #{args.state.walls[-1].y}]"
+    end
+    if event_random % 3 == 0
+      target = args.state.walls.sample
+      args.state.combat_log << "The Enemies have fired a catapult destroying a #{target.tree_type ? "tree": "wall"}"
+      args.state.walls.delete(target)
+    end
+    if event_random % 5 == 0 
+      args.state.combat_log << "A pie wagon has arrived, protect it until it reaches the Hot Pot!"
+      args.state.goodies << spawn_pie_wagon
+    end
+  end
 end

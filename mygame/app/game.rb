@@ -25,6 +25,7 @@ class Game
       x: 29,
       hp: 20,
       atk: 0,
+      type: "Hot Pot"
     }
 
     args.state.walls = [
@@ -122,6 +123,7 @@ class Game
   
     check_arrows(args)
     args.state.enemies.reject! { |e| e.dead }
+    args.state.goodies.reject! { |g| g.dead }
     if args.state.player.dead || args.state.hotpot.dead
         #args.audio[:music].paused = true
         args.outputs.sounds << "sounds/game-over.wav"
@@ -177,12 +179,12 @@ class Game
     end
 
     # render label stuff
-    args.outputs.labels << [border_x + 10, border_y - 10, "You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk}"]
+    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk}"]
     args.outputs.labels << [border_x + 10, border_y + 35 + border_size, args.state.info_message]
     args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}"]
-    args.state.combat_log = args.state.combat_log.flatten.last(10)
+    args.state.combat_log = args.state.combat_log.flatten.last(15)
     args.state.combat_log.each_with_index do |log, index|
-      args.outputs.labels << [885, (670 - (index*20)) , "#{log}", 0.1,]
+      args.outputs.labels << [885, (670 - (index*20)) , "#{log}", -4,]
     end
     args.outputs.labels << [border_x + 600, border_y + 35 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left"]
     args.outputs.solids << {
@@ -206,6 +208,8 @@ class Game
     }
   end
   
+  private
+
   def handle_input(args)
     @new_player_x = args.state.player.x
     @new_player_y = args.state.player.y
@@ -278,6 +282,9 @@ class Game
         @player_moved = true
         args.state.player.arrows -= 1
       end
+    elsif args.inputs.keyboard.key_down.space
+      args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
+      @player_moved = true
     end
   end
 
@@ -309,13 +316,21 @@ class Game
       args.state.info_message = message
     end
     args.state.goodies.each do |goody|
-      if goody.type != 'Cook'
-        target_distances = args.state.enemies.map { |enemy| [enemy, proximity_to_target(goody, enemy)] }
-      else
+      if goody.type == 'Cook' && args.state.tick_count.even?
         target_distances = args.state.goodies.map { |good| [good, proximity_to_target(goody, good)] }
+      else
+        target_distances = args.state.enemies.map { |enemy| [enemy, proximity_to_target(goody, enemy)] }
       end
       nearest_target, min_distance = target_distances.min_by { |_, distance| distance }
-      if min_distance && min_distance < 3
+      if goody.type == "Pie Wagon"
+         if goody.moved
+           goody.moved = false
+           new_spot = [goody.x, goody.y]
+         else
+          new_spot = BasicPath.new(goody, args.state.hotpot, args.state.walls).move_step
+          goody.moved = true
+         end
+      elsif min_distance && min_distance < 5
         new_spot = BasicPath.new(goody, nearest_target, args.state.walls).move_step
       else
         new_spot = BasicPath.new(goody, goody, args.state.walls).random_direction
@@ -329,16 +344,30 @@ class Game
         if goody.type == 'Cook'
           args.state.combat_log << heal(goody, blocking_friend)
           args.state.player.hp = args.state.player.maxhp if args.state.player.hp > args.state.player.maxhp
+        elsif goody.type == "Pie Wagon"
+          if blocking_friend == args.state.hotpot
+            args.state.combat_log << "Yay the Pie Wagon made it to the hotpot" 
+            args.state.combat_log << "The hotpot gains 10HP"
+            args.state.combat_log << "A new Cook has spawned"
+            args.state.combat_log << "You gain 2HP"
+            spawn_villager('Cook')
+            args.state.player.hp += 2
+            args.state.hotpot.hp += 10
+            args.state.player.hp = args.state.player.maxhp if args.state.player.hp > args.state.player.maxhp
+            goody.dead = true
+          end
         end
       elsif found_wall
         #don't move
       elsif blocking_opponent
         args.state.combat_log << other_combat(goody, blocking_opponent)
         args.state.enemies.reject! { |e| e.dead }
-        args.state.goodies.reject! { |e| e.dead }
       elsif hit_arrow
         hit_arrow.dead = true
-        args.state.arrows.reject! { |arrow| arrow.dead }        
+        args.state.arrows.reject! { |arrow| arrow.dead }   
+      elsif goody.type == "Pie Wagon"
+        goody.x = new_spot.x
+        goody.y = new_spot.y
       else
         goody.x = new_spot.x unless !(in_village?(new_spot))
         goody.y = new_spot.y unless !(in_village?(new_spot))
@@ -419,6 +448,7 @@ class Game
     end
     found
   end
+
   def check_arrows(args)
     args.state.arrows.each do |arrow|
       #check if they run into a friend
@@ -458,9 +488,9 @@ class Game
   end
 
   def spawn_tree
-    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree }
+    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
     until !in_village?(tree) do
-      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree }
+      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
     end
     tree
   end
