@@ -29,6 +29,17 @@ class Baddies
              armor: 4  
             }
         end
+        if $gtk.args.state.level > 3
+            @baddies[:shaman] = 
+            {
+             hp: 6,
+             atk: [1,4],
+             value: 8,
+             name: "Goblin Shaman",
+             tile_key: :s, 
+             armor: 1  
+            }
+        end
     end
 
     def spawn_baddie

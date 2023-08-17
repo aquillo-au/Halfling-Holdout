@@ -197,7 +197,7 @@ class Game
     args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor"]
     args.outputs.labels << [border_x + 10, border_y + 35 + border_size, args.state.info_message]
     args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}"]
-    args.state.combat_log = args.state.combat_log.flatten.last(15)
+    args.state.combat_log = args.state.combat_log.flatten.last(20)
     args.state.combat_log.each_with_index do |log, index|
       args.outputs.labels << [885, (670 - (index*20)) , "#{log}", -4,]
     end
@@ -390,6 +390,12 @@ class Game
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
+      if enemy.type == "Goblin Shaman" && args.state.tick_count % 3 == 0
+        close_friends = args.state.enemies.select { |ally| proximity_to_target(enemy, ally) < 6}
+        close_friends.each do |friend|
+          args.state.combat_log << heal(enemy, friend)
+        end
+      end
       if check_if_same_square?(new_spot.x, new_spot.y, args.state.player)
         args.state.combat_log << other_combat(enemy, args.state.player)
       elsif blocking_friend
