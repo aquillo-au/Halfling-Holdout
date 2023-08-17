@@ -53,7 +53,7 @@ class Level
         2.times.spawn_villager()
         next_level(args)
     elsif args.inputs.keyboard.key_down.a
-        args.state.player.atk += 1
+        args.state.player.atk[0] += 1
         next_level(args)
     elsif args.inputs.keyboard.key_down.p
         args.state.player.maxhp += 5

@@ -14,9 +14,10 @@ class Game
       x: 28,
       hp: 20,
       maxhp: 20,
-      atk: 2,
+      atk: [1,6],
       arrows: 5,
       quiver: 5,
+      armor: 4,
       type: "Hero"
     }
     args.state.dragon = {
@@ -26,7 +27,8 @@ class Game
       y: 20,
       x: 29,
       hp: 20,
-      atk: 0,
+      armor: 2,
+      atk: [0,0],
       type: "Hot Pot"
     }
 
@@ -86,15 +88,15 @@ class Game
       spawn_tree,
     ]
     args.state.goodies = [
-      { x: 26, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 31, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 37, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 37, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 31, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 26, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 20, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 20, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk},
-      { x: 30, y: 20, type: GOODIES[:cook].name, tile_key: GOODIES[:cook].tile_key, hp: GOODIES[:cook].hp, atk: GOODIES[:cook].atk},
+      { x: 26, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 31, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 37, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 37, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 31, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 26, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 20, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 20, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
+      { x: 30, y: 20, type: GOODIES[:cook].name, tile_key: GOODIES[:cook].tile_key, hp: GOODIES[:cook].hp, atk: GOODIES[:cook].atk, armor: GOODIES[:cook].armor},
     ]
     args.state.clouds = [
       spawn_cloud('start'),
@@ -192,9 +194,9 @@ class Game
     end
 
     # render label stuff
-    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk}"]
+    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor"]
     args.outputs.labels << [border_x + 10, border_y + 35 + border_size, args.state.info_message]
-    args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}"]
+    args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}"]
     args.state.combat_log = args.state.combat_log.flatten.last(15)
     args.state.combat_log.each_with_index do |log, index|
       args.outputs.labels << [885, (670 - (index*20)) , "#{log}", -4,]
@@ -275,7 +277,7 @@ class Game
     found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
 
     found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
-    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, @allies)
+    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
 
     if still_in_map?(@new_player_x, @new_player_y)
       if !found_enemy && !found_wall && !blocking_friend
@@ -284,7 +286,7 @@ class Game
         message = "You moved #{@player_direction}."
       elsif found_enemy
         message = your_combat(args.state.player, found_enemy)
-        args.state.score += 1 if found_enemy.dead
+        args.state.score += found_enemy.value if found_enemy.dead
         args.state.enemies.reject! { |e| e.dead }
       elsif blocking_friend && !found_wall
         blocking_friend.x = args.state.player.x
@@ -360,17 +362,22 @@ class Game
         #don't move
       elsif blocking_opponent
         args.state.combat_log << other_combat(goody, blocking_opponent)
-        args.state.enemies.reject! { |e| e.dead }
-      elsif hit_arrow
-        hit_arrow.dead = true
-        args.state.arrows.reject! { |arrow| arrow.dead }   
+        args.state.enemies.reject! { |e| e.dead } 
       elsif goody.type == "Pie Wagon"
         goody.x = new_spot.x
         goody.y = new_spot.y
+        if hit_arrow
+          hit_arrow.dead = true
+          args.state.arrows.reject! { |arrow| arrow.dead }  
+        end          
       elsif goody.type == "Ranger"
-        goody.x = new_spot.x unless (in_village?(new_spot) || !still_in_map?(new_spot.x, new_spot.y))
-        goody.y = new_spot.y unless (in_village?(new_spot) || !still_in_map?(new_spot.x, new_spot.y))
+        goody.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
+        goody.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       else
+        if hit_arrow
+          hit_arrow.dead = true
+          args.state.arrows.reject! { |arrow| arrow.dead }  
+        end
         goody.x = new_spot.x unless !(in_village?(new_spot))
         goody.y = new_spot.y unless !(in_village?(new_spot))
       end
@@ -391,11 +398,12 @@ class Game
         args.state.combat_log << other_combat(enemy, args.state.hotpot)
       elsif blocking_opponent
         args.state.combat_log << other_combat(enemy, blocking_opponent)
-      elsif hit_arrow
-        args.state.combat_log << your_arrow(enemy)
-        hit_arrow.dead = true
-        args.state.arrows.reject! { |arrow| arrow.dead } 
       else
+        if hit_arrow
+          args.state.combat_log << your_arrow(enemy)
+          hit_arrow.dead = true
+          args.state.arrows.reject! { |arrow| arrow.dead } 
+        end
         enemy.x = new_spot.x
         enemy.y = new_spot.y
       end

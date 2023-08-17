@@ -28,13 +28,13 @@ def tick_legend args
     return wall.tree_type ? ['A Tree'] : ['A Wall'] if wall
 
     friend = $my_game.find_same_square_group(x, y, $gtk.args.state.goodies)
-    return [friend.type, "#{friend.hp} hps", "#{friend.atk} Attack"] if friend
+    return [friend.type, "#{friend.hp} hps", "#{friend.atk[0]}d#{friend.atk[1]} Attack", "#{friend.armor} Armor"] if friend
 
     enemy = $my_game.find_same_square_group(x, y, $gtk.args.state.enemies)
-    return [enemy.type, "#{enemy.hp} hps", "#{enemy.atk} Attack"] if enemy
+    return [enemy.type, "#{enemy.hp} hps", "#{enemy.atk[0]}d#{enemy.atk[1]} Attack", "#{enemy.armor} Armor"] if enemy
 
     hotpot = $my_game.check_if_same_square?(x,y, $gtk.args.state.hotpot)
-    return ["The fabled HOTPOT protect it at all costs!"] if hotpot
+    return ["The fabled HOTPOT protect it at all costs!", "It has #{$gtk.args.state.hotpot.armor} Armor"] if hotpot
 
     you = $my_game.check_if_same_square?(x,y, $gtk.args.state.player)
     return ["Its You, don't you look cute?"] if you
