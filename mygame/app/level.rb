@@ -1,6 +1,7 @@
 class Level
   attr_gtk
   def initialize(args)
+    @armor_buff = 0
     @labels = []
     @labels << {
       x: 40,
@@ -13,36 +14,57 @@ class Level
       y: args.grid.h - 100,
       text: "h for 2 new villagers",
     }
-    @labels << {
-      x: 40,
-      y: args.grid.h - 120,
-      text: "a for 1 more attack",
-    }
-    @labels << {
-      x: 40,
-      y: args.grid.h - 140,
-      text: "p for 5 more max hit points",
-    }
-    @labels << {
-      x: 40,
-      y: args.grid.h - 160,
-      text: "q for a 3 larger quiver",
-    }
+    if $player_choice == 'hero'
+      @labels << {
+        x: 40,
+        y: args.grid.h - 120,
+        text: "a for 1 more attack",
+      }
+      @labels << {
+        x: 40,
+        y: args.grid.h - 140,
+        text: "p for 5 more max hit points",
+      }
+      @labels << {
+        x: 40,
+        y: args.grid.h - 160,
+        text: "q for a 3 larger quiver",
+      }
+    elsif $player_choice == 'warrior'
+      @labels << {
+        x: 40,
+        y: args.grid.h - 120,
+        text: "a for 2 more armor",
+      }
+      @labels << {
+        x: 40,
+        y: args.grid.h - 140,
+        text: "p for 5 more max hit points",
+      }
+      @labels << {
+        x: 40,
+        y: args.grid.h - 160,
+        text: "q for 1 more arrow slot",
+      }
+    end      
   end
 
   def next_level(args)
-    args.state.score += 1
+    args.state.combat_log = []
+    args.state.score += args.state.level
     args.state.info_message = nil
     args.state.level += 1
     args.state.budget = args.state.level * 5
     args.state.player.hp += 5
-    args.state.player.hp.clamp(1, args.state.player.maxhp)
+    args.state.player.hp = args.state.player.hp.clamp(1, args.state.player.maxhp)
     args.state.hotpot.hp +=1
     args.state.player.arrows = args.state.player.quiver
+    args.state.player.armor = Players.new().player_data($player_choice).armor + @armor_buff
     spawn_villager('villager')
     event_random = rand(100)
     events(event_random)
     Baddies.new.spawn_baddie
+    $my_game.add_bush
     args.state.scene = "gameplay"
     return
 
@@ -50,22 +72,40 @@ class Level
 
   def tick
     if args.inputs.keyboard.key_down.h
-        2.times.spawn_villager()
-        next_level(args)
+      h_bonus
     elsif args.inputs.keyboard.key_down.a
-        args.state.player.atk[0] += 1
-        next_level(args)
+      a_bonus
     elsif args.inputs.keyboard.key_down.p
-        args.state.player.maxhp += 5
-        next_level(args)
-      elsif args.inputs.keyboard.key_down.q
-        args.state.player.quiver += 3
-        next_level(args)
+      p_bonus
+    elsif args.inputs.keyboard.key_down.q
+      q_bonus
     end
     args.outputs.labels << @labels
   end
 
   private
+
+  def h_bonus
+    2.times.spawn_villager()
+    next_level(args)
+  end
+
+  def a_bonus
+    args.state.player.atk[0] += 1 if $player_choice == 'hero'
+    @armor_buff += 2 if $player_choice == 'warrior'
+    next_level(args)
+  end
+
+  def p_bonus
+    args.state.player.maxhp += 5
+    next_level(args)
+  end
+
+  def q_bonus
+    args.state.player.quiver += 3 if $player_choice == 'hero'
+    args.state.player.quiver += 1 if $player_choice == 'warrior'
+    next_level(args)
+  end
 
   def events(event_random)
     if event_random % 4 == 0

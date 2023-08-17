@@ -9,6 +9,7 @@ require 'app/game.rb'
 require 'app/game_over.rb'
 require 'app/village.rb'
 require 'app/level.rb'
+require 'app/players.rb'
 
 def tick args
   # tick_game args 

@@ -1,25 +1,15 @@
 class Game
   attr_gtk
   def initialize(args)
-    args.state.budget = 5
-    args.state.enemies = []
-    Baddies.new.spawn_baddie
     args.state.arrows = []
+    args.state.enemies = []
+    args.state.combat_log = []
+    args.state.budget = 5
+    Baddies.new.spawn_baddie
     args.state.level = 1
     args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.score = 0
-    args.state.combat_log = []
-    args.state.player = {
-      y: 20,
-      x: 28,
-      hp: 20,
-      maxhp: 20,
-      atk: [1,6],
-      arrows: 5,
-      quiver: 5,
-      armor: 4,
-      type: "Hero"
-    }
+    args.state.player = Players.new().player_data($player_choice)
     args.state.dragon = {
       alive: false
     }
@@ -31,6 +21,56 @@ class Game
       atk: [0,0],
       type: "Hot Pot"
     }
+
+    @enviroment = [
+      { x:29 , y: 20, tile_key: :xpath },
+      
+      { x:28 , y: 20, tile_key: :hpath },
+      { x:27 , y: 20, tile_key: :hpath2 },
+      { x:26 , y: 20, tile_key: :hpath },
+      { x:25 , y: 20, tile_key: :hpath2 },
+      { x:24 , y: 20, tile_key: :hpath },
+      { x:23 , y: 20, tile_key: :hpath2 },
+      { x:22 , y: 20, tile_key: :hpath },
+      { x:21 , y: 20, tile_key: :hpath },
+      { x:20 , y: 20, tile_key: :hpath },
+      { x:19 , y: 20, tile_key: :hpath2 },
+      { x:18 , y: 20, tile_key: :hpath },
+
+      { x:30 , y: 20, tile_key: :hpath },
+      { x:31 , y: 20, tile_key: :hpath2 },
+      { x:32 , y: 20, tile_key: :hpath },
+      { x:33 , y: 20, tile_key: :hpath2 },
+      { x:34 , y: 20, tile_key: :hpath },
+      { x:35 , y: 20, tile_key: :hpath2 },
+      { x:36 , y: 20, tile_key: :hpath },
+      { x:37 , y: 20, tile_key: :hpath },
+      { x:38 , y: 20, tile_key: :hpath },
+      { x:39 , y: 20, tile_key: :hpath2 },
+
+      { x:29 , y: 21, tile_key: :vpath },
+      { x:29 , y: 22, tile_key: :vpath2 },
+      { x:29 , y: 23, tile_key: :vpath },
+      { x:29 , y: 24, tile_key: :vpath2 },
+      { x:29 , y: 25, tile_key: :vpath },
+      { x:29 , y: 26, tile_key: :vpath2 },
+      { x:29 , y: 27, tile_key: :vpath },
+      { x:29 , y: 28, tile_key: :vpath },
+      { x:29 , y: 29, tile_key: :vpath },
+      { x:29 , y: 30, tile_key: :vpath },
+
+      { x:29 , y: 19, tile_key: :vpath },
+      { x:29 , y: 18, tile_key: :vpath2 },
+      { x:29 , y: 17, tile_key: :vpath },
+      { x:29 , y: 16, tile_key: :vpath2 },
+      { x:29 , y: 15, tile_key: :vpath },
+      { x:29 , y: 14, tile_key: :vpath2 },
+      { x:29 , y: 13, tile_key: :vpath },
+      { x:29 , y: 12, tile_key: :vpath },
+      { x:29 , y: 11, tile_key: :vpath },
+      { x:29 , y: 10, tile_key: :vpath },
+    ]
+    15.times{ |x| @enviroment << spawn_bush }
 
     args.state.walls = [
       { x: 21, y: 14, tile_key: :secorn },
@@ -135,9 +175,6 @@ class Game
       end
     end
 
-    check_arrows(args)
-    args.state.enemies.reject! { |e| e.dead }
-    args.state.goodies.reject! { |g| g.dead }
     if args.state.player.dead || args.state.hotpot.dead
         #args.audio[:music].paused = true
         args.outputs.sounds << "sounds/game-over.wav"
@@ -153,10 +190,18 @@ class Game
       end
     end   
     args.state.clouds.reject! { |c| c.dead }
-    if args.state.clouds.size < 6
+    if args.state.clouds.size < 9
       args.state.clouds << spawn_cloud(false)
     end
     # render game
+    # render enemies at locations
+    args.outputs.sprites << args.state.enemies.map do |e|
+      tile_in_game(e[:x], e[:y], e[:tile_key])
+    end
+    # render the enviroment comes after enemies to let them hide in bushes
+    args.outputs.sprites << @enviroment.map do |object|
+      tile_in_game(object[:x], object[:y], object[:tile_key])
+    end
     args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, '@')
     args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H)
   
@@ -164,10 +209,6 @@ class Game
     args.outputs.sprites << args.state.arrows.map do |a|
       tile_in_game(a[:x], a[:y], a[:tile_key])
     end    
-    # render enemies at locations
-    args.outputs.sprites << args.state.enemies.map do |e|
-      tile_in_game(e[:x], e[:y], e[:tile_key])
-    end
     #render the village
     args.outputs.sprites << args.state.goodies.map do |e|
       tile_in_game(e[:x], e[:y], e[:tile_key])
@@ -195,13 +236,13 @@ class Game
 
     # render label stuff
     args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor"]
-    args.outputs.labels << [border_x + 10, border_y + 35 + border_size, args.state.info_message]
+    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message]
     args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}"]
     args.state.combat_log = args.state.combat_log.flatten.last(20)
     args.state.combat_log.each_with_index do |log, index|
       args.outputs.labels << [885, (670 - (index*20)) , "#{log}", -4,]
     end
-    args.outputs.labels << [border_x + 600, border_y + 35 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left"]
+    args.outputs.labels << [border_x + 600, border_y + 36 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left"]
     args.outputs.solids << {
       x: PADDING_X,
       y: PADDING_Y,
@@ -272,6 +313,7 @@ class Game
 
   def game_turn(args)
     args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
+    check_arrows(args)
     found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
 
     found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
@@ -414,6 +456,9 @@ class Game
         enemy.y = new_spot.y
       end
     end
+    check_arrows(args)
+    args.state.enemies.reject! { |e| e.dead }
+    args.state.goodies.reject! { |g| g.dead }
     Baddies.new.spawn_baddie
   end
 
@@ -503,14 +548,6 @@ class Game
     }
   end
 
-  def spawn_tree
-    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
-    until !in_village?(tree) do
-      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
-    end
-    tree
-  end
-
   def shoot_arrow(source, d)
     args.state.arrows << {
       x: source.x,
@@ -520,6 +557,25 @@ class Game
     }
     source.arrows -= 1
   end
+
+  def spawn_tree
+    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
+    until !in_village?(tree) do
+      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
+    end
+    tree
+  end
+
+  def spawn_bush
+    bush = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :bush }
+    until !in_village?(bush) do
+      bush = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :bush }
+    end
+    bush
+  end
+
+  def add_bush
+    @enviroment << spawn_bush
+  end
+
 end
-
-

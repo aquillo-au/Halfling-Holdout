@@ -39,5 +39,6 @@ def tick_legend args
     you = $my_game.check_if_same_square?(x,y, $gtk.args.state.player)
     return ["Its You, don't you look cute?"] if you
 
+    false
   end
 end

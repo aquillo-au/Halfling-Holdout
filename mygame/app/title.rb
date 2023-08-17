@@ -1,22 +1,33 @@
 HIGH_SCORE_FILE = "high-score.txt"
-def fire_input?(args)
+def hero_select?(args)
     args.inputs.keyboard.key_down.h
+end
+def warrior_select?(args)
+  args.inputs.keyboard.key_down.w
 end
 
 def title_tick args
     args.state.high_score ||= args.gtk.read_file(HIGH_SCORE_FILE).to_i
     # setup the grid
-    if fire_input?(args)
-        args.outputs.sounds << "sounds/game-over.wav"
-#       args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
-        args.state.scene = "gameplay"
-        return
+    if hero_select?(args)
+      $player_choice = 'hero'
+      args.outputs.sounds << "sounds/game-over.wav"
+#     args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
+      args.state.scene = "gameplay"
+      return
+    end
+    if warrior_select?(args)
+      $player_choice = 'warrior'
+      args.outputs.sounds << "sounds/game-over.wav"
+#     args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
+      args.state.scene = "gameplay"
+      return
     end
     labels = []
     labels << {
       x: 40,
       y: args.grid.h - 40,
-      text: "Halfling Holdout Version 0.1",
+      text: "Halfling Holdout Version 0.4",
       size_enum: 6,
     }
     labels << {
@@ -42,7 +53,7 @@ def title_tick args
     labels << {
       x: 40,
       y: args.grid.h - 215,
-      text: "You gain 1 point for each kill and each levelup",
+      text: "You gain points for each kill and each levelup",
     }
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 1 * DESTINATION_TILE_SIZE, PADDING_Y + 23 * DESTINATION_TILE_SIZE,:H)
     labels << {
@@ -72,15 +83,21 @@ def title_tick args
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 1 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:r)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:g)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 9.5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:o)
+    args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 14 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:s)
     labels << {
-      x: 225,
-      y: 313,
+      x: 275,
+      y: 315,
       text: "<-- The Baddies",
     }
     labels << {
       x: 10,
       y: 293,
-      text: "Rat | Goblin | Orc",
+      text: "Rat | Goblin | Orc | Shaman",
+    }
+    labels << {
+      x: 205,
+      y: 275,
+      text: "(healer)",
     }
     labels << {
       x: 40,
@@ -90,7 +107,7 @@ def title_tick args
     labels << {
       x: 40,
       y: 80,
-      text: "h to start",
+      text: "Press: h to Select generic Hero | w to Select Warrior",
       size_enum: 2,
     }
     args.outputs.labels << labels
