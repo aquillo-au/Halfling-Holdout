@@ -27,7 +27,7 @@ def title_tick args
     labels << {
       x: 40,
       y: args.grid.h - 40,
-      text: "Halfling Holdout Version 0.4",
+      text: "Halfling Holdout Version 0.5",
       size_enum: 6,
     }
     labels << {
@@ -82,7 +82,7 @@ def title_tick args
     }
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 1 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:r)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:g)
-    args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 9.5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:o)
+    args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 9.5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:n)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 14 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:s)
     labels << {
       x: 275,
@@ -102,7 +102,7 @@ def title_tick args
     labels << {
       x: 40,
       y: 120,
-      text: "Arrows to move or attack | ASDW to fire an arrow | Mouse Over to inspect | gamepad works too",
+      text: "Arrows to move or attack, space to wait | ASDW to fire an arrow | Mouse Over to inspect",
     }
     labels << {
       x: 40,

@@ -41,7 +41,7 @@ def game_over_tick(args)
     }
     args.outputs.labels << labels
   
-    if fire_input?(args)
+    if args.inputs.keyboard.key_down.h
       #args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
       $my_game = Game.new(args)
       args.state.scene = "gameplay"

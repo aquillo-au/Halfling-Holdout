@@ -25,7 +25,7 @@ class Baddies
              atk: [1,5],
              value: 6,
              name: "Orc",
-             tile_key: :o, 
+             tile_key: :n, 
              armor: 4  
             }
         end

@@ -22,54 +22,10 @@ class Game
       type: "Hot Pot"
     }
 
-    @enviroment = [
-      { x:29 , y: 20, tile_key: :xpath },
-      
-      { x:28 , y: 20, tile_key: :hpath },
-      { x:27 , y: 20, tile_key: :hpath2 },
-      { x:26 , y: 20, tile_key: :hpath },
-      { x:25 , y: 20, tile_key: :hpath2 },
-      { x:24 , y: 20, tile_key: :hpath },
-      { x:23 , y: 20, tile_key: :hpath2 },
-      { x:22 , y: 20, tile_key: :hpath },
-      { x:21 , y: 20, tile_key: :hpath },
-      { x:20 , y: 20, tile_key: :hpath },
-      { x:19 , y: 20, tile_key: :hpath2 },
-      { x:18 , y: 20, tile_key: :hpath },
-
-      { x:30 , y: 20, tile_key: :hpath },
-      { x:31 , y: 20, tile_key: :hpath2 },
-      { x:32 , y: 20, tile_key: :hpath },
-      { x:33 , y: 20, tile_key: :hpath2 },
-      { x:34 , y: 20, tile_key: :hpath },
-      { x:35 , y: 20, tile_key: :hpath2 },
-      { x:36 , y: 20, tile_key: :hpath },
-      { x:37 , y: 20, tile_key: :hpath },
-      { x:38 , y: 20, tile_key: :hpath },
-      { x:39 , y: 20, tile_key: :hpath2 },
-
-      { x:29 , y: 21, tile_key: :vpath },
-      { x:29 , y: 22, tile_key: :vpath2 },
-      { x:29 , y: 23, tile_key: :vpath },
-      { x:29 , y: 24, tile_key: :vpath2 },
-      { x:29 , y: 25, tile_key: :vpath },
-      { x:29 , y: 26, tile_key: :vpath2 },
-      { x:29 , y: 27, tile_key: :vpath },
-      { x:29 , y: 28, tile_key: :vpath },
-      { x:29 , y: 29, tile_key: :vpath },
-      { x:29 , y: 30, tile_key: :vpath },
-
-      { x:29 , y: 19, tile_key: :vpath },
-      { x:29 , y: 18, tile_key: :vpath2 },
-      { x:29 , y: 17, tile_key: :vpath },
-      { x:29 , y: 16, tile_key: :vpath2 },
-      { x:29 , y: 15, tile_key: :vpath },
-      { x:29 , y: 14, tile_key: :vpath2 },
-      { x:29 , y: 13, tile_key: :vpath },
-      { x:29 , y: 12, tile_key: :vpath },
-      { x:29 , y: 11, tile_key: :vpath },
-      { x:29 , y: 10, tile_key: :vpath },
-    ]
+    @decorations = []
+    paint_village
+    paint_grass
+    @enviroment = []
     15.times{ |x| @enviroment << spawn_bush }
 
     args.state.walls = [
@@ -194,6 +150,9 @@ class Game
       args.state.clouds << spawn_cloud(false)
     end
     # render game
+    args.outputs.sprites << @decorations.map do |d|
+      tile_in_game(d[:x], d[:y], d[:tile_key])
+    end
     # render enemies at locations
     args.outputs.sprites << args.state.enemies.map do |e|
       tile_in_game(e[:x], e[:y], e[:tile_key])
@@ -217,7 +176,7 @@ class Game
     args.outputs.sprites << args.state.walls.map do |w|
       tile_in_game(w[:x], w[:y], w[:tile_key])
     end
-    args.outputs.sprites << [ args.state.clouds, args.state.dragon ]
+    args.outputs.sprites << [ args.state.clouds, args.state.dragon,  ]
     
     # render the border
     border_x = PADDING_X - DESTINATION_TILE_SIZE
@@ -226,8 +185,8 @@ class Game
   
     args.outputs.borders << [border_x + DESTINATION_TILE_SIZE,
                              border_y + DESTINATION_TILE_SIZE,
-                             border_size + 250,
-                             border_size]
+                             border_size + 245,
+                             border_size - 10]
   
     if args.state.enemies.empty?
       args.outputs.sounds << "sounds/game-over.wav"
@@ -244,23 +203,34 @@ class Game
     end
     args.outputs.labels << [border_x + 600, border_y + 36 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left"]
     args.outputs.solids << {
-      x: PADDING_X,
+       x: args.grid.w - 400,
+       y: args.grid.h - 450,
+       w: SOURCE_TILE_SIZE * 22,
+       h: SOURCE_TILE_SIZE * 25,
+       r: 68,
+       g: 150,
+       b: 230,
+       a: 50,
+     }
+    args.outputs.solids << {
+      x: args.grid.w - 400,
       y: PADDING_Y,
-      w: SIZE + 250 + SOURCE_TILE_SIZE,
-      h: SIZE + SOURCE_TILE_SIZE,
-      r: 55,
-      g: 60,
-      b: 25,
-      a: 175,
+      w: SOURCE_TILE_SIZE * 22,
+      h: SOURCE_TILE_SIZE * 6,
+      r: 68,
+      g: 150,
+      b: 230,
+      a: 50,
     }
     args.outputs.solids << {
-      x: PADDING_X + SOURCE_TILE_SIZE * 18,
-      y: PADDING_Y + SOURCE_TILE_SIZE * 10,
-      w: SOURCE_TILE_SIZE * 22,
-      h: SOURCE_TILE_SIZE * 21,
-      r: 100,
-      g: 150,
-      b: 0,
+      x: 0,
+      y: 0,
+      w: args.grid.w,
+      h: args.grid.h,
+      r: 32,
+      g: 120,
+      b: 60,
+      a: 25,
     }
   end
   
@@ -313,6 +283,7 @@ class Game
 
   def game_turn(args)
     args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
+    events
     check_arrows(args)
     found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
 
@@ -510,6 +481,26 @@ class Game
     found
   end
 
+  def events
+    if args.state.tick_count % 75 == 0
+      args.state.walls << spawn_tree
+      args.state.combat_log << "A new tree has grown at [#{args.state.walls[-1].x}, #{args.state.walls[-1].y}]"
+    end
+    if args.state.tick_count % 60 == 0
+      target = args.state.walls.sample
+      args.state.combat_log << "The Enemies have fired a catapult destroying a #{target.tree_type ? "tree": "wall"}"
+      args.state.walls.delete(target)
+    end
+    if args.state.tick_count % 95 == 0
+      args.state.combat_log << "A pie wagon has arrived, protect it until it reaches the Hot Pot!"
+      args.state.goodies << spawn_pie_wagon
+    end
+    if args.state.tick_count % 85 == 0
+      args.state.combat_log << "A wandering ranger aids your cause"
+      args.state.goodies << spawn_ranger
+    end
+  end
+
   def check_arrows(args)
     args.state.arrows.each do |arrow|
       #check if they run into a friend
@@ -559,9 +550,18 @@ class Game
   end
 
   def spawn_tree
-    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
+    random = rand(3)
+    case random
+    when 0
+      tree_tile = :tree
+    when 1
+      tree_tile = :tree2
+    else
+      tree_tile = :tree3
+    end
+    tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: tree_tile, tree_type: true, }
     until !in_village?(tree) do
-      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: :tree, tree_type: true, }
+      tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: tree_tile, tree_type: true, }
     end
     tree
   end
@@ -576,6 +576,139 @@ class Game
 
   def add_bush
     @enviroment << spawn_bush
+  end
+
+  def paint_grass
+    x_spot = 0
+    y_spot = 0
+    until x_spot == WIDTH + 1 do 
+        until y_spot == HEIGHT do
+          random = rand(20)
+          case random
+          when 0, 1, 2, 3, 16
+            grass_tile = :grass
+          when 4, 5, 6, 7, 8, 9, 10, 17
+            grass_tile = :grass2
+          when 11
+            grass_tile = :grass3
+          when 12
+            grass_tile = :grass4
+          when 13, 14, 15
+            grass_tile = :grass5
+          else
+            grass_tile = :grass6
+          end
+          grass = { x: x_spot, y: y_spot, tile_key: grass_tile }
+          @decorations << grass if !in_village?(grass)
+          y_spot += 1
+        end
+      x_spot += 1
+      y_spot = 0
+    end
+  end
+  #me.x > 17 && me.x < 40 && me.y > 9 && me.y < 31 
+  def paint_village
+    x_spot = 19
+    y_spot = 11
+    until x_spot == 39 do 
+      until y_spot == 30 do
+        random = rand(8)
+        case random
+        when 0, 1
+          dirt_tile = :dirt
+        when 2, 3
+          dirt_tile = :dirt2
+        when 4, 5
+          dirt_tile = :dirt3
+        else
+          dirt_tile = :dirt4
+        end
+        dirt = { x: x_spot, y: y_spot, tile_key: dirt_tile }
+        @decorations << dirt
+        y_spot += 1
+      end
+      y_spot = 11
+      x_spot += 1
+    end
+    x_spot = 19
+    y_spot = 30
+    until x_spot == 39 do 
+      dirt = { x: x_spot, y: y_spot, tile_key: :dirttop }
+      @decorations << dirt
+      x_spot += 1
+    end
+    x_spot = 19
+    y_spot = 10
+    until x_spot == 39 do 
+      dirt = { x: x_spot, y: y_spot, tile_key: :dirtbottom }
+      @decorations << dirt
+      x_spot += 1
+    end
+    x_spot = 39
+    y_spot = 11
+    until y_spot == 30 do 
+      dirt = { x: x_spot, y: y_spot, tile_key: :dirtright }
+      @decorations << dirt
+      y_spot += 1
+    end
+    x_spot = 18
+    y_spot = 11
+    until y_spot == 30 do 
+      dirt = { x: x_spot, y: y_spot, tile_key: :dirtleft }
+      @decorations << dirt
+      y_spot += 1
+    end
+ 
+    @decorations <<  { x:29 , y: 20, tile_key: :xpath } 
+    @decorations <<  { x:28 , y: 20, tile_key: :hpath } 
+    @decorations <<  { x:27 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:26 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:25 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:24 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:23 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:22 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:21 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:20 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:19 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:18 , y: 20, tile_key: :pathendleft } #end of path
+
+    @decorations <<  { x:30 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:31 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:32 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:33 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:34 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:35 , y: 20, tile_key: :hpath2 }
+    @decorations <<  { x:36 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:37 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:38 , y: 20, tile_key: :hpath }
+    @decorations <<  { x:39 , y: 20, tile_key: :pathendright } #end of path
+
+    @decorations <<  { x:29 , y: 21, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 22, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 23, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 24, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 25, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 26, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 27, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 28, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 29, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 30, tile_key: :pathendtop } #end of path
+
+    @decorations <<  { x:29 , y: 19, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 18, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 17, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 16, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 15, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 14, tile_key: :vpath2 }
+    @decorations <<  { x:29 , y: 13, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 12, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 11, tile_key: :vpath }
+    @decorations <<  { x:29 , y: 10, tile_key: :pathendbottom } #end of path
+
+    @decorations <<  { x:18 , y: 30, tile_key: :nedirt }
+    @decorations <<  { x:39 , y: 30, tile_key: :nwdirt }
+    @decorations <<  { x:18 , y: 10, tile_key: :sedirt }
+    @decorations <<  { x:39 , y: 10, tile_key: :swdirt }
   end
 
 end
