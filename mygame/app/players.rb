@@ -10,7 +10,8 @@ class Players
                 arrows: 1,
                 quiver: 1,
                 armor: 8,
-                type: "Hero"    
+                type: "Warrior", 
+                sprite_key: :warrior  
             },
             hero: {
                 y: 20,
@@ -21,7 +22,20 @@ class Players
                 arrows: 5,
                 quiver: 5,
                 armor: 4,
-                type: "Hero"
+                type: "Hero",
+                sprite_key: :hero 
+            },
+            archer: {
+                y: 20,
+                x: 28,
+                hp: 15,
+                maxhp: 15,
+                atk: [1,4],
+                arrows: 10,
+                quiver: 10,
+                armor: 1,
+                type: "Archer",
+                sprite_key: :archer 
             }
         }
     end

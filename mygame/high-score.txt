@@ -1,1 +1,5 @@
-92
+bob ^ 45 ^ hero
+bill ^ 45 ^ archer
+aquillo ^ 39 ^ archer
+aquillo ^ 39 ^ archer
+aquillo ^ 18 ^ hero

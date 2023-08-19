@@ -10,4 +10,4 @@ PADDING_Y = 60
 SIZE = 602
 WIDTH = 53
 HEIGHT = 38
-
+HIGH_SCORE_FILE = "high-score.txt"

@@ -6,10 +6,12 @@ class Game
     args.state.combat_log = []
     args.state.budget = 5
     Baddies.new.spawn_baddie
-    args.state.level = 1
+    args.state.level = 15
     args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.score = 0
+    
     args.state.player = Players.new().player_data($player_choice)
+
     args.state.dragon = {
       alive: false
     }
@@ -134,6 +136,7 @@ class Game
     if args.state.player.dead || args.state.hotpot.dead
         #args.audio[:music].paused = true
         args.outputs.sounds << "sounds/game-over.wav"
+        $game_over = GameOver.new(args)
         args.state.scene = "game_over"
       end
   
@@ -161,7 +164,7 @@ class Game
     args.outputs.sprites << @enviroment.map do |object|
       tile_in_game(object[:x], object[:y], object[:tile_key])
     end
-    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, '@')
+    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key)
     args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H)
   
     # render the arrows
@@ -279,39 +282,25 @@ class Game
     elsif args.inputs.keyboard.key_down.space
       @player_moved = true
     end
+    if @player_moved && $player_choice == 'archer'
+      if args.state.tick_count % 10 == 0
+        @player_moved = false
+        player_movement
+        args.state.combat_log << "You move so fast it seems the world is standing still"
+      end
+    end
   end
 
   def game_turn(args)
     args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
     events
     check_arrows(args)
-    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
-
-    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
-
-    found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
-    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
-
-    if still_in_map?(@new_player_x, @new_player_y)
-      if !found_enemy && !found_wall && !blocking_friend
-        args.state.player.x = @new_player_x
-        args.state.player.y = @new_player_y
-        message = "You moved #{@player_direction}."
-      elsif found_enemy
-        message = your_combat(args.state.player, found_enemy)
-        args.state.score += found_enemy.value if found_enemy.dead
-        args.state.enemies.reject! { |e| e.dead }
-      elsif blocking_friend && !found_wall
-        blocking_friend.x = args.state.player.x
-        blocking_friend.y = args.state.player.y
-        args.state.player.x = @new_player_x
-        args.state.player.y = @new_player_y
-        message = "You swapped places with #{blocking_friend.type}."
-      else
-        message = "You can't move through walls or the hotpot!"
-      end
-      args.state.info_message = message
+    if $player_choice == 'warrior' && args.state.tick_count % 15 == 0
+      args.state.combat_log << "Before you react the world moves around you"
+    else
+      player_movement
     end
+
     args.state.goodies.each do |goody|
       if goody.type == 'Cook' && args.state.tick_count.even?
         target_distances = args.state.goodies.map { |good| [good, proximity_to_target(goody, good)] }
@@ -431,6 +420,35 @@ class Game
     args.state.enemies.reject! { |e| e.dead }
     args.state.goodies.reject! { |g| g.dead }
     Baddies.new.spawn_baddie
+  end
+
+  def player_movement
+    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
+    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
+    found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
+
+    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
+
+    if still_in_map?(@new_player_x, @new_player_y)
+      if !found_enemy && !found_wall && !blocking_friend
+        args.state.player.x = @new_player_x
+        args.state.player.y = @new_player_y
+        message = "You moved #{@player_direction}."
+      elsif found_enemy
+        message = your_combat(args.state.player, found_enemy)
+        args.state.score += found_enemy.value if found_enemy.dead
+        args.state.enemies.reject! { |e| e.dead }
+      elsif blocking_friend && !found_wall
+        blocking_friend.x = args.state.player.x
+        blocking_friend.y = args.state.player.y
+        args.state.player.x = @new_player_x
+        args.state.player.y = @new_player_y
+        message = "You swapped places with #{blocking_friend.type}."
+      else
+        message = "You can't move through walls or the hotpot!"
+      end
+      args.state.info_message = message
+    end
   end
 
   def tile_in_game(x, y, tile_key)
