@@ -1,9 +1,12 @@
 def startup_tick args
+  if args.state.tick_count == 1
+    args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
+  end 
     labels = []
     labels << {
       x: 40,
       y: args.grid.h - 40,
-      text: "Halfling Holdout Version 0.5",
+      text: "Halfling Holdout Version #{VERSION}",
       size_enum: 6,
     }
     labels << {

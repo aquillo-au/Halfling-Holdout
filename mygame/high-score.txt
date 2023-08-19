@@ -1,5 +1,5 @@
-bob ^ 45 ^ hero
-bill ^ 45 ^ archer
-aquillo ^ 39 ^ archer
-aquillo ^ 39 ^ archer
-aquillo ^ 18 ^ hero
+Frodo ^ 10 ^ hero
+Samwise ^ 9 ^ warrior
+Merry ^ 8 ^ archer
+Pippin ^ 7 ^ mage
+aquillo ^ 1 ^ hero

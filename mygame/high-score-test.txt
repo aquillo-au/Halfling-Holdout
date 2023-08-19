@@ -1,0 +1,5 @@
+Froo ^ 75 ^ warrior
+Aquillo ^ 37 ^ warrior
+grug ^ 37 ^ archer
+Salt ^ 27 ^ hero
+Froo ^ 0 ^ archer

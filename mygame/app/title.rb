@@ -33,7 +33,7 @@ class Title
     @labels << {
       x: 40,
       y: args.grid.h - 40,
-      text: "Halfling Holdout Version 0.5",
+      text: "Halfling Holdout Version #{VERSION}",
       size_enum: 6,
     }
     @labels << {
@@ -46,17 +46,34 @@ class Title
       y: 88,
       text: "Press i for instructions | c for character list | s for high scores",
     }
+    @labels << {
+      x: 550,
+      y: 60,
+      size_enum: -2,
+      text: "Music: Forest Walk & The Great Battle by Alexander Nakarada (www.serpentsoundstudios.com)"
+    }
+    @labels << {
+      x: 625,
+      y: 40,
+      size_enum: -2,
+      text: "Licensed under Creative Commons: By Attribution 4.0 License"
+    }
+    
     args.outputs.labels << @labels
 
   end
 
   private
 
+#  by Alexander Nakarada | https://www.serpentsoundstudios.com
+# Music promoted by https://www.chosic.com/free-music/all/
+# Attribution 4.0 International (CC BY 4.0)
+# https://creativecommons.org/licenses/by/4.0/
   def character_page
     if args.inputs.keyboard.key_down.h
       $player_choice = 'hero'
       args.outputs.sounds << "sounds/game-over.wav"
-#     args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
+      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args) 
       args.state.scene = "gameplay"
@@ -65,7 +82,7 @@ class Title
     if args.inputs.keyboard.key_down.w
       $player_choice = 'warrior'
       args.outputs.sounds << "sounds/game-over.wav"
-#     args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
+      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args) 
       args.state.scene = "gameplay"
@@ -74,7 +91,7 @@ class Title
     if args.inputs.keyboard.key_down.a
       $player_choice = 'archer'
       args.outputs.sounds << "sounds/game-over.wav"
-      #     args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
+      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args)
       args.state.scene = "gameplay"

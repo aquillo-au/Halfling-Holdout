@@ -11,3 +11,4 @@ SIZE = 602
 WIDTH = 53
 HEIGHT = 38
 HIGH_SCORE_FILE = "high-score.txt"
+VERSION = '0.6.1'

@@ -6,7 +6,7 @@ class Game
     args.state.combat_log = []
     args.state.budget = 5
     Baddies.new.spawn_baddie
-    args.state.level = 15
+    args.state.level = 1
     args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.score = 0
     
@@ -134,8 +134,7 @@ class Game
     end
 
     if args.state.player.dead || args.state.hotpot.dead
-        #args.audio[:music].paused = true
-        args.outputs.sounds << "sounds/game-over.wav"
+        args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
         $game_over = GameOver.new(args)
         args.state.scene = "game_over"
       end
