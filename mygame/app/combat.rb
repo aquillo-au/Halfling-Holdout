@@ -11,14 +11,28 @@ def your_combat(attacker, defender)
    end
 end
 
-def your_arrow(defender)
+def your_arrow(defender, arrow)
    damage = attack_roll({atk: [1,6], no_crit: true })
    defender.hp -= damage
    if defender.hp < 1
       defender.dead = true
       ["an arrow hit the #{defender.type} for #{damage}", "killing it"]
+      if arrow.player
+         $gtk.args.state.score += defender.value
+      end
    else
       ["an arrow hit the #{defender.type} for #{damage}", "leaving it with #{defender.hp}hps"]
+   end
+end
+
+def bolt_hit(defender)
+   damage = attack_roll({atk: [1,5], no_crit: true })
+   defender.hp -= damage
+   if defender.hp < 1
+      defender.dead = true
+      ["a bolt hit the #{defender.type} for #{damage}", "killing it"]
+   else
+      ["a bolt hit the #{defender.type} for #{damage}", "leaving it with #{defender.hp}hps"]
    end
 end
 

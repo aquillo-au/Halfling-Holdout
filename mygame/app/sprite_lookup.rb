@@ -62,6 +62,7 @@ class SpriteGrid
       z: [ 7, 10],
       '|' => [ 7, 12],
       wall: [11, 10],
+      boar: [2,4],
       bush: [1,2],
       tree: [1,3],
       tree2: [1,4],
@@ -102,6 +103,10 @@ class SpriteGrid
       warrow: [1,8],
       darrow: [1,10],
       aarrow: [1,11],
+      wbolt: [1,12],
+      sbolt: [1,13],
+      dbolt: [1,14],
+      abolt: [1,15],
     }
   end
 

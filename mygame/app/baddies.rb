@@ -18,25 +18,36 @@ class Baddies
             armor: 0
             }
         }
-        if $gtk.args.state.level > 3
+        if $gtk.args.state.level > 5
             @baddies[:orc] = 
             {
              hp: 10,
              atk: [1,5],
-             value: 6,
+             value: 7,
              name: "Orc",
              tile_key: :n, 
              armor: 4  
             }
         end
-        if $gtk.args.state.level > 3
+        if $gtk.args.state.level > 4
             @baddies[:shaman] = 
             {
              hp: 6,
              atk: [1,4],
              value: 8,
-             name: "Goblin Shaman",
+             name: "Orc Shaman",
              tile_key: :s, 
+             armor: 1  
+            }
+        end
+        if $gtk.args.state.level > 3
+            @baddies[:xbowgob] = 
+            {
+             hp: 5,
+             atk: [1,2],
+             value: 6,
+             name: "Goblin Bowman",
+             tile_key: :f, 
              armor: 1  
             }
         end

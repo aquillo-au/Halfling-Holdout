@@ -6,6 +6,20 @@ class BasicPath
     @target = [target.x, target.y]
     @friends = friends.to_h {|friend| [[friend.x, friend.y], true] }
   end
+  
+  def random_direction
+    direction = rand(4)
+    case direction
+    when 1
+      return [@me.x + 1, @me.y]
+    when 2
+      return [@me.x - 1, @me.y]
+    when 3
+      return [@me.x, @me.y + 1]
+    else
+      return [@me.x, @me.y - 1]
+    end
+  end
 
   def move_step
     axis = x_or_y
@@ -16,13 +30,46 @@ class BasicPath
     new_postion
   end
 
+  def take_aim
+    axis = x_or_y
+    check_aim(axis)
+  end
+
+  private
+
   def x_or_y
+    random = rand(100)
     # move the axis we are furthest from
     if (@me.x - @target.x).abs < (@me.y - @target.y).abs
-      return 'y'
+      if (@me.x - @target.x) == 0 || random > 25
+        return 'y'
+      else
+        return 'x' 
+      end
+    elsif (@me.y - @target.y) == 0 || random > 25
+      return 'x'
     else
-      'x'
+      return 'y'
     end
+  end
+
+  def check_aim(axis)
+    if axis == 'x'
+       #postive is right, negative is left
+      if (@me.x - @target.x).positive?
+        aim_towards = 'a'
+      else
+        aim_towards = 'd'
+      end
+    else
+      #postive is down, negative is up
+      if (@me.y - @target.y).positive?
+        aim_towards = 's'
+      else
+        aim_towards = 'w'
+      end
+    end
+    aim_towards
   end
 
   def check_direction(axis)
@@ -44,6 +91,7 @@ class BasicPath
     move_to
   end
 
+
   # Returns a list of adjacent cells
   # Used to determine what the next cells to be added to the frontier are
   def adjacent_neighbors(cell)
@@ -59,19 +107,7 @@ class BasicPath
     neighbors
   end
 
-  def random_direction
-    direction = rand(4)
-    case direction
-    when 1
-      return [@me.x + 1, @me.y]
-    when 2
-      return [@me.x - 1, @me.y]
-    when 3
-      return [@me.x, @me.y + 1]
-    else
-      return [@me.x, @me.y - 1]
-    end
-end
+
 end
 
 

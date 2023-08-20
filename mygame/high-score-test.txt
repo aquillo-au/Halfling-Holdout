@@ -1,4 +1,9 @@
+help ^ 117 ^ hero
 Froo ^ 75 ^ warrior
+aquillo ^ 68 ^ hero
+help ^ 67 ^ warrior
+aquillo ^ 65 ^ archer
+help ^ 48 ^ archer
 Aquillo ^ 37 ^ warrior
 grug ^ 37 ^ archer
 Salt ^ 27 ^ hero

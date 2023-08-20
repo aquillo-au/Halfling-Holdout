@@ -2,8 +2,10 @@ class Game
   attr_gtk
   def initialize(args)
     args.state.arrows = []
+    args.state.bolts = []
     args.state.enemies = []
     args.state.combat_log = []
+
     args.state.budget = 5
     Baddies.new.spawn_baddie
     args.state.level = 1
@@ -23,6 +25,12 @@ class Game
       atk: [0,0],
       type: "Hot Pot"
     }
+
+    args.state.others = [
+      spawn_piggy(true),
+      spawn_piggy(true),
+      spawn_piggy(true)
+    ]
 
     @decorations = []
     paint_village
@@ -134,10 +142,10 @@ class Game
     end
 
     if args.state.player.dead || args.state.hotpot.dead
-        args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
-        $game_over = GameOver.new(args)
-        args.state.scene = "game_over"
-      end
+      args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
+      $game_over = GameOver.new(args)
+      args.state.scene = "game_over"
+    end
   
     args.state.clouds.each do |cloud|
       cloud.x -= rand(5)/10
@@ -159,6 +167,11 @@ class Game
     args.outputs.sprites << args.state.enemies.map do |e|
       tile_in_game(e[:x], e[:y], e[:tile_key])
     end
+    # render the others
+    args.outputs.sprites << args.state.others.map do |o|
+      tile_in_game(o[:x], o[:y], o[:tile_key])
+    end
+    
     # render the enviroment comes after enemies to let them hide in bushes
     args.outputs.sprites << @enviroment.map do |object|
       tile_in_game(object[:x], object[:y], object[:tile_key])
@@ -166,10 +179,13 @@ class Game
     args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key)
     args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H)
   
-    # render the arrows
+    # render the projectiles
     args.outputs.sprites << args.state.arrows.map do |a|
       tile_in_game(a[:x], a[:y], a[:tile_key])
     end    
+    args.outputs.sprites << args.state.bolts.map do |b|
+      tile_in_game(b[:x], b[:y], b[:tile_key])
+    end
     #render the village
     args.outputs.sprites << args.state.goodies.map do |e|
       tile_in_game(e[:x], e[:y], e[:tile_key])
@@ -260,22 +276,22 @@ class Game
       @player_moved = true
     elsif args.inputs.keyboard.key_down.s
       if args.state.player.arrows > 0
-        shoot_arrow(args.state.player, 's')
+        shoot_arrow(args.state.player, 's', true)
         @player_moved = true
       end
     elsif args.inputs.keyboard.key_down.a
       if args.state.player.arrows > 0
-        shoot_arrow(args.state.player, 'a')
+        shoot_arrow(args.state.player, 'a', true)
         @player_moved = true
       end
     elsif args.inputs.keyboard.key_down.w
       if args.state.player.arrows > 0
-        shoot_arrow(args.state.player, 'w')
+        shoot_arrow(args.state.player, 'w', true)
         @player_moved = true
       end
     elsif args.inputs.keyboard.key_down.d
       if args.state.player.arrows > 0
-        shoot_arrow(args.state.player, 'd')
+        shoot_arrow(args.state.player, 'd', true)
         @player_moved = true
       end
     elsif args.inputs.keyboard.key_down.space
@@ -291,15 +307,75 @@ class Game
   end
 
   def game_turn(args)
-    args.state.arrows = arrow_flight(args.state.arrows) if args.state.arrows
     events
-    check_arrows(args)
+    # check if slow characters get a move
     if $player_choice == 'warrior' && args.state.tick_count % 15 == 0
       args.state.combat_log << "Before you react the world moves around you"
     else
       player_movement
     end
+    
+    #handle the projectiles
+    args.state.arrows = projectile_flight(args.state.arrows) if args.state.arrows
+    args.state.bolts = projectile_flight(args.state.bolts) if args.state.bolts
+    check_arrows(args)
+    check_bolts(args)
 
+    # move the other things
+    goodie_movement
+    baddie_movement
+    other_movement
+    
+    
+    check_arrows(args)
+    check_bolts(args)
+    args.state.enemies.reject! { |e| e.dead }
+    args.state.goodies.reject! { |g| g.dead }
+    Baddies.new.spawn_baddie
+  end
+
+  def player_movement
+    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
+    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.others) unless found_enemy
+    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
+    found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
+    hit_bolt = find_same_square_group(@new_player_x, @new_player_y, args.state.bolts)
+    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
+
+    if still_in_map?(@new_player_x, @new_player_y)
+      if !found_enemy && !found_wall && !blocking_friend
+        args.state.player.x = @new_player_x
+        args.state.player.y = @new_player_y
+        message = "You moved #{@player_direction}."
+      elsif found_enemy
+        message = your_combat(args.state.player, found_enemy)
+        args.state.score += found_enemy.value if found_enemy.dead
+        args.state.enemies.reject! { |e| e.dead }
+        if args.state.enemies.empty?
+          args.outputs.sounds << "sounds/game-over.wav"
+          args.state.scene = "level"
+        end
+      elsif blocking_friend && !found_wall
+        blocking_friend.x = args.state.player.x
+        blocking_friend.y = args.state.player.y
+        args.state.player.x = @new_player_x
+        args.state.player.y = @new_player_y
+        message = "You swapped places with #{blocking_friend.type}."
+      elsif hit_bolt
+        hit_bolt.dead = true 
+        args.state.combat_log << bolt_hit(args.state.player)
+        args.state.bolts.reject! { |bolt| bolt.dead } 
+        args.state.player.x = @new_player_x
+        args.state.player.y = @new_player_y
+      else
+        message = "You can't move through walls or the hotpot!"
+      end
+      args.state.info_message = message
+    end
+  end
+
+  def goodie_movement
+    return if args.state.enemies.empty?
     args.state.goodies.each do |goody|
       if goody.type == 'Cook' && args.state.tick_count.even?
         target_distances = args.state.goodies.map { |good| [good, proximity_to_target(goody, good)] }
@@ -307,40 +383,37 @@ class Game
         target_distances = args.state.enemies.map { |enemy| [enemy, proximity_to_target(goody, enemy)] }
       end
       nearest_target, min_distance = target_distances.min_by { |_, distance| distance }
+      path = BasicPath.new(goody, nearest_target, args.state.walls, @allies)
+       
       if goody.type == "Pie Wagon"
+        path = BasicPath.new(goody, args.state.hotpot, args.state.walls)
          if goody.moved
            goody.moved = false
            new_spot = [goody.x, goody.y]
          else
-          new_spot = BasicPath.new(goody, args.state.hotpot, args.state.walls).move_step
+          new_spot = path.move_step
           goody.moved = true
          end
       elsif min_distance && min_distance < 5
-        new_spot = BasicPath.new(goody, nearest_target, args.state.walls, @allies).move_step
+        new_spot = path.move_step
       elsif goody.type == "Ranger"
         if goody.arrows.even?
-          shot = rand(4)
-          case shot
-            when 1
-              shoot_arrow(goody, 'd')
-            when 2
-              shoot_arrow(goody, 's')
-            when 3
-              shoot_arrow(goody, 'a')
-            when 4
-              shoot_arrow(goody, 'w')
-          end
+          aim = path.take_aim
+          shoot_arrow(goody, aim)
+          new_spot = goody
         else 
           goody.arrows = 0
+          new_spot = path.random_direction
         end
-        new_spot = BasicPath.new(goody, goody, args.state.walls).random_direction
       else
-        new_spot = BasicPath.new(goody, goody, args.state.walls).random_direction
+        new_spot = path.random_direction
       end
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, @allies)
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.others) unless blocking_opponent
       found_wall = find_same_square_group(new_spot.x, new_spot.y, args.state.walls)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
+      hit_bolt = find_same_square_group(new_spot.x, new_spot.y, args.state.bolts)
       if blocking_friend
         #don't move unless healer
         if goody.type == 'Cook'
@@ -364,38 +437,53 @@ class Game
       elsif blocking_opponent
         args.state.combat_log << other_combat(goody, blocking_opponent)
         args.state.enemies.reject! { |e| e.dead } 
+        return if args.state.enemies.empty?
+
       elsif goody.type == "Pie Wagon"
         goody.x = new_spot.x
         goody.y = new_spot.y
         if hit_arrow
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead }  
-        end          
+        end        
       elsif goody.type == "Ranger"
         goody.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
         goody.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       else
         if hit_arrow
           hit_arrow.dead = true
-          args.state.arrows.reject! { |arrow| arrow.dead }  
+          args.state.arrows.reject! { |arrow| arrow.dead } 
+        elsif hit_bolt
+          hit_bolt.dead = true 
+          args.state.combat_log << bolt_hit(goody)
+          args.state.bolts.reject! { |bolt| bolt.dead } 
         end
         goody.x = new_spot.x unless !(in_village?(new_spot))
         goody.y = new_spot.y unless !(in_village?(new_spot))
       end
-    end 
+    end
+  end 
 
+  def baddie_movement
     args.state.enemies.each do |enemy|
       ally_distances = @allies.map { |ally| [ally, proximity_to_target(enemy, ally)] }
       nearest_target, min_distance = ally_distances.min_by { |_, distance| distance } 
-      new_spot = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies).move_step
+      path = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies)
+      new_spot = path.move_step
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies)
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.others) unless blocking_opponent
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
-      if enemy.type == "Goblin Shaman" && args.state.tick_count % 3 == 0
+      if enemy.type == "Orc Shaman" && args.state.tick_count % 3 == 0
         close_friends = args.state.enemies.select { |ally| proximity_to_target(enemy, ally) < 6}
         close_friends.each do |friend|
           args.state.combat_log << heal(enemy, friend)
         end
+      elsif enemy.type == "Goblin Bowman" && args.state.tick_count % 4 == 0
+        aim = path.take_aim
+        fire_bolt(enemy, aim)
+        next
+
       end
       if check_if_same_square?(new_spot.x, new_spot.y, args.state.player)
         args.state.combat_log << other_combat(enemy, args.state.player)
@@ -407,7 +495,7 @@ class Game
         args.state.combat_log << other_combat(enemy, blocking_opponent)
       else
         if hit_arrow
-          args.state.combat_log << your_arrow(enemy)
+          args.state.combat_log << your_arrow(enemy, hit_arrow)
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead } 
         end
@@ -415,45 +503,41 @@ class Game
         enemy.y = new_spot.y
       end
     end
-    check_arrows(args)
-    args.state.enemies.reject! { |e| e.dead }
-    args.state.goodies.reject! { |g| g.dead }
-    Baddies.new.spawn_baddie
   end
 
-  def player_movement
-    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
-    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
-    found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
-
-    blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
-
-    if still_in_map?(@new_player_x, @new_player_y)
-      if !found_enemy && !found_wall && !blocking_friend
-        args.state.player.x = @new_player_x
-        args.state.player.y = @new_player_y
-        message = "You moved #{@player_direction}."
-      elsif found_enemy
-        message = your_combat(args.state.player, found_enemy)
-        args.state.score += found_enemy.value if found_enemy.dead
+  def other_movement
+    args.state.others.each do |other|
+      new_spot = BasicPath.new(other, other, args.state.walls).random_direction
+      blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.others)
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies) unless blocking_opponent
+      found_wall = find_same_square_group(new_spot.x, new_spot.y, args.state.walls)
+      hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
+      hit_bolt = find_same_square_group(new_spot.x, new_spot.y, args.state.bolts)
+      if blocking_friend || found_wall
+        #don't move
+      elsif blocking_opponent
+        args.state.combat_log << other_combat(other, blocking_opponent)
         args.state.enemies.reject! { |e| e.dead }
-      elsif blocking_friend && !found_wall
-        blocking_friend.x = args.state.player.x
-        blocking_friend.y = args.state.player.y
-        args.state.player.x = @new_player_x
-        args.state.player.y = @new_player_y
-        message = "You swapped places with #{blocking_friend.type}."
-      else
-        message = "You can't move through walls or the hotpot!"
+        args.state.goodies.reject! { |e| e.dead }  
+      elsif still_in_map?(new_spot.x, new_spot.y)
+        if hit_arrow
+          hit_arrow.dead = true
+          args.state.combat_log << your_arrow(other, hit_arrow)
+          args.state.arrows.reject! { |arrow| arrow.dead } 
+        elsif hit_bolt
+          hit_bolt.dead = true 
+          args.state.combat_log << bolt_hit(other)
+          args.state.bolts.reject! { |bolt| bolt.dead } 
+        end
+        other.x = new_spot.x
+        other.y = new_spot.y
       end
-      args.state.info_message = message
     end
   end
 
   def tile_in_game(x, y, tile_key)
-    $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE,
-         PADDING_Y + y * DESTINATION_TILE_SIZE,
-         tile_key)
+    $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE, PADDING_Y + y * DESTINATION_TILE_SIZE, tile_key)
   end
   
   def proximity_to_target(me, target)
@@ -471,17 +555,17 @@ class Game
     me.x > 17 && me.x < 40 && me.y > 9 && me.y < 31 
   end
 
-  def arrow_flight(arrows)
-    arrows.each do |arrow|
-      case arrow.direction
-        when "s"
-          arrow.y -= 1
-        when "w"
-          arrow.y += 1
-        when "d"
-          arrow.x += 1
-        when "a"
-          arrow.x -= 1
+  def projectile_flight(projectiles)
+    projectiles.each do |projectile|
+      case projectile.direction
+      when "s"
+        projectile.y -= 1
+      when "w"
+        projectile.y += 1
+      when "d"
+        projectile.x += 1
+      when "a"
+        projectile.x -= 1
       end
     end
   end
@@ -499,6 +583,10 @@ class Game
   end
 
   def events
+    if args.state.tick_count % 45 == 0
+      args.state.others << spawn_piggy
+      args.state.combat_log << "A wild boar has wandered in"
+    end
     if args.state.tick_count % 75 == 0
       args.state.walls << spawn_tree
       args.state.combat_log << "A new tree has grown at [#{args.state.walls[-1].x}, #{args.state.walls[-1].y}]"
@@ -527,11 +615,26 @@ class Game
       if blocking_friend || found_wall || !still_in_map?(arrow.x, arrow.y)
         arrow.dead = true
       elsif blocking_opponent
-        args.state.combat_log << your_arrow(blocking_opponent)
+        args.state.combat_log << your_arrow(blocking_opponent, arrow)
         arrow.dead = true
       end
     end
     args.state.arrows.reject! { |arrow| arrow.dead }
+  end
+
+  def check_bolts(args)
+    args.state.bolts.each do |bolt|
+      #check if they run into a friend
+      blocking_target = find_same_square_group(bolt.x, bolt.y, @allies)
+      found_wall = find_same_square_group(bolt.x, bolt.y, args.state.walls)
+      if found_wall || !still_in_map?(bolt.x, bolt.y)
+        bolt.dead = true
+      elsif blocking_target
+        args.state.combat_log << bolt_hit(blocking_target)
+        bolt.dead = true
+      end
+    end
+    args.state.bolts.reject! { |bolt| bolt.dead }
   end
 
   def spawn_cloud(start = false)
@@ -556,14 +659,50 @@ class Game
     }
   end
 
-  def shoot_arrow(source, d)
+  def shoot_arrow(source, d, hero = false)
+    x_start = source.x
+    y_start = source.y
+    if !hero 
+      case d
+        when 'a'
+          x_start -= 1
+        when 'd'
+          x_start += 1
+        when 's'
+          y_start -= 1
+        else
+          y_start += 1
+      end
+    end
     args.state.arrows << {
-      x: source.x,
-      y: source.y,
+      x: x_start,
+      y: y_start,
       tile_key: "#{d}arrow".to_sym,
-      direction: d #down
+      direction: d, #down
+      player: hero
     }
     source.arrows -= 1
+  end
+
+  def fire_bolt(source, d)
+    x_start = source.x
+    y_start = source.y
+    case d
+      when 'a'
+        x_start -= 1
+      when 'd'
+        x_start += 1
+      when 's'
+        y_start -= 1
+      else
+        y_start += 1
+    end
+    args.state.bolts << {
+      x: x_start,
+      y: y_start,
+      tile_key: "#{d}bolt".to_sym,
+      direction: d
+    }
   end
 
   def spawn_tree
@@ -581,6 +720,15 @@ class Game
       tree = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: tree_tile, tree_type: true, }
     end
     tree
+  end
+
+  def spawn_piggy(start = false)
+    start ? cords = [rand(WIDTH),rand(HEIGHT)] : cords = spawn_location
+    piggy = { x: cords[0], y: cords[1], hp: 6, tile_key: :boar, atk: [1,2], value: 1, type: "Wild Boar", armor: 0 }
+    until !in_village?(piggy) do
+      piggy = { x: rand(WIDTH), y: rand(HEIGHT), hp: 6, tile_key: :boar, atk: [1,2], value: 1, type: "Wild Boar", armor: 0 }
+    end
+    piggy
   end
 
   def spawn_bush
@@ -623,7 +771,7 @@ class Game
       y_spot = 0
     end
   end
-  #me.x > 17 && me.x < 40 && me.y > 9 && me.y < 31 
+
   def paint_village
     x_spot = 19
     y_spot = 11
@@ -727,5 +875,4 @@ class Game
     @decorations <<  { x:18 , y: 10, tile_key: :sedirt }
     @decorations <<  { x:39 , y: 10, tile_key: :swdirt }
   end
-
 end
