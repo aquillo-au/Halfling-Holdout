@@ -2,35 +2,51 @@ def startup_tick args
   if args.state.tick_count == 1
     args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
   end 
+  args.outputs.sprites << {
+    x: 0,
+    y: 0,
+    w: args.grid.w,
+    h: args.grid.h,
+    a: 150,
+    path: 'sprites/background.png'
+  }
+  args.outputs.sprites << {
+    x: 40,
+    y: args.grid.h - 160,
+    w: 605,
+    h: 150,
+    path: 'sprites/title.png'
+  }
     labels = []
     labels << {
-      x: 40,
+      x: 650,
       y: args.grid.h - 40,
-      text: "Halfling Holdout Version #{VERSION}",
-      size_enum: 6,
+      text: "Version #{VERSION}",
+      size_enum: 5,
     }
     labels << {
       x: 40,
-      y: args.grid.h - 88,
+      y: args.grid.h - 170,
       text: "by Aquillo",
     }
     labels << {
       x: 40,
-      y: args.grid.h - 140,
+      y: args.grid.h - 240,
       text: "Protect the Halfling Hotpot in the center of the Village",
     }
     labels << {
       x: 40,
-      y: args.grid.h - 180,
+      y: args.grid.h - 280,
       text: "What is your name Hero?",
     }
     labels << {
       x: 40,
-      y: args.grid.h - 200,
+      y: args.grid.h - 310,
       text: "#{args.state.input_ip}",
     }
     if args.inputs.keyboard.enter
-      $name = args.state.input_ip 
+      args.state.input_ip ? $name = "The Unknown" : $name = args.state.input_ip
+      args.outputs.sounds << "sounds/fireball.wav"
       args.state.scene = "title"
       return
     end

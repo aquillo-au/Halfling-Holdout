@@ -14,6 +14,33 @@ class Title
 
   def tick
     @labels = []
+    args.outputs.sprites << {
+      x: 0,
+      y: 0,
+      w: args.grid.w,
+      h: args.grid.h,
+      a: 120,
+      path: 'sprites/background.png'
+    }
+    args.outputs.sprites << {
+      x: 40,
+      y: args.grid.h - 125,
+      w: 605,
+      h: 125,
+      path: 'sprites/title.png'
+    }
+    @labels << {
+      x: 653,
+      y: args.grid.h - 70,
+      text: "Version #{VERSION}",
+      size_enum: 2,
+    }
+    @labels << {
+      x: 653,
+      y: args.grid.h - 40,
+      text: "by Aquillo",
+      size_enum: -2,
+    }
     
     # setup the grid
     if args.inputs.keyboard.key_down.i
@@ -31,31 +58,35 @@ class Title
       score_page
     end
     @labels << {
-      x: 40,
-      y: args.grid.h - 40,
-      text: "Halfling Holdout Version #{VERSION}",
-      size_enum: 6,
-    }
-    @labels << {
-      x: 40,
-      y: args.grid.h - 88,
-      text: "by Aquillo",
-    }
-    @labels << {
       x: 20,
       y: 88,
-      text: "Press i for instructions | c for character list | s for high scores",
+      text: "Press: i for instructions",
+      size_enum: -5,
     }
     @labels << {
-      x: 550,
+      x: 93,
+      y: 63,
+      text: "c for character list",
+      size_enum: -5,
+    }
+    @labels << {
+      x: 93,
+      y: 38,
+      text: "s for high scores",
+      size_enum: -5,
+    }
+    @labels << {
+      x: args.grid.w,
       y: 60,
-      size_enum: -2,
-      text: "Music: Forest Walk & The Great Battle by Alexander Nakarada (www.serpentsoundstudios.com)"
+      text: "Music: Forest Walk & The Great Battle by Alexander Nakarada (www.serpentsoundstudios.com)",
+      size_enum: -8,
+      alignment_enum: 2,
     }
     @labels << {
-      x: 625,
+      x: args.grid.w,
       y: 40,
-      size_enum: -2,
+      size_enum: -8,
+      alignment_enum: 2,
       text: "Licensed under Creative Commons: By Attribution 4.0 License"
     }
     
@@ -72,7 +103,7 @@ class Title
   def character_page
     if args.inputs.keyboard.key_down.h
       $player_choice = 'hero'
-      args.outputs.sounds << "sounds/game-over.wav"
+      args.outputs.sounds << "sounds/click.wav"
       args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args) 
@@ -81,7 +112,7 @@ class Title
     end
     if args.inputs.keyboard.key_down.w
       $player_choice = 'warrior'
-      args.outputs.sounds << "sounds/game-over.wav"
+      args.outputs.sounds << "sounds/click.wav"
       args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args) 
@@ -90,7 +121,7 @@ class Title
     end
     if args.inputs.keyboard.key_down.a
       $player_choice = 'archer'
-      args.outputs.sounds << "sounds/game-over.wav"
+      args.outputs.sounds << "sounds/click.wav"
       args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args)
@@ -98,80 +129,85 @@ class Title
       return
     end
     @labels << {
-      x: 0,
-      y: 280,
-      text: "Press:",
-      size_enum: 3,
-    }
-    @labels << {
-      x: 40,
-      y: args.grid.h - 110,
+      x: args.grid.w/2,
+      y: args.grid.h - 125,
+      alignment_enum: 1,
       text: "#{$name} you must choose your class",
+      size_enum: -1,
     }
     @labels << {
       x: 100,
       y: 550,
       text: "The Hero is a good all rounder",
+      size_enum: -5,
     }
     @labels << {
       x: 100,
       y: 525,
       text: "Its a great choice for 1st timers",
+      size_enum: -5,
     }
     @labels << {
       x: 100,
       y: 500,
       text: "But isn't very good at magic",
+      size_enum: -5,
     }
     @labels << {
-      x: 125,
-      y: 280,
+      x: 225,
+      y: 270,
       text: "h to Select the Hero",
-      size_enum: 3,
+      size_enum: -5,
     }
     args.outputs.sprites << { x: 225, y: 311, w: 150, h: 150, path: 'sprites/hero.png' }
     @labels << {
       x: 500,
       y: 550,
       text: "The warrior is strong and powerful",
+      size_enum: -5,
     }
     @labels << {
       x: 500,
       y: 525,
       text: "You have more Armor and Hit points",
+      size_enum: -5,
     }
     @labels << {
       x: 500,
       y: 500,
       text: "But is slow and poor at range",
+      size_enum: -5,
     }
     @labels << {
-      x: 525,
-      y: 280,
+      x: 530,
+      y: 270,
       text: "w to Select the Warrior",
-      size_enum: 3,
+      size_enum: -5,
     }
     args.outputs.sprites << { x: 550, y: 250, w: 250, h: 250, path: 'sprites/dwarf.png' }
     @labels << {
-      x: 900,
+      x: 910,
       y: 550,
       text: "The Archer is quick",
+      size_enum: -5,
     }
     @labels << {
-      x: 900,
+      x: 910,
       y: 525,
       text: "Low armor and Hit Points",
+      size_enum: -5,
     }
     @labels << {
-      x: 900,
+      x: 910,
       y: 500,
       text: "But can kill from afar",
+      size_enum: -5,
     }
     @labels << {
       x: 925,
-      y: 280,
+      y: 270,
       text: "a to Select the Archer",
-      size_enum: 3,
+      size_enum: -5,
     }
     args.outputs.sprites << { x: 950, y: 275, w: 155, h: 180, path: 'sprites/ranger.png' }
   end
@@ -179,34 +215,40 @@ class Title
   def instruction_page
     @labels << {
       x: 40,
-      y: args.grid.h - 140,
+      y: args.grid.h - 160,
       text: "Protect the Halfling Hotpot in the center of the Village",
+      size_enum: -5,
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 165,
+      y: args.grid.h - 185,
       text: "Each level more Goblins and Rats will attack the village",
+      size_enum: -5,
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 190,
+      y: args.grid.h - 210,
       text: "The village also grows in size and you can gain a small powerup",
+      size_enum: -5,
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 215,
+      y: args.grid.h - 235,
       text: "You gain points for each kill and each levelup",
+      size_enum: -5,
     }
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 1 * DESTINATION_TILE_SIZE, PADDING_Y + 23 * DESTINATION_TILE_SIZE,:H)
     @labels << {
       x: 50,
-      y: 448,
+      y: 443,
       text: "<-- The Hotpot",
+      size_enum: -5,
     }
     @labels << {
-      x: 50,
-      y: 398,
+      x: 100,
+      y: 394,
       text: "Your Friends -->",
+      size_enum: -5,
     }
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 21 * DESTINATION_TILE_SIZE, PADDING_Y + 20 * DESTINATION_TILE_SIZE,:h)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 26 * DESTINATION_TILE_SIZE, PADDING_Y + 20 * DESTINATION_TILE_SIZE,:v)
@@ -215,47 +257,54 @@ class Title
       x: 325,
       y: 380,
       text: "Guard | Villager | Cook",
+      size_enum: -5,
     }
     @labels << {
       x: 490,
       y: 360,
       text: "(healer)",
+      size_enum: -5,
     }
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 1 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:r)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:g)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 9.5 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:n)
     args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 14 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:s)
+    args.outputs.sprites << SpriteGrid.new.tile(PADDING_X + 19 * DESTINATION_TILE_SIZE, PADDING_Y + 15 * DESTINATION_TILE_SIZE,:f)
     @labels << {
-      x: 275,
+      x: 405,
       y: 315,
       text: "<-- The Baddies",
+      size_enum: -5,
     }
     @labels << {
       x: 10,
       y: 293,
-      text: "Rat | Goblin | Orc | Shaman",
+      text: "Rat | Goblin | Orc | Shaman | Bowman",
+      size_enum: -5,
     }
     @labels << {
       x: 205,
       y: 275,
       text: "(healer)",
+      size_enum: -5,
     }
     @labels << {
       x: 40,
       y: 120,
       text: "Arrows to move or attack, space to wait | ASDW to fire an arrow | Mouse Over to inspect",
+      size_enum: -5,
     }
   end
 
   def score_page
     @labels << {
-      x: 585,
-      y: 600,
-      text: "High-scores!",
+      x: args.grid.w/2 - 100,
+      y: 550,
+      text: "High Scores!",
       size_enum: 3,
     }
     args.state.high_scores.each_with_index do |score, index|
-      args.outputs.labels << [560, (570 - (index*25)) , "#{score.name} with #{score.score} as the #{score.character}",]
+      args.outputs.labels << [555, (515 - (index*25)) , "#{score.name} with #{score.score} as the #{score.character}",-5]
     end
   end
 end

@@ -21,14 +21,29 @@ class GameOver
   end
 
   def tick
+    args.outputs.sprites << {
+      x: 0,
+      y: 0,
+      w: args.grid.w,
+      h: args.grid.h,
+      a: 135,
+      path: 'sprites/background.png'
+    }
+    args.outputs.sprites << {
+      x: args.grid.w - 360,
+      y: args.grid.h - 80,
+      w: 350,
+      h: 75,
+      path: 'sprites/title.png'
+    }
     @labels = []
     generate_labels(args)
-
     args.outputs.labels << @labels
   
     if args.inputs.keyboard.key_down.h
       #args.audio[:music] = { input: "sounds/flight.ogg", looping: true }
       $title = Title.new(args)
+      args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
       args.state.scene = "title"
       return
     end
@@ -38,25 +53,38 @@ class GameOver
 
   def generate_labels(args)
     @labels << {
-      x: 585,
-      y: 550,
-      text: "High Scores!",
+      x: args.grid.w,
+      y: 60,
+      text: "Music: Cold Journey by Alexander Nakarada (www.serpentsoundstudios.com)",
+      size_enum: -8,
+      alignment_enum: 2,
+    }
+    @labels << {
+      x: args.grid.w,
+      y: 40,
+      size_enum: -8,
+      alignment_enum: 2,
+      text: "Licensed under Creative Commons: By Attribution 4.0 License"
+    }
+    @labels << {
+      x: 50,
+      y: 525,
+      text: "High Scores",
       size_enum: 5,
     }
     args.state.high_scores.each_with_index do |score, index|
-      args.outputs.labels << [565, (510 - (index*25)) , "#{score.name} with #{score.score} as the #{score.character.capitalize}"]
+      args.outputs.labels << [55, (480 - (index*38)) , "#{score.name} with #{score.score} as the #{score.character.capitalize},", -1]
     end
-
     if args.state.score > args.state.high_scores[-1][:score]
       @labels << {
-        x: 260,
+        x: 350,
         y: args.grid.h - 90,
         text: "New high-score!",
         size_enum: 3,
       }
     else
       @labels << {
-        x: 260,
+        x: 350,
         y: args.grid.h - 90,
         text: "Score to beat: #{args.state.high_scores[-1][:score]}",
         size_enum: 3,

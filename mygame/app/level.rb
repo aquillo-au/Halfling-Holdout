@@ -21,10 +21,31 @@ class Level
     elsif $player_choice == 'archer'
       archer_level(args)
     end
+    @labels << {
+      x: 40,
+      y: 100,
+      text: "Level  Cleared!",
+      size_enum: 4,
+    }
   end
 
   
   def tick
+    args.outputs.sprites << {
+      x: 0,
+      y: 0,
+      w: args.grid.w,
+      h: args.grid.h,
+      a: 175,
+      path: 'sprites/level.png'
+    }
+    args.outputs.sprites << {
+      x: args.grid.w - 400,
+      y: 10,
+      w: 375,
+      h: 150,
+      path: 'sprites/title.png'
+    }
     if args.inputs.keyboard.key_down.h
       h_bonus
     elsif args.inputs.keyboard.key_down.a
@@ -86,17 +107,17 @@ class Level
   def warrior_level(args)
     @labels << {
       x: 40,
-      y: args.grid.h - 120,
+      y: args.grid.h - 130,
       text: "a for 2 more armor",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 140,
+      y: args.grid.h - 160,
       text: "p for 5 more max hit points",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 160,
+      y: args.grid.h - 190,
       text: "q for 1 more arrow slot",
     }
   end
@@ -104,17 +125,17 @@ class Level
   def hero_level(args)
     @labels << {
       x: 40,
-      y: args.grid.h - 120,
+      y: args.grid.h - 130,
       text: "a for 1 more attack",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 140,
+      y: args.grid.h - 160,
       text: "p for 5 more max hit points",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 160,
+      y: args.grid.h - 190,
       text: "q for a 3 larger quiver",
     }
   end
@@ -122,17 +143,17 @@ class Level
   def archer_level(args)
     @labels << {
       x: 40,
-      y: args.grid.h - 120,
+      y: args.grid.h - 130,
       text: "a for 1 to max attack",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 140,
+      y: args.grid.h - 160,
       text: "p for 3 more max hit points",
     }
     @labels << {
       x: 40,
-      y: args.grid.h - 160,
+      y: args.grid.h - 190,
       text: "q for a 5 larger quiver",
     } 
   end

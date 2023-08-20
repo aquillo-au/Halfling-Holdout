@@ -116,7 +116,21 @@ class Game
   end
 
   def tick
-    
+    args.outputs.sprites << {
+      x: 0,
+      y: 0,
+      w: args.grid.w,
+      h: args.grid.h,
+      a: 25,
+      path: 'sprites/background.png'
+    }
+    args.outputs.sprites << {
+      x: args.grid.w - 135,
+      y: args.grid.h - 40,
+      w: 125,
+      h: 35,
+      path: 'sprites/title.png'
+    }
     @allies = [args.state.player, args.state.hotpot]
     args.state.goodies.each { |villager| @allies << villager }
   
@@ -142,7 +156,7 @@ class Game
     end
 
     if args.state.player.dead || args.state.hotpot.dead
-      args.audio[:music] = { input: "sounds/forestwalk.ogg", looping: true }
+      args.audio[:music] = { input: "sounds/coldjourney.ogg", looping: true }
       $game_over = GameOver.new(args)
       args.state.scene = "game_over"
     end
@@ -207,19 +221,19 @@ class Game
                              border_size - 10]
   
     if args.state.enemies.empty?
-      args.outputs.sounds << "sounds/game-over.wav"
+      args.outputs.sounds << "sounds/click.wav"
       args.state.scene = "level"
     end
 
     # render label stuff
-    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor"]
-    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message]
-    args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}"]
+    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor", -5]
+    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message, -4]
+    args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}", -6]
     args.state.combat_log = args.state.combat_log.flatten.last(20)
     args.state.combat_log.each_with_index do |log, index|
-      args.outputs.labels << [885, (670 - (index*20)) , "#{log}", -4,]
+      args.outputs.labels << [885, (666 - (index*20)) , "#{log}", -8,]
     end
-    args.outputs.labels << [border_x + 600, border_y + 36 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left"]
+    args.outputs.labels << [border_x + 600, border_y + 36 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left", -6]
     args.outputs.solids << {
        x: args.grid.w - 400,
        y: args.grid.h - 450,
@@ -240,16 +254,16 @@ class Game
       b: 230,
       a: 50,
     }
-    args.outputs.solids << {
-      x: 0,
-      y: 0,
-      w: args.grid.w,
-      h: args.grid.h,
-      r: 32,
-      g: 120,
-      b: 60,
-      a: 25,
-    }
+    # args.outputs.solids << {
+    #   x: 0,
+    #   y: 0,
+    #   w: args.grid.w,
+    #   h: args.grid.h,
+    #   r: 32,
+    #   g: 120,
+    #   b: 60,
+    #   a: 25,
+    # }
   end
   
   private

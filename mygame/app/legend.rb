@@ -15,7 +15,7 @@ def tick_legend args
     sprite_key = find_sprite(tile_x, tile_y)  # $sprite_tiles.sprite_lookup.find { |k, v| v == [tile_x, tile_y] }
     if sprite_key
       sprite_key.each_with_index do |log, index|
-        args.outputs.labels << [885, (150 - (index*20)) , "#{log}", -4,]
+        args.outputs.labels << [885, (175 - (index*20)) , "#{log}", -4,]
       end      
     # else
     #   args.outputs.labels << [660, 50, "Tile [#{tile_x}, #{tile_y}] not found.", -1, 0]
@@ -25,19 +25,22 @@ def tick_legend args
 
   def find_sprite(x, y)
     wall = $my_game.find_same_square_group(x, y, $gtk.args.state.walls)
-    return wall.tree_type ? ['A Tree'] : ['A Wall'] if wall
+    return wall.tree_type ? ['','A Tree'] : ['','A Wall'] if wall
 
     friend = $my_game.find_same_square_group(x, y, $gtk.args.state.goodies)
-    return [friend.type, "#{friend.hp} hps", "#{friend.atk[0]}d#{friend.atk[1]} Attack", "#{friend.armor} Armor"] if friend
+    return ['Friendly',friend.type, "#{friend.hp} hps", "#{friend.atk[0]}d#{friend.atk[1]} Attack", "#{friend.armor} Armor"] if friend
 
     enemy = $my_game.find_same_square_group(x, y, $gtk.args.state.enemies)
-    return [enemy.type, "#{enemy.hp} hps", "#{enemy.atk[0]}d#{enemy.atk[1]} Attack", "#{enemy.armor} Armor"] if enemy
+    return ['Enemy',enemy.type, "#{enemy.hp} hps", "#{enemy.atk[0]}d#{enemy.atk[1]} Attack", "#{enemy.armor} Armor"] if enemy
+
+    other = $my_game.find_same_square_group(x, y, $gtk.args.state.others)
+    return ['Neutral',other.type, "#{other.hp} hps", "#{other.atk[0]}d#{other.atk[1]} Attack", "#{other.armor} Armor"] if other
 
     hotpot = $my_game.check_if_same_square?(x,y, $gtk.args.state.hotpot)
-    return ["The fabled HOTPOT protect it at all costs!", "It has #{$gtk.args.state.hotpot.armor} Armor"] if hotpot
+    return ['',"The fabled HOTPOT", "Protect it at all costs!", "It has #{$gtk.args.state.hotpot.armor} Armor"] if hotpot
 
     you = $my_game.check_if_same_square?(x,y, $gtk.args.state.player)
-    return ["Its You, don't you look cute?"] if you
+    return ['',"Its You", "don't you look cute?"] if you
 
     false
   end
