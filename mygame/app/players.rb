@@ -1,7 +1,7 @@
 class Players
     def initialize()
         @players = {
-            warrior: {
+            dwarf: {
                 y: 20,
                 x: 28,
                 hp: 30,
@@ -12,7 +12,7 @@ class Players
                 armor: 8,
                 mana: 0,
                 maxmana: 0,
-                type: "Warrior", 
+                type: "Dwarf", 
                 sprite_key: :warrior, 
                 spells: false
             },
@@ -30,7 +30,7 @@ class Players
                 type: "Hero",
                 sprite_key: :hero,
                 spells: {
-                    lightning: true,
+                    Teleport: 10,
                 }
             },
             archer: {
@@ -47,7 +47,28 @@ class Players
                 type: "Archer",
                 sprite_key: :archer,
                 spells: {
-                    lightning: 5,
+                    Lightning: 5,
+                    Teleport: 10,
+                }
+            },
+            wizard: {
+                y: 20,
+                x: 28,
+                hp: 10,
+                maxhp: 10,
+                atk: [1,2],
+                arrows: 3,
+                quiver: 3,
+                armor: 0,
+                mana: 10,
+                maxmana: 15,
+                type: "Wizard",
+                sprite_key: :wizard,
+                spells: {
+                    Lightning: 5,
+                    Teleport: 10,
+                    Fireball: 5,
+                    Heal: 3,
                 }
             }
         }

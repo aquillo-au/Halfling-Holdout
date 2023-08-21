@@ -11,15 +11,14 @@ def tick_legend args
     mouse_col = args.inputs.mouse.point.x.idiv(SOURCE_TILE_SIZE)
     tile_x = (mouse_col - legend_x.idiv(SOURCE_TILE_SIZE) - 1)
 
-    sprite_key = find_sprite(tile_x, tile_y)  # $sprite_tiles.sprite_lookup.find { |k, v| v == [tile_x, tile_y] }
+    sprite_key = find_sprite(tile_x, tile_y)
    
 
     if sprite_key
       sprite_key.each_with_index do |log, index|
-        args.outputs.labels << [885, (175 - (index*20)) , "#{log}", -4,]
-      end      
-    # else
-    #   args.outputs.labels << [660, 50, "Tile [#{tile_x}, #{tile_y}] not found.", -1, 0]
+        args.outputs.labels << [885, (175 - (index*20)) , "#{log}", -4,] unless index == 0
+        args.outputs.labels << [args.grid.w - 45, 155, "(#{log})", -5, 2] if index == 0 && log != ''
+      end
     end
 
   end

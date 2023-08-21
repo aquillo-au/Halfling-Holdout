@@ -123,8 +123,8 @@ class Title
       args.state.scene = "gameplay"
       return
     end
-    if args.inputs.keyboard.key_down.w
-      $player_choice = 'warrior'
+    if args.inputs.keyboard.key_down.d
+      $player_choice = 'dwarf'
       args.outputs.sounds << "sounds/click.wav"
       args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
@@ -141,6 +141,15 @@ class Title
       args.state.scene = "gameplay"
       return
     end
+    if args.inputs.keyboard.key_down.w
+      $player_choice = 'wizard'
+      args.outputs.sounds << "sounds/click.wav"
+      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
+      $level = Level.new(args)
+      $my_game = Game.new(args)
+      args.state.scene = "gameplay"
+      return
+    end
     @labels << {
       x: args.grid.w/2,
       y: args.grid.h - 125,
@@ -149,80 +158,105 @@ class Title
       size_enum: -1,
     }
     @labels << {
-      x: 100,
+      x: 50,
       y: 550,
       text: "The Hero is a good all rounder",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 100,
+      x: 50,
       y: 525,
-      text: "Its a great choice for 1st timers",
-      size_enum: -5,
+      text: "It's a great 1st choice",
+      size_enum: -6,
     }
     @labels << {
-      x: 100,
+      x: 50,
       y: 500,
       text: "But isn't very good at magic",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 225,
+      x: 50,
       y: 270,
       text: "h to Select the Hero",
-      size_enum: -5,
+      size_enum: -6,
     }
-    args.outputs.sprites << { x: 225, y: 311, w: 150, h: 150, path: 'sprites/hero.png' }
+    args.outputs.sprites << { x: 75, y: 311, w: 150, h: 150, path: 'sprites/hero.png' }
     @labels << {
-      x: 500,
+      x: 625,
       y: 550,
-      text: "The warrior is strong and powerful",
-      size_enum: -5,
+      text: "The Dwarf is strong and powerful",
+      size_enum: -6,
     }
     @labels << {
-      x: 500,
+      x: 625,
       y: 525,
       text: "You have more Armor and Hit points",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 500,
+      x: 625,
       y: 500,
       text: "But is slow and poor at range",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 530,
+      x: 650,
       y: 270,
-      text: "w to Select the Warrior",
-      size_enum: -5,
+      text: "d to Select the Dwarf",
+      size_enum: -6,
     }
-    args.outputs.sprites << { x: 550, y: 250, w: 250, h: 250, path: 'sprites/dwarf.png' }
+    args.outputs.sprites << { x: 650, y: 250, w: 250, h: 250, path: 'sprites/dwarf.png' }
     @labels << {
-      x: 910,
+      x: 375,
+      y: 550,
+      text: "The Wizard is magical",
+      size_enum: -6,
+    }
+    @labels << {
+      x: 375,
+      y: 525,
+      text: "many spells and tricks",
+      size_enum: -6,
+    }
+    @labels << {
+      x: 375,
+      y: 500,
+      text: "but poor in combat",
+      size_enum: -6,
+    }
+    @labels << {
+      x: 375,
+      y: 270,
+      text: "w to Select the Wizard",
+      size_enum: -6,
+    }
+    args.outputs.sprites << { x: 375, y: 290, w: 155, h: 175, path: 'sprites/wizard.png' }
+    @labels << {
+      x: 1000,
       y: 550,
       text: "The Archer is quick",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 910,
+      x: 1000,
       y: 525,
       text: "Low armor and Hit Points",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 910,
+      x: 1000,
       y: 500,
       text: "But can kill from afar",
-      size_enum: -5,
+      size_enum: -6,
     }
     @labels << {
-      x: 925,
+      x: 1000,
       y: 270,
       text: "a to Select the Archer",
       size_enum: -5,
     }
-    args.outputs.sprites << { x: 950, y: 275, w: 155, h: 180, path: 'sprites/ranger.png' }
+    args.outputs.sprites << { x: 1000, y: 275, w: 155, h: 180, path: 'sprites/ranger.png' }
   end
 
   def instruction_page
@@ -235,7 +269,7 @@ class Title
     @labels << {
       x: 40,
       y: args.grid.h - 185,
-      text: "Each level more Goblins and Rats will attack the village",
+      text: "Each level more baddies will attack the village",
       size_enum: -5,
     }
     @labels << {

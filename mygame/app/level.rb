@@ -16,10 +16,12 @@ class Level
     }
     if $player_choice == 'hero'
       hero_level(args)
-    elsif $player_choice == 'warrior'
-      warrior_level(args)
+    elsif $player_choice == 'dwarf'
+      dwarf_level(args)
     elsif $player_choice == 'archer'
       archer_level(args)
+    elsif $player_choice == 'wizard'
+      wizard_level(args)
     end
     @labels << {
       x: 40,
@@ -62,7 +64,7 @@ class Level
   
   private
 
-  def next_level(args)
+  def next_level
     # args.state.combat_log = []
     args.state.score += args.state.level
     args.state.info_message = nil
@@ -83,27 +85,31 @@ class Level
   
   def h_bonus
     2.times.spawn_villager()
-    next_level(args)
+    next_level
   end
 
   def a_bonus
     case $player_choice
-    when 'hero', 'warrior'
+    when 'hero', 'dwarf'
       args.state.player.atk[0] += 1
     when 'archer'
       args.state.player.atk[1] += 1
+    when 'wizard'
+      spell = args.state.player.spells.keys.sample
+      args.state.player.spells[spell] -= 1
+      args.state.player.spells[spell] = args.state.player.spells[spell].clamp(1, 10)
     end
-    next_level(args)
+    next_level
   end
 
   def p_bonus
     case $player_choice
-    when 'hero', 'warrior'
+    when 'hero', 'dwarf'
       args.state.player.maxhp += 5
-    when 'archer'
+    when 'archer', 'wizard'
       args.state.player.maxhp += 3
     end  
-    next_level(args)
+    next_level
   end
 
   def q_bonus
@@ -112,10 +118,10 @@ class Level
       args.state.player.quiver += 3
     when 'archer'
       args.state.player.quiver += 5
-    when 'warrior'
+    when 'dwarf', 'wizard'
       args.state.player.quiver += 1
     end      
-    next_level(args)
+    next_level
   end
 
   def m_bonus
@@ -123,14 +129,16 @@ class Level
     when 'hero'
       args.state.player.maxmana += 1
     when 'archer'
+      args.state.player.maxmana += 3
+    when 'wizard'
       args.state.player.maxmana += 5
-    when 'warrior'
+    when 'dwarf'
       @armor_buff += 2
     end
-    next_level(args)
+    next_level
   end
 
-  def warrior_level(args)
+  def dwarf_level(args)
     @labels << {
       x: 40,
       y: args.grid.h - 130,
@@ -150,6 +158,29 @@ class Level
       x: 40,
       y: args.grid.h - 220,
       text: "m for 2 more armor",
+    }
+  end
+
+  def wizard_level(args)
+    @labels << {
+      x: 40,
+      y: args.grid.h - 130,
+      text: "a for a random spells mana cost to be reduced",
+    }
+    @labels << {
+      x: 40,
+      y: args.grid.h - 160,
+      text: "p for 3 more max hit points",
+    }
+    @labels << {
+      x: 40,
+      y: args.grid.h - 190,
+      text: "q for 1 more arrow slot",
+    }
+    @labels << {
+      x: 40,
+      y: args.grid.h - 220,
+      text: "m for 5 more max mana",
     }
   end
 
@@ -195,7 +226,7 @@ class Level
     @labels << {
       x: 40,
       y: args.grid.h - 220,
-      text: "m for 1 more max manna",
+      text: "m for 3 more max manna",
     }
   end
 
@@ -203,7 +234,7 @@ class Level
     size = rand(50).clamp(20, 50)
     {
       x: 0 - rand(20),
-      y: rand($gtk.args.grid.h - size) - 100,
+      y: rand(args.grid.h - size) - 100,
       w: size,
       h: size,
       path: "sprites/dragon-0.png",

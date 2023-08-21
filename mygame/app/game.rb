@@ -3,6 +3,7 @@ class Game
   def initialize(args)
     args.state.arrows = []
     args.state.bolts = []
+    args.state.fireballs = []
     args.state.enemies = []
     args.state.combat_log = []
 
@@ -142,7 +143,7 @@ class Game
     args.state.goodies.each { |villager| @allies << villager }
   
     # handle keyboard input
-    handle_input(args)
+    handle_input
   
 
     #handle game logic
@@ -207,6 +208,9 @@ class Game
     args.outputs.sprites << args.state.bolts.map do |b|
       tile_in_game(b[:x], b[:y], b[:tile_key])
     end
+    args.outputs.sprites << args.state.fireballs.map do |f|
+      tile_in_game(f[:x], f[:y], :fireball)
+    end
     #render the village
     args.outputs.sprites << args.state.goodies.map do |e|
       tile_in_game(e[:x], e[:y], e[:tile_key])
@@ -243,14 +247,16 @@ class Game
       args.outputs.sprites << { x: @lightning_x, y: @lightning_y, w: 25, h: 25, path: "sprites/lightning/lightning#{sprite_index}.png" }
     end
       # render label stuff
-    args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor", -5]
+    args.outputs.labels << [border_x + 10, border_y + 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left with #{args.state.player.armor} Armor", -5]
+    args.outputs.labels << [border_x + 10, border_y - 8, "#{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]}", -5]
     if args.state.player.spells
       args.outputs.labels << [885, 255,"#{args.state.player.mana}/#{args.state.player.maxmana} Mana", -6]
       args.state.player.spells.keys.each_with_index do |spell, index|
         args.outputs.labels << [885, 235 - (index*20),"#{spell} - #{args.state.player.spells[spell]} mana", -6]
+        args.outputs.labels << [args.grid.w - 75, 235 - (index*20),"(#{spell.to_s[0]})", -6] unless spell == :Lightning
       end
     end
-    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message, -4]
+    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message, -6]
     args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}", -6]
     args.state.combat_log = args.state.combat_log.flatten.last(20)
     args.state.combat_log.each_with_index do |log, index|
@@ -291,7 +297,8 @@ class Game
   
   private
 
-  def handle_input(args)
+  def handle_input
+    @player_direction = nil
     @new_player_x = args.state.player.x
     @new_player_y = args.state.player.y
     @player_moved = false
@@ -333,8 +340,8 @@ class Game
       end
     elsif args.inputs.keyboard.key_down.space
       @player_moved = true
-    elsif args.inputs.mouse.click && args.state.player.spells[:lightning]
-      if args.state.player.mana >= args.state.player.spells[:lightning]
+    elsif args.inputs.mouse.click && args.state.player.spells[:Lightning]
+      if args.state.player.mana >= args.state.player.spells[:Lightning]
         mouse_row = args.inputs.mouse.point.y.idiv(SOURCE_TILE_SIZE)
         tile_y = (mouse_row - PADDING_Y.idiv(SOURCE_TILE_SIZE) - 1)
     
@@ -347,9 +354,42 @@ class Game
           args.state.start_looping_at = args.state.tick_count
           @lightning_x = PADDING_X + target.x * DESTINATION_TILE_SIZE
           @lightning_y = PADDING_Y + target.y * DESTINATION_TILE_SIZE
-          args.state.player.mana -= 5
+          args.state.player.mana -= args.state.player.spells[:Lightning]
           @player_moved = true
         end
+      else
+        args.state.info_message = "You don't have enough Mana"
+      end
+    elsif args.inputs.keyboard.key_down.t && args.state.player.spells[:Teleport]
+      if args.state.player.mana >= args.state.player.spells[:Teleport]
+        @new_player_x = 28
+        @new_player_y = 20       
+        args.state.player.mana -= args.state.player.spells[:Teleport]
+        @player_moved = true
+      else
+        args.state.info_message = "You don't have enough Mana"
+      end
+    elsif args.inputs.keyboard.key_down.f && args.state.player.spells[:Fireball] 
+      if args.state.player.mana >= args.state.player.spells[:Fireball]
+        args.state.fireballs << { x: args.state.player.x, y: args.state.player.y }      
+        args.state.player.mana -= args.state.player.spells[:Fireball]
+        @player_moved = true
+      else
+        args.state.info_message = "You don't have enough Mana"
+      end
+    elsif args.inputs.keyboard.key_down.h && args.state.player.spells[:Heal]
+      if args.state.player.mana >= args.state.player.spells[:Heal]
+        close_friends = @allies.select { |ally| proximity_to_target(args.state.player, ally) < 6}
+        close_friends.each do |friend|
+          args.state.combat_log << heal(args.state.player, friend)
+        end
+        heal = rand(5) + 1
+        args.state.player.hp = (args.state.player.hp + heal).clamp(1, args.state.player.maxhp)
+        args.state.info_message = "You heal yourself for #{heal}"
+        args.state.player.mana -= args.state.player.spells[:Heal]
+        @player_moved = true
+      else
+        args.state.info_message = "You don't have enough Mana"
       end
     end
     if @player_moved && $player_choice == 'archer'
@@ -367,7 +407,7 @@ class Game
       args.state.player.mana += 1
     end
     # check if slow characters get a move
-    if $player_choice == 'warrior' && args.state.tick_count % 15 == 0
+    if $player_choice == 'dwarf' && args.state.tick_count % 15 == 0
       args.state.combat_log << "Before you react the world moves around you"
     else
       player_movement
@@ -376,6 +416,8 @@ class Game
     #handle the projectiles
     args.state.arrows = projectile_flight(args.state.arrows) if args.state.arrows
     args.state.bolts = projectile_flight(args.state.bolts) if args.state.bolts
+    fireball_flight if args.state.fireballs
+
     check_arrows(args)
     check_bolts(args)
 
@@ -394,6 +436,7 @@ class Game
   end
 
   def player_movement
+    message = ''
     found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
     found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.others) unless found_enemy
     found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
@@ -401,7 +444,7 @@ class Game
     hit_bolt = find_same_square_group(@new_player_x, @new_player_y, args.state.bolts)
     blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
 
-    if still_in_map?(@new_player_x, @new_player_y)
+    if still_in_map?(@new_player_x, @new_player_y) && @player_direction
       if !found_enemy && !found_wall && !blocking_friend
         args.state.player.x = @new_player_x
         args.state.player.y = @new_player_y
@@ -429,7 +472,7 @@ class Game
       else
         message = "You can't move through walls or the hotpot!"
       end
-      args.state.info_message = message
+      args.state.info_message = message if message != ''
     end
   end
 
@@ -505,7 +548,7 @@ class Game
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead }  
         end        
-      elsif goody.type == "Ranger"
+      elsif goody.type == "Ranger" || !(in_village?(goody))
         goody.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
         goody.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       else
@@ -589,11 +632,33 @@ class Game
           args.state.combat_log << bolt_hit(other)
           args.state.bolts.reject! { |bolt| bolt.dead } 
         end
-        other.x = new_spot.x
-        other.y = new_spot.y
+        other.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
+        other.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       end
     end
   end
+
+  def fireball_flight
+    return if args.state.enemies.empty?
+    args.state.fireballs.each do |ball|
+      target_distances = args.state.enemies.map { |enemy| [enemy, proximity_to_target(ball, enemy)] }
+      nearest_target, min_distance = target_distances.min_by { |_, distance| distance }
+      path = BasicPath.new(ball, nearest_target, args.state.walls, @allies)
+      new_spot = path.move_step
+
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies + args.state.others)
+
+      if blocking_opponent
+        args.state.combat_log << fire_ball_attack(blocking_opponent)
+        args.state.enemies.reject! { |e| e.dead } 
+        args.state.fireballs.delete(ball)
+        return if args.state.enemies.empty?
+      else
+        ball.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
+        ball.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
+      end
+    end
+  end 
 
   def tile_in_game(x, y, tile_key)
     $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE, PADDING_Y + y * DESTINATION_TILE_SIZE, tile_key)
@@ -940,6 +1005,8 @@ class Game
       args.state.tick_count % 5 == 0
     elsif $player_choice == 'archer'
       args.state.tick_count % 4 == 0
+    elsif $player_choice == 'wizard'
+      args.state.tick_count % 3 == 0
     end
   end
 end

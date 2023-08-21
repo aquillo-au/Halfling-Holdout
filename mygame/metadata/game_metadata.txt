@@ -2,5 +2,5 @@ devid=aquillo-au
 devtitle=Aquillo
 gameid=halfling-holdout
 gametitle=Halfing Holdout
-version=0.7
+version=0.8
 icon=metadata/icon.png

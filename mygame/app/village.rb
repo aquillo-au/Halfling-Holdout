@@ -35,6 +35,7 @@ def spawn_villager(type = 'random')
     end
     good_guy = { x: rand(23) + 18, y: rand(22) + 9, type: type.name, tile_key: type.tile_key, hp: type.hp, atk: type.atk, armor: type.armor}
     $gtk.args.state.goodies << good_guy
+    return
 end
 
 def spawn_pie_wagon

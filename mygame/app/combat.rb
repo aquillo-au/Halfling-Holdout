@@ -62,6 +62,19 @@ def lightning_bolt(target)
    end
 end
 
+def fire_ball_attack(target)
+   damage = check_damage(target, attack_roll({atk: [3,3]}))
+   target.hp -= damage
+   if target.hp < 1
+      target.dead = true
+      ["The Fireball hits the #{target.type} for #{damage}", "killing it"]
+   elsif damage > 0
+      ["The Fireball hits the #{target.type} for #{damage}", "leaving it with #{target.hp}hps"] 
+   else
+      ["The Fireball hits the #{target.type} damaging its armor"]
+   end
+end
+
 def heal(healer, defender) 
    healing = heal_roll(healer)
    defender.hp += healing
@@ -86,8 +99,8 @@ end
 def heal_roll(healer)
    healing = 0
    healer.atk[0].times do 
-      roll = ((rand(healer.atk[1])+ 1 )/2).to_i 
-      healing += roll      
+      roll = (rand(healer.atk[1])+ 1).to_i 
+      healing += roll
    end
    healing
 end

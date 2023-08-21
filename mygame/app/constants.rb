@@ -10,5 +10,5 @@ PADDING_Y = 60
 SIZE = 602
 WIDTH = 53
 HEIGHT = 38
-HIGH_SCORE_FILE = "high-score.txt"
+HIGH_SCORE_FILE = "high-score-test.txt"
 VERSION = $gtk.args.cvars["game_metadata.version"].value.to_s
