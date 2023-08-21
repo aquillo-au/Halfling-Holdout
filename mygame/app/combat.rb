@@ -49,6 +49,19 @@ def other_combat(attacker, defender)
    end
 end
 
+def lightning_bolt(target)
+   damage = check_damage(target, attack_roll({atk: [1,10]}))
+   target.hp -= damage
+   if target.hp < 1
+      target.dead = true
+      ["The lightning hits the #{target.type} for #{damage}", "killing it"]
+   elsif damage > 0
+      ["The lightning hits the #{target.type} for #{damage}", "leaving it with #{target.hp}hps"] 
+   else
+      ["The lightning hits the #{target.type} damaging its armor"]
+   end
+end
+
 def heal(healer, defender) 
    healing = heal_roll(healer)
    defender.hp += healing
@@ -86,8 +99,10 @@ end
 def check_damage(defender, damage)
    if damage > defender.armor
       return damage - defender.armor
-   else
+   elsif damage > 0
       defender.armor -= 1
+      return 0
+   else
       0
    end
 end

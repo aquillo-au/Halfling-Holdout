@@ -116,6 +116,13 @@ class Game
   end
 
   def tick
+    if args.inputs.keyboard.key_down.m
+      if args.audio[:music].paused
+        args.audio[:music].paused = false
+      else
+        args.audio[:music].paused = true
+      end
+    end
     args.outputs.sprites << {
       x: 0,
       y: 0,
@@ -210,6 +217,7 @@ class Game
     end
     args.outputs.sprites << [ args.state.clouds, args.state.dragon,  ]
     
+
     # render the border
     border_x = PADDING_X - DESTINATION_TILE_SIZE
     border_y = PADDING_Y - DESTINATION_TILE_SIZE
@@ -225,8 +233,23 @@ class Game
       args.state.scene = "level"
     end
 
-    # render label stuff
+    if args.state.start_looping_at
+      sprite_index = args.state
+                         .start_looping_at
+                         .frame_index 12, 3, false
+    end
+    sprite_index ||= 12
+    if sprite_index != 12
+      args.outputs.sprites << { x: @lightning_x, y: @lightning_y, w: 25, h: 25, path: "sprites/lightning/lightning#{sprite_index}.png" }
+    end
+      # render label stuff
     args.outputs.labels << [border_x + 10, border_y - 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left | #{args.state.player.arrows}/#{args.state.player.quiver} arrows | an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]} | #{args.state.player.armor} Armor", -5]
+    if args.state.player.spells
+      args.outputs.labels << [885, 255,"#{args.state.player.mana}/#{args.state.player.maxmana} Mana", -6]
+      args.state.player.spells.keys.each_with_index do |spell, index|
+        args.outputs.labels << [885, 235 - (index*20),"#{spell} - #{args.state.player.spells[spell]} mana", -6]
+      end
+    end
     args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message, -4]
     args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}", -6]
     args.state.combat_log = args.state.combat_log.flatten.last(20)
@@ -310,6 +333,24 @@ class Game
       end
     elsif args.inputs.keyboard.key_down.space
       @player_moved = true
+    elsif args.inputs.mouse.click && args.state.player.spells[:lightning]
+      if args.state.player.mana >= args.state.player.spells[:lightning]
+        mouse_row = args.inputs.mouse.point.y.idiv(SOURCE_TILE_SIZE)
+        tile_y = (mouse_row - PADDING_Y.idiv(SOURCE_TILE_SIZE) - 1)
+    
+        mouse_col = args.inputs.mouse.point.x.idiv(SOURCE_TILE_SIZE)
+        tile_x = (mouse_col - PADDING_X.idiv(SOURCE_TILE_SIZE) - 1)
+    
+        target = find_same_square_group(tile_x, tile_y, args.state.enemies + args.state.others)
+        if target
+          args.state.combat_log << lightning_bolt(target) 
+          args.state.start_looping_at = args.state.tick_count
+          @lightning_x = PADDING_X + target.x * DESTINATION_TILE_SIZE
+          @lightning_y = PADDING_Y + target.y * DESTINATION_TILE_SIZE
+          args.state.player.mana -= 5
+          @player_moved = true
+        end
+      end
     end
     if @player_moved && $player_choice == 'archer'
       if args.state.tick_count % 10 == 0
@@ -322,6 +363,9 @@ class Game
 
   def game_turn(args)
     events
+    if args.state.player.mana < args.state.player.maxmana && gain_mana?
+      args.state.player.mana += 1
+    end
     # check if slow characters get a move
     if $player_choice == 'warrior' && args.state.tick_count % 15 == 0
       args.state.combat_log << "Before you react the world moves around you"
@@ -345,6 +389,7 @@ class Game
     check_bolts(args)
     args.state.enemies.reject! { |e| e.dead }
     args.state.goodies.reject! { |g| g.dead }
+    args.state.others.reject! { |o| o.dead }
     Baddies.new.spawn_baddie
   end
 
@@ -513,8 +558,8 @@ class Game
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead } 
         end
-        enemy.x = new_spot.x
-        enemy.y = new_spot.y
+        enemy.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
+        enemy.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       end
     end
   end
@@ -888,5 +933,13 @@ class Game
     @decorations <<  { x:39 , y: 30, tile_key: :nwdirt }
     @decorations <<  { x:18 , y: 10, tile_key: :sedirt }
     @decorations <<  { x:39 , y: 10, tile_key: :swdirt }
+  end
+
+  def gain_mana?
+    if $player_choice == 'hero'
+      args.state.tick_count % 5 == 0
+    elsif $player_choice == 'archer'
+      args.state.tick_count % 4 == 0
+    end
   end
 end

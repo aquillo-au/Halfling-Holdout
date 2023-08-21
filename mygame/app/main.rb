@@ -16,19 +16,20 @@ def tick args
   # tick_game args 
   $sprite_tiles ||= SpriteGrid.new
   args.state.scene ||= "startup"
-  if args.state.scene == "gameplay"
+  case args.state.scene
+  when"gameplay"
     $my_game ||= Game.new(args)
     $my_game.args = args
     $my_game.tick
-  elsif args.state.scene == "level"
+  when "level"
     $level ||= Level.new(args)
     $level.args = args
     $level.tick
-  elsif args.state.scene == "title"
+  when "title"
     $title ||= Title.new(args)
     $title.args = args
     $title.tick
-  elsif args.state.scene == "game_over"
+  when "game_over"
     $game_over ||= GameOver.new(args)
     $game_over.args = args
     $game_over.tick

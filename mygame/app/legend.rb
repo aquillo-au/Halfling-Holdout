@@ -11,8 +11,9 @@ def tick_legend args
     mouse_col = args.inputs.mouse.point.x.idiv(SOURCE_TILE_SIZE)
     tile_x = (mouse_col - legend_x.idiv(SOURCE_TILE_SIZE) - 1)
 
-
     sprite_key = find_sprite(tile_x, tile_y)  # $sprite_tiles.sprite_lookup.find { |k, v| v == [tile_x, tile_y] }
+   
+
     if sprite_key
       sprite_key.each_with_index do |log, index|
         args.outputs.labels << [885, (175 - (index*20)) , "#{log}", -4,]
@@ -22,6 +23,9 @@ def tick_legend args
     end
 
   end
+
+
+
 
   def find_sprite(x, y)
     wall = $my_game.find_same_square_group(x, y, $gtk.args.state.walls)

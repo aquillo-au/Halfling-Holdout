@@ -54,6 +54,8 @@ class Level
       p_bonus
     elsif args.inputs.keyboard.key_down.q
       q_bonus
+    elsif args.inputs.keyboard.key_down.m
+      m_bonus
     end
     args.outputs.labels << @labels
   end
@@ -85,22 +87,46 @@ class Level
   end
 
   def a_bonus
-    args.state.player.atk[0] += 1 if $player_choice == 'hero'
-    args.state.player.atk[1] += 1 if $player_choice == 'archer'
-    @armor_buff += 2 if $player_choice == 'warrior'
+    case $player_choice
+    when 'hero', 'warrior'
+      args.state.player.atk[0] += 1
+    when 'archer'
+      args.state.player.atk[1] += 1
+    end
     next_level(args)
   end
 
   def p_bonus
-    args.state.player.maxhp += 5 unless $player_choice == 'archer'
-    args.state.player.maxhp += 3 if $player_choice == 'archer'
+    case $player_choice
+    when 'hero', 'warrior'
+      args.state.player.maxhp += 5
+    when 'archer'
+      args.state.player.maxhp += 3
+    end  
     next_level(args)
   end
 
   def q_bonus
-    args.state.player.quiver += 5 if $player_choice == 'archer'
-    args.state.player.quiver += 3 if $player_choice == 'hero'
-    args.state.player.quiver += 1 if $player_choice == 'warrior'
+    case $player_choice
+    when 'hero'
+      args.state.player.quiver += 3
+    when 'archer'
+      args.state.player.quiver += 5
+    when 'warrior'
+      args.state.player.quiver += 1
+    end      
+    next_level(args)
+  end
+
+  def m_bonus
+    case $player_choice
+    when 'hero'
+      args.state.player.maxmana += 1
+    when 'archer'
+      args.state.player.maxmana += 5
+    when 'warrior'
+      @armor_buff += 2
+    end
     next_level(args)
   end
 
@@ -108,7 +134,7 @@ class Level
     @labels << {
       x: 40,
       y: args.grid.h - 130,
-      text: "a for 2 more armor",
+      text: "a for 1 more attack",
     }
     @labels << {
       x: 40,
@@ -119,6 +145,11 @@ class Level
       x: 40,
       y: args.grid.h - 190,
       text: "q for 1 more arrow slot",
+    }
+    @labels << {
+      x: 40,
+      y: args.grid.h - 220,
+      text: "m for 2 more armor",
     }
   end
 
@@ -138,6 +169,11 @@ class Level
       y: args.grid.h - 190,
       text: "q for a 3 larger quiver",
     }
+    @labels << {
+      x: 40,
+      y: args.grid.h - 220,
+      text: "m for 1 more max manna",
+    }
   end
 
   def archer_level(args)
@@ -156,6 +192,11 @@ class Level
       y: args.grid.h - 190,
       text: "q for a 5 larger quiver",
     } 
+    @labels << {
+      x: 40,
+      y: args.grid.h - 220,
+      text: "m for 1 more max manna",
+    }
   end
 
   def spawn_dragon

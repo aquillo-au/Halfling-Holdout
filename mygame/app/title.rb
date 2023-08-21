@@ -13,13 +13,20 @@ class Title
   end
 
   def tick
+    if args.inputs.keyboard.key_down.m
+      if args.audio[:music].paused
+        args.audio[:music].paused = false
+      else
+        args.audio[:music].paused = true
+      end
+    end
     @labels = []
     args.outputs.sprites << {
       x: 0,
       y: 0,
       w: args.grid.w,
       h: args.grid.h,
-      a: 120,
+      a: 115,
       path: 'sprites/background.png'
     }
     args.outputs.sprites << {
@@ -59,20 +66,26 @@ class Title
     end
     @labels << {
       x: 20,
-      y: 88,
+      y: 90,
       text: "Press: i for instructions",
       size_enum: -5,
     }
     @labels << {
       x: 93,
-      y: 63,
+      y: 65,
       text: "c for character list",
       size_enum: -5,
     }
     @labels << {
       x: 93,
-      y: 38,
+      y: 40,
       text: "s for high scores",
+      size_enum: -5,
+    }
+    @labels << {
+      x: 93,
+      y: 15,
+      text: "m to turn the music on/off",
       size_enum: -5,
     }
     @labels << {
@@ -283,15 +296,39 @@ class Title
       size_enum: -5,
     }
     @labels << {
-      x: 205,
+      x: 193,
       y: 275,
       text: "(healer)",
       size_enum: -5,
     }
     @labels << {
-      x: 40,
-      y: 120,
-      text: "Arrows to move or attack, space to wait | ASDW to fire an arrow | Mouse Over to inspect",
+      x: args.grid.w - 550,
+      y: 520,
+      text: "Arrows to move or attack",
+      size_enum: -5,
+    }
+    @labels << {
+      x: args.grid.w - 550,
+      y: 500,
+      text: "space to wait",
+      size_enum: -5,
+    }
+    @labels << {
+      x: args.grid.w - 550,
+      y: 480,
+      text: "ASDW to fire an arrow",
+      size_enum: -5,
+    }
+    @labels << {
+      x: args.grid.w - 550,
+      y: 460,
+      text: "Click on an enemy to strike with lightning (5 mana)",
+      size_enum: -5,
+    }
+    @labels << {
+      x: args.grid.w - 550,
+      y: 440,
+      text: "Mouse Over to inspect/see stats",
       size_enum: -5,
     }
   end

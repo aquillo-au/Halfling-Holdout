@@ -10,8 +10,11 @@ class Players
                 arrows: 1,
                 quiver: 1,
                 armor: 8,
+                mana: 0,
+                maxmana: 0,
                 type: "Warrior", 
-                sprite_key: :warrior  
+                sprite_key: :warrior, 
+                spells: false
             },
             hero: {
                 y: 20,
@@ -22,8 +25,13 @@ class Players
                 arrows: 5,
                 quiver: 5,
                 armor: 4,
+                mana: 0,
+                maxmana: 10,
                 type: "Hero",
-                sprite_key: :hero 
+                sprite_key: :hero,
+                spells: {
+                    lightning: true,
+                }
             },
             archer: {
                 y: 20,
@@ -34,8 +42,13 @@ class Players
                 arrows: 10,
                 quiver: 10,
                 armor: 1,
+                mana: 5,
+                maxmana: 10,
                 type: "Archer",
-                sprite_key: :archer 
+                sprite_key: :archer,
+                spells: {
+                    lightning: 5,
+                }
             }
         }
     end
