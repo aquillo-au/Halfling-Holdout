@@ -80,6 +80,7 @@ class Level
     spawn_dragon if args.state.tick_count % 2 == 0
     Baddies.new.spawn_baddie
     $my_game.add_bush
+    $my_game.spawn_chest
     args.state.scene = "gameplay"
     return
   end
@@ -243,4 +244,9 @@ class Level
       alive: true,
     }
   end
+
+  def increase_armor
+    @armor += 1
+  end
+    
 end

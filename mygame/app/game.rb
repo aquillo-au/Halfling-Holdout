@@ -466,12 +466,33 @@ class Game
           args.outputs.sounds << "sounds/game-over.wav"
           args.state.scene = "level"
         end
-      elsif blocking_friend && !found_wall
+      elsif blocking_friend
+        case blocking_friend.type 
+        when 'chestbrown'
+          message = "You found a brown chest"
+          args.state.score += 5
+          blocking_friend.dead = true
+          $player_choice =='archer' ?  args.state.player.atk[0] +=1 : args.state.player.atk[1] +=1 
+        when 'chestred'
+          message = "You found a red chest"
+          args.state.score += 5
+          blocking_friend.dead = true
+          args.state.hotpot.armor += 2
+          args.state.hotpot.armor += 2
+          args.state.player.maxhp += 2
+        when 'chestgrey'
+          message = "You found a grey chest"
+          args.state.score += 5
+          blocking_friend.dead = true
+          $level.increase_armor
+          args.state.player.armor += 2
+        else
         blocking_friend.x = args.state.player.x
         blocking_friend.y = args.state.player.y
+        message = "You swapped places with #{blocking_friend.type}."
+        end
         args.state.player.x = @new_player_x
         args.state.player.y = @new_player_y
-        message = "You swapped places with #{blocking_friend.type}."
       elsif hit_bolt
         hit_bolt.dead = true 
         args.state.combat_log << @combat.bolt_hit(args.state.player)
@@ -490,6 +511,9 @@ class Game
     args.state.goodies.each do |goody|
       if goody.type == 'Cook' && args.state.tick_count.even?
         target_distances = args.state.goodies.map { |good| [good, proximity_to_target(goody, good)] }
+      elsif goody.type == 'chestbrown' || goody.type == 'chestred' || goody.type == 'chestgrey'
+        #lets not move chests
+        next
       else
         target_distances = args.state.enemies.map { |enemy| [enemy, proximity_to_target(goody, enemy)] }
       end
@@ -1014,5 +1038,22 @@ class Game
     elsif $player_choice == 'wizard'
       args.state.tick_count % 3 == 0
     end
+  end
+
+  def spawn_chest
+    type = rand(3)
+    case type
+    when 0
+      type = :chestbrown
+    when 1
+      type = :chestred
+    when 2
+      type = :chestgrey
+    end
+    chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, hp: 5, armor: 5 }
+    until !in_village?(chest) do
+      chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, hp: 5, armor: 5 }
+    end
+    args.state.goodies << chest
   end
 end
