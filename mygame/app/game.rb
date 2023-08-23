@@ -370,8 +370,10 @@ class Game
       elsif args.inputs.keyboard.key_down.t && args.state.player.spells[:Teleport]
         if args.state.player.mana >= args.state.player.spells[:Teleport]
           @new_player_x = 28
-          @new_player_y = 20       
+          @new_player_y = 20
+          args.state.combat_log << "#{@new_player_x}, #{@new_player_y}"
           args.state.player.mana -= args.state.player.spells[:Teleport]
+          @player_direction = "by teleportation"
           @player_moved = true
         else
           args.state.info_message = "You don't have enough Mana"
@@ -533,7 +535,7 @@ class Game
             args.state.combat_log << "The hotpot gains 10HP"
             args.state.combat_log << "A new Cook has spawned"
             args.state.combat_log << "You gain 2HP"
-            spawn_villager('Cook')
+            @village.spawn_villager('Cook')
             args.state.player.hp += 2
             args.state.hotpot.hp += 10
             args.state.player.hp = args.state.player.maxhp if args.state.player.hp > args.state.player.maxhp
@@ -851,7 +853,7 @@ class Game
   end
 
   def spawn_piggy(start = false)
-    start ? cords = [rand(WIDTH),rand(HEIGHT)] : cords = spawn_location
+    start ? cords = [rand(WIDTH),rand(HEIGHT)] : cords = @village.spawn_location
     piggy = { x: cords[0], y: cords[1], hp: 6, tile_key: :boar, atk: [1,2], value: 1, type: "Wild Boar", armor: 0 }
     until !in_village?(piggy) do
       piggy = { x: rand(WIDTH), y: rand(HEIGHT), hp: 6, tile_key: :boar, atk: [1,2], value: 1, type: "Wild Boar", armor: 0 }

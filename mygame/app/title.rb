@@ -116,39 +116,19 @@ class Title
   def character_page
     if args.inputs.keyboard.key_down.h
       $player_choice = 'hero'
-      args.outputs.sounds << "sounds/click.wav"
-      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
-      $level = Level.new(args)
-      $my_game = Game.new(args) 
-      args.state.scene = "gameplay"
-      return
+      start_game
     end
     if args.inputs.keyboard.key_down.d
       $player_choice = 'dwarf'
-      args.outputs.sounds << "sounds/click.wav"
-     # args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
-      $level = Level.new(args)
-      $my_game = Game.new(args) 
-      args.state.scene = "gameplay"
-      return
+      start_game
     end
     if args.inputs.keyboard.key_down.a
       $player_choice = 'archer'
-      args.outputs.sounds << "sounds/click.wav"
-      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
-      $level = Level.new(args)
-      $my_game = Game.new(args)
-      args.state.scene = "gameplay"
-      return
+      start_game
     end
     if args.inputs.keyboard.key_down.w
       $player_choice = 'wizard'
-      args.outputs.sounds << "sounds/click.wav"
-      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
-      $level = Level.new(args)
-      $my_game = Game.new(args)
-      args.state.scene = "gameplay"
-      return
+      start_game
     end
     @labels << {
       x: args.grid.w/2,
@@ -377,5 +357,14 @@ class Title
     args.state.high_scores.each_with_index do |score, index|
       args.outputs.labels << [555, (515 - (index*25)) , "#{score.name} with #{score.score} as the #{score.character}",-5]
     end
+  end
+
+  def start_game
+    args.outputs.sounds << "sounds/click.wav"
+    args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
+    $level = Level.new(args)
+    $my_game = Game.new(args)
+    args.state.scene = "gameplay"
+    return
   end
 end

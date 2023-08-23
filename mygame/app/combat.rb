@@ -56,6 +56,7 @@ class Combat
       if target.hp < 1
          target.dead = true
          ["The lightning hits the #{target.type} for #{damage}", "killing it"]
+         $gtk.args.state.score += defender.value
       elsif damage > 0
          ["The lightning hits the #{target.type} for #{damage}", "leaving it with #{target.hp}hps"] 
       else
@@ -69,6 +70,7 @@ class Combat
       if target.hp < 1
          target.dead = true
          ["The Fireball hits the #{target.type} for #{damage}", "killing it"]
+         $gtk.args.state.score += defender.value
       elsif damage > 0
          ["The Fireball hits the #{target.type} for #{damage}", "leaving it with #{target.hp}hps"] 
       else

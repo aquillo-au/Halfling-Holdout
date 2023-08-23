@@ -45,7 +45,7 @@ def startup_tick args
       text: "#{args.state.input_ip}",
     }
     if args.inputs.keyboard.enter
-      args.state.input_ip ? $name = "The Unknown" : $name = args.state.input_ip
+      args.state.input_ip ? $name = args.state.input_ip :  $name = "The Unknown" 
       args.outputs.sounds << "sounds/fireball.wav"
       args.state.scene = "title"
       return

@@ -1,3 +1,5 @@
+hero ^ 229 ^ hero
+hero ^ 18 ^ wizard
 Frodo ^ 10 ^ hero
 Samwise ^ 9 ^ warrior
 Merry ^ 8 ^ archer
