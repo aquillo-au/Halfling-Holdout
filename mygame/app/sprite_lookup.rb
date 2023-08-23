@@ -128,11 +128,11 @@ class SpriteGrid
     end
   end
 
-  def tile x, y, tile_row_column_or_key
-    tile_extended x, y, DESTINATION_TILE_SIZE, DESTINATION_TILE_SIZE, tile_row_column_or_key
+  def tile x, y, tile_row_column_or_key, frame
+    tile_extended x, y, DESTINATION_TILE_SIZE, DESTINATION_TILE_SIZE, tile_row_column_or_key, frame
   end
 
-  def tile_extended x, y, w, h, tile_row_column_or_key
+  def tile_extended x, y, w, h, tile_row_column_or_key, frame
     row_or_key, column = tile_row_column_or_key
     if !column
       row, column = sprite row_or_key
@@ -145,10 +145,6 @@ class SpriteGrid
       raise "Unabled to find a sprite for #{member_name}. Make sure the value exists in app/sprite_lookup.rb."
     end
 
-    # Sprite provided by Rogue Yun
-    # http://www.bay12forums.com/smf/index.php?topic=144897.0
-    # License: Public Domain
-
     {
       x: x,
       y: y,
@@ -158,7 +154,7 @@ class SpriteGrid
       tile_y: (row * 16),
       tile_w: 16,
       tile_h: 16,
-      path: 'sprites/simple-mood-16x16.png'
+      path: "sprites/sprite-grid-#{frame}.png"
     }
   end
 end

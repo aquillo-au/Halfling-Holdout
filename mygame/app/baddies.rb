@@ -65,4 +65,20 @@ class Baddies
             $gtk.args.state.budget -= type.value
         end
     end
+
+    private
+    
+    def spawn_location
+        side = rand(4)
+        case side
+        when 1
+            return [0, rand(HEIGHT)]
+        when 2
+            return [WIDTH, rand(HEIGHT)]
+        when 3
+            return [rand(WIDTH), 0]
+        else
+            return [rand(WIDTH), HEIGHT - 1 ]
+        end
+    end
 end

@@ -6,6 +6,8 @@ class Game
     args.state.fireballs = []
     args.state.enemies = []
     args.state.combat_log = []
+    @village = Goodies.new
+    @combat = Combat.new
 
     args.state.budget = 5
     Baddies.new.spawn_baddie
@@ -95,15 +97,15 @@ class Game
       spawn_tree,
     ]
     args.state.goodies = [
-      { x: 26, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 31, y: 13, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 37, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 37, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 31, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 26, y: 28, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 20, y: 18, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 20, y: 23, type: GOODIES[:guard].name, tile_key: GOODIES[:guard].tile_key, hp: GOODIES[:guard].hp, atk: GOODIES[:guard].atk, armor: GOODIES[:guard].armor},
-      { x: 30, y: 20, type: GOODIES[:cook].name, tile_key: GOODIES[:cook].tile_key, hp: GOODIES[:cook].hp, atk: GOODIES[:cook].atk, armor: GOODIES[:cook].armor},
+      @village.place_villager(26, 13, 'guard'),
+      @village.place_villager(31, 13, 'guard'),
+      @village.place_villager(37, 18, 'guard'),
+      @village.place_villager(37, 23, 'guard'),
+      @village.place_villager(31, 28, 'guard'),
+      @village.place_villager(26, 28, 'guard'),
+      @village.place_villager(20, 18, 'guard'),
+      @village.place_villager(20, 23, 'guard'),
+      @village.place_villager(30, 20, 'cook'),
     ]
     args.state.clouds = [
       spawn_cloud('start'),
@@ -153,6 +155,8 @@ class Game
       game_turn(args)
     end
   
+    frame = 1.frame_index(count: 5, hold_for: 15, repeat: true)
+
     if args.state.dragon.alive
       dragon_sprite_index = 0.frame_index(count: 6, hold_for: 14, repeat: true)
       args.state.dragon.path = "sprites/dragon-#{dragon_sprite_index}.png"
@@ -183,41 +187,41 @@ class Game
     end
     # render game
     args.outputs.sprites << @decorations.map do |d|
-      tile_in_game(d[:x], d[:y], d[:tile_key])
+      tile_in_game(d[:x], d[:y], d[:tile_key], frame)
     end
     # render enemies at locations
     args.outputs.sprites << args.state.enemies.map do |e|
-      tile_in_game(e[:x], e[:y], e[:tile_key])
+      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
     end
     # render the others
     args.outputs.sprites << args.state.others.map do |o|
-      tile_in_game(o[:x], o[:y], o[:tile_key])
+      tile_in_game(o[:x], o[:y], o[:tile_key], frame)
     end
     
     # render the enviroment comes after enemies to let them hide in bushes
     args.outputs.sprites << @enviroment.map do |object|
-      tile_in_game(object[:x], object[:y], object[:tile_key])
+      tile_in_game(object[:x], object[:y], object[:tile_key], frame)
     end
-    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key)
-    args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H)
+    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key, frame)
+    args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H, frame)
   
     # render the projectiles
     args.outputs.sprites << args.state.arrows.map do |a|
-      tile_in_game(a[:x], a[:y], a[:tile_key])
+      tile_in_game(a[:x], a[:y], a[:tile_key], frame)
     end    
     args.outputs.sprites << args.state.bolts.map do |b|
-      tile_in_game(b[:x], b[:y], b[:tile_key])
+      tile_in_game(b[:x], b[:y], b[:tile_key], frame)
     end
     args.outputs.sprites << args.state.fireballs.map do |f|
-      tile_in_game(f[:x], f[:y], :fireball)
+      tile_in_game(f[:x], f[:y], :fireball, frame)
     end
     #render the village
     args.outputs.sprites << args.state.goodies.map do |e|
-      tile_in_game(e[:x], e[:y], e[:tile_key])
+      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
     end
     # render walls at locations
     args.outputs.sprites << args.state.walls.map do |w|
-      tile_in_game(w[:x], w[:y], w[:tile_key])
+      tile_in_game(w[:x], w[:y], w[:tile_key], frame)
     end
     args.outputs.sprites << [ args.state.clouds, args.state.dragon,  ]
     
@@ -237,11 +241,12 @@ class Game
       args.state.scene = "level"
     end
 
-    if args.state.start_looping_at
+    if args.state.start_lightning_at
       sprite_index = args.state
-                         .start_looping_at
+                         .start_lightning_at
                          .frame_index 12, 3, false
     end
+
     sprite_index ||= 12
     if sprite_index != 12
       args.outputs.sprites << { x: @lightning_x, y: @lightning_y, w: 25, h: 25, path: "sprites/lightning/lightning#{sprite_index}.png" }
@@ -340,56 +345,59 @@ class Game
       end
     elsif args.inputs.keyboard.key_down.space
       @player_moved = true
-    elsif args.inputs.mouse.click && args.state.player.spells[:Lightning]
-      if args.state.player.mana >= args.state.player.spells[:Lightning]
-        mouse_row = args.inputs.mouse.point.y.idiv(SOURCE_TILE_SIZE)
-        tile_y = (mouse_row - PADDING_Y.idiv(SOURCE_TILE_SIZE) - 1)
-    
-        mouse_col = args.inputs.mouse.point.x.idiv(SOURCE_TILE_SIZE)
-        tile_x = (mouse_col - PADDING_X.idiv(SOURCE_TILE_SIZE) - 1)
-    
-        target = find_same_square_group(tile_x, tile_y, args.state.enemies + args.state.others)
-        if target
-          args.state.combat_log << lightning_bolt(target) 
-          args.state.start_looping_at = args.state.tick_count
-          @lightning_x = PADDING_X + target.x * DESTINATION_TILE_SIZE
-          @lightning_y = PADDING_Y + target.y * DESTINATION_TILE_SIZE
-          args.state.player.mana -= args.state.player.spells[:Lightning]
+    end
+    if args.state.player.spells #check if a spell caster
+      if args.inputs.mouse.click && args.state.player.spells[:Lightning]
+        if args.state.player.mana >= args.state.player.spells[:Lightning]
+          mouse_row = args.inputs.mouse.point.y.idiv(SOURCE_TILE_SIZE)
+          tile_y = (mouse_row - PADDING_Y.idiv(SOURCE_TILE_SIZE) - 1)
+      
+          mouse_col = args.inputs.mouse.point.x.idiv(SOURCE_TILE_SIZE)
+          tile_x = (mouse_col - PADDING_X.idiv(SOURCE_TILE_SIZE) - 1)
+      
+          target = find_same_square_group(tile_x, tile_y, args.state.enemies + args.state.others)
+          if target
+            args.state.combat_log << @combat.lightning_bolt(target) 
+            args.state.start_lightning_at = args.state.tick_count
+            @lightning_x = PADDING_X + target.x * DESTINATION_TILE_SIZE
+            @lightning_y = PADDING_Y + target.y * DESTINATION_TILE_SIZE
+            args.state.player.mana -= args.state.player.spells[:Lightning]
+            @player_moved = true
+          end
+        else
+          args.state.info_message = "You don't have enough Mana"
+        end
+      elsif args.inputs.keyboard.key_down.t && args.state.player.spells[:Teleport]
+        if args.state.player.mana >= args.state.player.spells[:Teleport]
+          @new_player_x = 28
+          @new_player_y = 20       
+          args.state.player.mana -= args.state.player.spells[:Teleport]
           @player_moved = true
+        else
+          args.state.info_message = "You don't have enough Mana"
         end
-      else
-        args.state.info_message = "You don't have enough Mana"
-      end
-    elsif args.inputs.keyboard.key_down.t && args.state.player.spells[:Teleport]
-      if args.state.player.mana >= args.state.player.spells[:Teleport]
-        @new_player_x = 28
-        @new_player_y = 20       
-        args.state.player.mana -= args.state.player.spells[:Teleport]
-        @player_moved = true
-      else
-        args.state.info_message = "You don't have enough Mana"
-      end
-    elsif args.inputs.keyboard.key_down.f && args.state.player.spells[:Fireball] 
-      if args.state.player.mana >= args.state.player.spells[:Fireball]
-        args.state.fireballs << { x: args.state.player.x, y: args.state.player.y }      
-        args.state.player.mana -= args.state.player.spells[:Fireball]
-        @player_moved = true
-      else
-        args.state.info_message = "You don't have enough Mana"
-      end
-    elsif args.inputs.keyboard.key_down.h && args.state.player.spells[:Heal]
-      if args.state.player.mana >= args.state.player.spells[:Heal]
-        close_friends = @allies.select { |ally| proximity_to_target(args.state.player, ally) < 6}
-        close_friends.each do |friend|
-          args.state.combat_log << heal(args.state.player, friend)
+      elsif args.inputs.keyboard.key_down.f && args.state.player.spells[:Fireball] 
+        if args.state.player.mana >= args.state.player.spells[:Fireball]
+          args.state.fireballs << { x: args.state.player.x, y: args.state.player.y }      
+          args.state.player.mana -= args.state.player.spells[:Fireball]
+          @player_moved = true
+        else
+          args.state.info_message = "You don't have enough Mana"
         end
-        heal = rand(5) + 1
-        args.state.player.hp = (args.state.player.hp + heal).clamp(1, args.state.player.maxhp)
-        args.state.info_message = "You heal yourself for #{heal}"
-        args.state.player.mana -= args.state.player.spells[:Heal]
-        @player_moved = true
-      else
-        args.state.info_message = "You don't have enough Mana"
+      elsif args.inputs.keyboard.key_down.h && args.state.player.spells[:Heal]
+        if args.state.player.mana >= args.state.player.spells[:Heal]
+          close_friends = @allies.select { |ally| proximity_to_target(args.state.player, ally) < 6}
+          close_friends.each do |friend|
+            args.state.combat_log << @combat.heal(args.state.player, friend)
+          end
+          heal = rand(5) + 1
+          args.state.player.hp = (args.state.player.hp + heal).clamp(1, args.state.player.maxhp)
+          args.state.info_message = "You heal yourself for #{heal}"
+          args.state.player.mana -= args.state.player.spells[:Heal]
+          @player_moved = true
+        else
+          args.state.info_message = "You don't have enough Mana"
+        end
       end
     end
     if @player_moved && $player_choice == 'archer'
@@ -437,9 +445,8 @@ class Game
 
   def player_movement
     message = ''
-    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies)
-    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.others) unless found_enemy
-    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls)
+    found_enemy = find_same_square_group(@new_player_x, @new_player_y, args.state.enemies + args.state.others )
+    found_wall = find_same_square_group(@new_player_x, @new_player_y, args.state.walls )
     found_wall = true if check_if_same_square?(@new_player_x, @new_player_y, args.state.hotpot)
     hit_bolt = find_same_square_group(@new_player_x, @new_player_y, args.state.bolts)
     blocking_friend = find_same_square_group(@new_player_x, @new_player_y, args.state.goodies)
@@ -450,7 +457,7 @@ class Game
         args.state.player.y = @new_player_y
         message = "You moved #{@player_direction}."
       elsif found_enemy
-        message = your_combat(args.state.player, found_enemy)
+        message = @combat.your_combat(args.state.player, found_enemy)
         args.state.score += found_enemy.value if found_enemy.dead
         args.state.enemies.reject! { |e| e.dead }
         if args.state.enemies.empty?
@@ -465,7 +472,7 @@ class Game
         message = "You swapped places with #{blocking_friend.type}."
       elsif hit_bolt
         hit_bolt.dead = true 
-        args.state.combat_log << bolt_hit(args.state.player)
+        args.state.combat_log << @combat.bolt_hit(args.state.player)
         args.state.bolts.reject! { |bolt| bolt.dead } 
         args.state.player.x = @new_player_x
         args.state.player.y = @new_player_y
@@ -511,15 +518,14 @@ class Game
         new_spot = path.random_direction
       end
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, @allies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.others) unless blocking_opponent
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies + args.state.others )
       found_wall = find_same_square_group(new_spot.x, new_spot.y, args.state.walls)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
       hit_bolt = find_same_square_group(new_spot.x, new_spot.y, args.state.bolts)
       if blocking_friend
         #don't move unless healer
         if goody.type == 'Cook'
-          args.state.combat_log << heal(goody, blocking_friend)
+          args.state.combat_log << @combat.heal(goody, blocking_friend)
           args.state.player.hp = args.state.player.maxhp if args.state.player.hp > args.state.player.maxhp
         elsif goody.type == "Pie Wagon"
           if blocking_friend == args.state.hotpot
@@ -537,7 +543,7 @@ class Game
       elsif found_wall
         #don't move
       elsif blocking_opponent
-        args.state.combat_log << other_combat(goody, blocking_opponent)
+        args.state.combat_log << @combat.other_combat(goody, blocking_opponent)
         args.state.enemies.reject! { |e| e.dead } 
         return if args.state.enemies.empty?
 
@@ -557,7 +563,7 @@ class Game
           args.state.arrows.reject! { |arrow| arrow.dead } 
         elsif hit_bolt
           hit_bolt.dead = true 
-          args.state.combat_log << bolt_hit(goody)
+          args.state.combat_log << @combat.bolt_hit(goody)
           args.state.bolts.reject! { |bolt| bolt.dead } 
         end
         goody.x = new_spot.x unless !(in_village?(new_spot))
@@ -573,13 +579,12 @@ class Game
       path = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies)
       new_spot = path.move_step
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.others) unless blocking_opponent
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies + args.state.others)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
       if enemy.type == "Orc Shaman" && args.state.tick_count % 3 == 0
         close_friends = args.state.enemies.select { |ally| proximity_to_target(enemy, ally) < 6}
         close_friends.each do |friend|
-          args.state.combat_log << heal(enemy, friend)
+          args.state.combat_log << @combat.heal(enemy, friend)
         end
       elsif enemy.type == "Goblin Bowman" && args.state.tick_count % 4 == 0
         aim = path.take_aim
@@ -588,16 +593,16 @@ class Game
 
       end
       if check_if_same_square?(new_spot.x, new_spot.y, args.state.player)
-        args.state.combat_log << other_combat(enemy, args.state.player)
+        args.state.combat_log << @combat.other_combat(enemy, args.state.player)
       elsif blocking_friend
         #don't move
       elsif check_if_same_square?(new_spot.x, new_spot.y, args.state.hotpot)
-        args.state.combat_log << other_combat(enemy, args.state.hotpot)
+        args.state.combat_log << @combat.other_combat(enemy, args.state.hotpot)
       elsif blocking_opponent
-        args.state.combat_log << other_combat(enemy, blocking_opponent)
+        args.state.combat_log << @combat.other_combat(enemy, blocking_opponent)
       else
         if hit_arrow
-          args.state.combat_log << your_arrow(enemy, hit_arrow)
+          args.state.combat_log << @combat.your_arrow(enemy, hit_arrow)
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead } 
         end
@@ -611,25 +616,24 @@ class Game
     args.state.others.each do |other|
       new_spot = BasicPath.new(other, other, args.state.walls).random_direction
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.others)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies) unless blocking_opponent
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies + @allies)
       found_wall = find_same_square_group(new_spot.x, new_spot.y, args.state.walls)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
       hit_bolt = find_same_square_group(new_spot.x, new_spot.y, args.state.bolts)
       if blocking_friend || found_wall
         #don't move
       elsif blocking_opponent
-        args.state.combat_log << other_combat(other, blocking_opponent)
+        args.state.combat_log << @combat.other_combat(other, blocking_opponent)
         args.state.enemies.reject! { |e| e.dead }
         args.state.goodies.reject! { |e| e.dead }  
       elsif still_in_map?(new_spot.x, new_spot.y)
         if hit_arrow
           hit_arrow.dead = true
-          args.state.combat_log << your_arrow(other, hit_arrow)
+          args.state.combat_log << @combat.your_arrow(other, hit_arrow)
           args.state.arrows.reject! { |arrow| arrow.dead } 
         elsif hit_bolt
           hit_bolt.dead = true 
-          args.state.combat_log << bolt_hit(other)
+          args.state.combat_log << @combat.bolt_hit(other)
           args.state.bolts.reject! { |bolt| bolt.dead } 
         end
         other.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
@@ -649,7 +653,7 @@ class Game
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies + args.state.others)
 
       if blocking_opponent
-        args.state.combat_log << fire_ball_attack(blocking_opponent)
+        args.state.combat_log << @combat.fire_ball_attack(blocking_opponent)
         args.state.enemies.reject! { |e| e.dead } 
         args.state.fireballs.delete(ball)
         return if args.state.enemies.empty?
@@ -660,8 +664,8 @@ class Game
     end
   end 
 
-  def tile_in_game(x, y, tile_key)
-    $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE, PADDING_Y + y * DESTINATION_TILE_SIZE, tile_key)
+  def tile_in_game(x, y, tile_key, frame = 1)
+    $sprite_tiles.tile(PADDING_X + x * DESTINATION_TILE_SIZE, PADDING_Y + y * DESTINATION_TILE_SIZE, tile_key, frame)
   end
   
   def proximity_to_target(me, target)
@@ -722,11 +726,11 @@ class Game
     end
     if args.state.tick_count % 95 == 0
       args.state.combat_log << "A pie wagon has arrived, protect it until it reaches the Hot Pot!"
-      args.state.goodies << spawn_pie_wagon
+      args.state.goodies << @village.spawn_pie_wagon
     end
     if args.state.tick_count % 85 == 0
       args.state.combat_log << "A wandering ranger aids your cause"
-      args.state.goodies << spawn_ranger
+      args.state.goodies << @village.spawn_ranger
     end
   end
 
@@ -739,7 +743,7 @@ class Game
       if blocking_friend || found_wall || !still_in_map?(arrow.x, arrow.y)
         arrow.dead = true
       elsif blocking_opponent
-        args.state.combat_log << your_arrow(blocking_opponent, arrow)
+        args.state.combat_log << @combat.your_arrow(blocking_opponent, arrow)
         arrow.dead = true
       end
     end
@@ -754,7 +758,7 @@ class Game
       if found_wall || !still_in_map?(bolt.x, bolt.y)
         bolt.dead = true
       elsif blocking_target
-        args.state.combat_log << bolt_hit(blocking_target)
+        args.state.combat_log << @combat.bolt_hit(blocking_target)
         bolt.dead = true
       end
     end

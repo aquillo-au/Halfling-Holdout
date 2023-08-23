@@ -126,7 +126,7 @@ class Title
     if args.inputs.keyboard.key_down.d
       $player_choice = 'dwarf'
       args.outputs.sounds << "sounds/click.wav"
-      args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
+     # args.audio[:music] = { input: "sounds/thegreatbattle.ogg", looping: true }
       $level = Level.new(args)
       $my_game = Game.new(args) 
       args.state.scene = "gameplay"

@@ -2,6 +2,7 @@ class Level
   attr_gtk
   def initialize(args)
     @armor_buff = 0
+    @village = Goodies.new
     @labels = []
     @labels << {
       x: 40,
@@ -75,7 +76,7 @@ class Level
     args.state.hotpot.hp +=1
     args.state.player.arrows = args.state.player.quiver
     args.state.player.armor = Players.new().player_data($player_choice).armor + @armor_buff
-    spawn_villager('villager')
+    @village.spawn_villager('villager')
     spawn_dragon if args.state.tick_count % 2 == 0
     Baddies.new.spawn_baddie
     $my_game.add_bush
@@ -84,7 +85,8 @@ class Level
   end
   
   def h_bonus
-    2.times.spawn_villager()
+    @village.spawn_villager()
+    @village.spawn_villager()
     next_level
   end
 
