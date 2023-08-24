@@ -13,7 +13,7 @@ class Level
     @labels << {
       x: 40,
       y: args.grid.h - 100,
-      text: "h for 2 new villagers",
+      text: "h for a new village hut",
     }
     if $player_choice == 'hero'
       hero_level(args)
@@ -76,7 +76,9 @@ class Level
     args.state.hotpot.hp +=1
     args.state.player.arrows = args.state.player.quiver
     args.state.player.armor = Players.new().player_data($player_choice).armor + @armor_buff
-    @village.spawn_villager('villager')
+    args.state.huts.first(args.state.level).each do |hut|
+      args.state.goodies << @village.place_villager(hut.x, hut.y, 'villager')
+    end
     spawn_dragon if args.state.tick_count % 2 == 0
     Baddies.new.spawn_baddie
     $my_game.add_bush
@@ -86,8 +88,11 @@ class Level
   end
   
   def h_bonus
-    @village.spawn_villager()
-    @village.spawn_villager()
+    hut = { x: rand(23) + 18, y: rand(22) + 9, tile_key: :hut, type: 'hut', hp: 10, armor: 0 }
+    while $my_game.find_same_square_group(hut.x, hut.y, args.state.walls)
+      hut = { x: rand(23) + 18, y: rand(22) + 9, tile_key: :hut, type: 'hut', hp: 10, armor: 0 }
+    end
+    args.state.huts << hut
     next_level
   end
 
@@ -246,7 +251,7 @@ class Level
   end
 
   def increase_armor
-    @armor += 1
+    @armor_buff += 1
   end
     
 end

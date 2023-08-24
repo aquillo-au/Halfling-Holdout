@@ -29,6 +29,17 @@ class Baddies
              armor: 4  
             }
         end
+        if $gtk.args.state.level > 8
+            @baddies[:troll] = 
+            {
+             hp: 20,
+             atk: [2,6],
+             value: 10,
+             name: "Troll",
+             tile_key: :o, 
+             armor: 6
+            }
+        end
         if $gtk.args.state.level > 4
             @baddies[:shaman] = 
             {

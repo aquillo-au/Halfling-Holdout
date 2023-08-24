@@ -9,6 +9,10 @@ class Game
     @village = Goodies.new
     @combat = Combat.new
 
+    @border_x = PADDING_X - DESTINATION_TILE_SIZE
+    @border_y = PADDING_Y - DESTINATION_TILE_SIZE
+    @border_size = SIZE + DESTINATION_TILE_SIZE + 1
+
     args.state.budget = 5
     Baddies.new.spawn_baddie
     args.state.level = 1
@@ -107,6 +111,13 @@ class Game
       @village.place_villager(20, 23, 'guard'),
       @village.place_villager(30, 20, 'cook'),
     ]
+    args.state.huts = [
+      { x: 25, y: 26, tile_key: :hut, type: 'hut', hp: 10, armor: 0 },
+      { x: 22, y: 17, tile_key: :hut2, type: 'hut', hp: 10, armor: 0 },
+      { x: 32, y: 15, tile_key: :hut3, type: 'hut', hp: 10, armor: 0 },
+      { x: 35, y: 24, tile_key: :hut4, type: 'hut', hp: 10, armor: 0 },
+    ]
+
     args.state.clouds = [
       spawn_cloud('start'),
       spawn_cloud('start'),
@@ -119,13 +130,6 @@ class Game
   end
 
   def tick
-    if args.inputs.keyboard.key_down.m
-      if args.audio[:music].paused
-        args.audio[:music].paused = false
-      else
-        args.audio[:music].paused = true
-      end
-    end
     args.outputs.sprites << {
       x: 0,
       y: 0,
@@ -143,6 +147,7 @@ class Game
     }
     @allies = [args.state.player, args.state.hotpot]
     args.state.goodies.each { |villager| @allies << villager }
+    args.state.huts.each { |hut| @allies << hut }
   
     # handle keyboard input
     handle_input
@@ -155,8 +160,7 @@ class Game
       game_turn(args)
     end
   
-    frame = 1.frame_index(count: 5, hold_for: 15, repeat: true)
-
+    
     if args.state.dragon.alive
       dragon_sprite_index = 0.frame_index(count: 6, hold_for: 14, repeat: true)
       args.state.dragon.path = "sprites/dragon-#{dragon_sprite_index}.png"
@@ -166,13 +170,13 @@ class Game
         args.state.dragon.alive = false
       end
     end
-
-    if args.state.player.dead || args.state.hotpot.dead
+    
+    if args.state.player.dead || args.state.hotpot.dead || args.state.huts.empty?
       args.audio[:music] = { input: "sounds/coldjourney.ogg", looping: true }
       $game_over = GameOver.new(args)
       args.state.scene = "game_over"
     end
-  
+    
     args.state.clouds.each do |cloud|
       cloud.x -= rand(5)/10
       cloud.y += (rand(10) - 4) / 20
@@ -185,119 +189,13 @@ class Game
     if args.state.clouds.size < 9
       args.state.clouds << spawn_cloud(false)
     end
-    # render game
-    args.outputs.sprites << @decorations.map do |d|
-      tile_in_game(d[:x], d[:y], d[:tile_key], frame)
-    end
-    # render enemies at locations
-    args.outputs.sprites << args.state.enemies.map do |e|
-      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
-    end
-    # render the others
-    args.outputs.sprites << args.state.others.map do |o|
-      tile_in_game(o[:x], o[:y], o[:tile_key], frame)
-    end
     
-    # render the enviroment comes after enemies to let them hide in bushes
-    args.outputs.sprites << @enviroment.map do |object|
-      tile_in_game(object[:x], object[:y], object[:tile_key], frame)
-    end
-    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key, frame)
-    args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H, frame)
-  
-    # render the projectiles
-    args.outputs.sprites << args.state.arrows.map do |a|
-      tile_in_game(a[:x], a[:y], a[:tile_key], frame)
-    end    
-    args.outputs.sprites << args.state.bolts.map do |b|
-      tile_in_game(b[:x], b[:y], b[:tile_key], frame)
-    end
-    args.outputs.sprites << args.state.fireballs.map do |f|
-      tile_in_game(f[:x], f[:y], :fireball, frame)
-    end
-    #render the village
-    args.outputs.sprites << args.state.goodies.map do |e|
-      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
-    end
-    # render walls at locations
-    args.outputs.sprites << args.state.walls.map do |w|
-      tile_in_game(w[:x], w[:y], w[:tile_key], frame)
-    end
-    args.outputs.sprites << [ args.state.clouds, args.state.dragon,  ]
-    
-
-    # render the border
-    border_x = PADDING_X - DESTINATION_TILE_SIZE
-    border_y = PADDING_Y - DESTINATION_TILE_SIZE
-    border_size = SIZE + DESTINATION_TILE_SIZE + 1
-  
-    args.outputs.borders << [border_x + DESTINATION_TILE_SIZE,
-                             border_y + DESTINATION_TILE_SIZE,
-                             border_size + 245,
-                             border_size - 10]
-  
     if args.state.enemies.empty?
       args.outputs.sounds << "sounds/click.wav"
       args.state.scene = "level"
     end
-
-    if args.state.start_lightning_at
-      sprite_index = args.state
-                         .start_lightning_at
-                         .frame_index 12, 3, false
-    end
-
-    sprite_index ||= 12
-    if sprite_index != 12
-      args.outputs.sprites << { x: @lightning_x, y: @lightning_y, w: 25, h: 25, path: "sprites/lightning/lightning#{sprite_index}.png" }
-    end
-      # render label stuff
-    args.outputs.labels << [border_x + 10, border_y + 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left with #{args.state.player.armor} Armor", -5]
-    args.outputs.labels << [border_x + 10, border_y - 8, "#{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]}", -5]
-    if args.state.player.spells
-      args.outputs.labels << [885, 255,"#{args.state.player.mana}/#{args.state.player.maxmana} Mana", -6]
-      args.state.player.spells.keys.each_with_index do |spell, index|
-        args.outputs.labels << [885, 235 - (index*20),"#{spell} - #{args.state.player.spells[spell]} mana", -6]
-        args.outputs.labels << [args.grid.w - 75, 235 - (index*20),"(#{spell.to_s[0]})", -6] unless spell == :Lightning
-      end
-    end
-    args.outputs.labels << [border_x + 10, border_y + 36 + border_size, args.state.info_message, -6]
-    args.outputs.labels << [border_x + 1000, border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}", -6]
-    args.state.combat_log = args.state.combat_log.flatten.last(20)
-    args.state.combat_log.each_with_index do |log, index|
-      args.outputs.labels << [885, (666 - (index*20)) , "#{log}", -8,]
-    end
-    args.outputs.labels << [border_x + 600, border_y + 36 + border_size, "The hotpot has #{args.state.hotpot.hp} hps left", -6]
-    args.outputs.solids << {
-       x: args.grid.w - 400,
-       y: args.grid.h - 450,
-       w: SOURCE_TILE_SIZE * 22,
-       h: SOURCE_TILE_SIZE * 25,
-       r: 68,
-       g: 150,
-       b: 230,
-       a: 50,
-     }
-    args.outputs.solids << {
-      x: args.grid.w - 400,
-      y: PADDING_Y,
-      w: SOURCE_TILE_SIZE * 22,
-      h: SOURCE_TILE_SIZE * 6,
-      r: 68,
-      g: 150,
-      b: 230,
-      a: 50,
-    }
-    # args.outputs.solids << {
-    #   x: 0,
-    #   y: 0,
-    #   w: args.grid.w,
-    #   h: args.grid.h,
-    #   r: 32,
-    #   g: 120,
-    #   b: 60,
-    #   a: 25,
-    # }
+    # render game
+    render_stuff
   end
   
   private
@@ -345,6 +243,12 @@ class Game
       end
     elsif args.inputs.keyboard.key_down.space
       @player_moved = true
+    elsif args.inputs.keyboard.key_down.m
+      if args.audio[:music].paused
+        args.audio[:music].paused = false
+      else
+        args.audio[:music].paused = true
+      end
     end
     if args.state.player.spells #check if a spell caster
       if args.inputs.mouse.click && args.state.player.spells[:Lightning]
@@ -442,6 +346,7 @@ class Game
     args.state.enemies.reject! { |e| e.dead }
     args.state.goodies.reject! { |g| g.dead }
     args.state.others.reject! { |o| o.dead }
+    args.state.huts.reject! { |h| h.dead }
     Baddies.new.spawn_baddie
   end
 
@@ -484,7 +389,7 @@ class Game
           message = "You found a grey chest"
           args.state.score += 5
           blocking_friend.dead = true
-          $level.increase_armor
+          arm = $level.increase_armor
           args.state.player.armor += 2
         else
         blocking_friend.x = args.state.player.x
@@ -559,12 +464,17 @@ class Game
             args.state.combat_log << "The hotpot gains 10HP"
             args.state.combat_log << "A new Cook has spawned"
             args.state.combat_log << "You gain 2HP"
-            @village.spawn_villager('Cook')
+            @village.place_villager(goody.x, goody.y, 'cook')
             args.state.player.hp += 2
             args.state.hotpot.hp += 10
             args.state.player.hp = args.state.player.maxhp if args.state.player.hp > args.state.player.maxhp
             goody.dead = true
           end
+        elsif goody.type == "Villager" && blocking_friend.type == "Villager"
+          goody.dead = true
+          blocking_friend.dead = true
+          args.state.combat_log << "Two villagers have joined forces to become a Guard"
+          args.state.goodies << @village.place_villager(goody.x, goody.y, 'guard')
         end
       elsif found_wall
         #don't move
@@ -580,7 +490,7 @@ class Game
           hit_arrow.dead = true
           args.state.arrows.reject! { |arrow| arrow.dead }  
         end        
-      elsif goody.type == "Ranger" || !(in_village?(goody))
+      elsif goody.type == "Ranger" || !(in_village?(goody)) || goody.type == "Guard"
         goody.x = new_spot.x unless !still_in_map?(new_spot.x, new_spot.y)
         goody.y = new_spot.y unless !still_in_map?(new_spot.x, new_spot.y)
       else
@@ -602,10 +512,10 @@ class Game
     args.state.enemies.each do |enemy|
       ally_distances = @allies.map { |ally| [ally, proximity_to_target(enemy, ally)] }
       nearest_target, min_distance = ally_distances.min_by { |_, distance| distance } 
-      path = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies)
+      enemy.type == 'Rat' ? path = BasicPath.new(enemy, args.state.hotpot, args.state.walls, args.state.enemies) : path = BasicPath.new(enemy, nearest_target, args.state.walls, args.state.enemies)
       new_spot = path.move_step
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
-      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies + args.state.others)
+      blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies + args.state.others + args.state.huts)
       hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
       if enemy.type == "Orc Shaman" && args.state.tick_count % 3 == 0
         close_friends = args.state.enemies.select { |ally| proximity_to_target(enemy, ally) < 6}
@@ -1050,10 +960,111 @@ class Game
     when 2
       type = :chestgrey
     end
-    chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, hp: 5, armor: 5 }
+    chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, atk: [0,0], hp: 5, armor: 5 }
     until !in_village?(chest) do
-      chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, hp: 5, armor: 5 }
+      chest = { x: rand(WIDTH), y: rand(HEIGHT), tile_key: type, type: type.to_s, atk: [0,0], hp: 5, armor: 5 }
     end
     args.state.goodies << chest
+  end
+
+  def render_stuff
+    frame = 1.frame_index(count: 5, hold_for: 15, repeat: true)
+    args.outputs.sprites << @decorations.map do |d|
+      tile_in_game(d[:x], d[:y], d[:tile_key], frame)
+    end
+    args.outputs.sprites << args.state.huts.map do |hut|
+      tile_in_game(hut[:x], hut[:y], hut[:tile_key], frame)
+    end
+    # render enemies at locations
+    args.outputs.sprites << args.state.enemies.map do |e|
+      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
+    end
+    # render the others
+    args.outputs.sprites << args.state.others.map do |o|
+      tile_in_game(o[:x], o[:y], o[:tile_key], frame)
+    end
+    
+    # render the enviroment comes after enemies to let them hide in bushes
+    args.outputs.sprites << @enviroment.map do |object|
+      tile_in_game(object[:x], object[:y], object[:tile_key], frame)
+    end
+    args.outputs.sprites << tile_in_game(args.state.player.x, args.state.player.y, args.state.player.sprite_key, frame)
+    args.outputs.sprites << tile_in_game(args.state.hotpot.x, args.state.hotpot.y, :H, frame)
+  
+    # render the projectiles
+    args.outputs.sprites << args.state.arrows.map do |a|
+      tile_in_game(a[:x], a[:y], a[:tile_key], frame)
+    end    
+    args.outputs.sprites << args.state.bolts.map do |b|
+      tile_in_game(b[:x], b[:y], b[:tile_key], frame)
+    end
+    args.outputs.sprites << args.state.fireballs.map do |f|
+      tile_in_game(f[:x], f[:y], :fireball, frame)
+    end
+    #render the village
+    args.outputs.sprites << args.state.goodies.map do |e|
+      tile_in_game(e[:x], e[:y], e[:tile_key], frame)
+    end
+    # render walls at locations
+    args.outputs.sprites << args.state.walls.map do |w|
+      tile_in_game(w[:x], w[:y], w[:tile_key], frame)
+    end
+    args.outputs.sprites << [ args.state.clouds, args.state.dragon,  ]
+    
+
+    # render the border
+    args.outputs.borders << [@border_x + DESTINATION_TILE_SIZE,
+                             @border_y + DESTINATION_TILE_SIZE,
+                             @border_size + 245,
+                             @border_size - 10]
+  
+
+    if args.state.start_lightning_at
+      sprite_index = args.state
+                         .start_lightning_at
+                         .frame_index 12, 3, false
+    end
+
+    sprite_index ||= 12
+    if sprite_index != 12
+      args.outputs.sprites << { x: @lightning_x, y: @lightning_y, w: 25, h: 25, path: "sprites/lightning/lightning#{sprite_index}.png" }
+    end
+      # render label stuff
+    args.outputs.labels << [@border_x + 10, @border_y + 10, "[#{args.state.player.x},#{args.state.player.y}]You have #{args.state.player.hp}/#{args.state.player.maxhp}HP left with #{args.state.player.armor} Armor", -5]
+    args.outputs.labels << [@border_x + 10, @border_y - 8, "#{args.state.player.arrows}/#{args.state.player.quiver} arrows and an attack of #{args.state.player.atk[0]}d#{args.state.player.atk[1]}", -5]
+    if args.state.player.spells
+      args.outputs.labels << [885, 255,"#{args.state.player.mana}/#{args.state.player.maxmana} Mana", -6]
+      args.state.player.spells.keys.each_with_index do |spell, index|
+        args.outputs.labels << [885, 235 - (index*20),"#{spell} - #{args.state.player.spells[spell]} mana", -6]
+        args.outputs.labels << [args.grid.w - 75, 235 - (index*20),"(#{spell.to_s[0]})", -6] unless spell == :Lightning
+      end
+    end
+    args.outputs.labels << [@border_x + 10, @border_y + 36 + @border_size, args.state.info_message, -6]
+    args.outputs.labels << [@border_x + 1000, @border_y - 10, "LEVEL: #{args.state.level}     SCORE: #{args.state.score}", -6]
+    args.state.combat_log = args.state.combat_log.flatten.last(20)
+    args.state.combat_log.each_with_index do |log, index|
+      args.outputs.labels << [885, (666 - (index*20)) , "#{log}", -8,]
+    end
+    args.outputs.labels << [@border_x + 600, @border_y + 36 + @border_size, "The hotpot has #{args.state.hotpot.hp} hps left", -6]
+    args.outputs.solids << {
+       x: args.grid.w - 400,
+       y: args.grid.h - 450,
+       w: SOURCE_TILE_SIZE * 22,
+       h: SOURCE_TILE_SIZE * 25,
+       r: 68,
+       g: 150,
+       b: 230,
+       a: 50,
+     }
+    args.outputs.solids << {
+      x: args.grid.w - 400,
+      y: PADDING_Y,
+      w: SOURCE_TILE_SIZE * 22,
+      h: SOURCE_TILE_SIZE * 6,
+      r: 68,
+      g: 150,
+      b: 230,
+      a: 50,
+    }
   end
 end

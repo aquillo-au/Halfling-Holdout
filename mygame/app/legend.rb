@@ -33,11 +33,23 @@ def tick_legend args
     friend = $my_game.find_same_square_group(x, y, $gtk.args.state.goodies)
     return ['Friendly',friend.type, "#{friend.hp} hps", "#{friend.atk[0]}d#{friend.atk[1]} Attack", "#{friend.armor} Armor"] if friend
 
+    hut = $my_game.find_same_square_group(x, y, $gtk.args.state.huts)
+    return ['Friendly', 'hut', "#{hut.hp} hps", "#{hut.armor} Armor"] if hut
+
     enemy = $my_game.find_same_square_group(x, y, $gtk.args.state.enemies)
     return ['Enemy',enemy.type, "#{enemy.hp} hps", "#{enemy.atk[0]}d#{enemy.atk[1]} Attack", "#{enemy.armor} Armor"] if enemy
 
     other = $my_game.find_same_square_group(x, y, $gtk.args.state.others)
     return ['Neutral',other.type, "#{other.hp} hps", "#{other.atk[0]}d#{other.atk[1]} Attack", "#{other.armor} Armor"] if other
+
+    arrow = $my_game.find_same_square_group(x, y, $gtk.args.state.arrows)
+    return ['Friendly', "An Arrow", "1d6 Attack"] if arrow
+
+    bolt = $my_game.find_same_square_group(x, y, $gtk.args.state.bolts)
+    return ['Enemy', "A Bolt", "1d5 Attack"] if bolt    
+
+    fireball = $my_game.find_same_square_group(x, y, $gtk.args.state.fireballs)
+    return ['Friendly', "A Fireball", "3d3 Attack"] if fireball
 
     hotpot = $my_game.check_if_same_square?(x,y, $gtk.args.state.hotpot)
     return ['',"The fabled HOTPOT", "Protect it at all costs!", "It has #{$gtk.args.state.hotpot.armor} Armor"] if hotpot
