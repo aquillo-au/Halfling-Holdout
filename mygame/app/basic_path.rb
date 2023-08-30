@@ -1,8 +1,8 @@
 class BasicPath
 
-  def initialize(mover, target, walls, friends = nil)
+  def initialize(mover, target = {x: 0, y: 0}, walls = $gtk.args.state.walls, friends = nil)
     @walls = walls.to_h {|wall| [[wall.x, wall.y], true] }
-    @me = [mover.x, mover.y]
+    @me = mover
     @target = [target.x, target.y]
     @friends = friends.to_h {|friend| [[friend.x, friend.y], true] }
   end
@@ -24,6 +24,7 @@ class BasicPath
   def move_step
     axis = x_or_y
     new_postion = check_direction(axis)
+    return new_postion if @me.type == 'Spirit'
     if @walls.key?(new_postion)  || @friends.key?(new_postion)
       axis == 'x'? new_postion = check_direction('y') : new_postion = check_direction('x')
     end

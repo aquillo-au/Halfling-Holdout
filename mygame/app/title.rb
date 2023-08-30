@@ -56,6 +56,10 @@ class Title
       @page = 'character'
     elsif args.inputs.keyboard.key_down.s
       @page = 'scores'
+    elsif args.inputs.keyboard.key_down.u
+      $bad_guys = 'Undead'
+    elsif args.inputs.keyboard.key_down.g
+      $bad_guys = 'Greenskins'
     end
     if @page == 'character'
       character_page 

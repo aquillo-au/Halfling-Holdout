@@ -80,7 +80,7 @@ class Level
       args.state.goodies << @village.place_villager(hut.x, hut.y, 'villager')
     end
     spawn_dragon if args.state.tick_count % 2 == 0
-    Baddies.new.spawn_baddie
+    Baddies.new.spawn_enemies
     $my_game.add_bush
     $my_game.spawn_chest
     args.state.scene = "gameplay"

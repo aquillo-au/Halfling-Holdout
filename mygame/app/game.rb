@@ -1,5 +1,7 @@
 class Game
   attr_gtk
+  attr_reader :enviroment
+
   def initialize(args)
     args.state.arrows = []
     args.state.bolts = []
@@ -9,12 +11,13 @@ class Game
     @village = Goodies.new
     @combat = Combat.new
 
+    $bad_guys ||= 'Greenskins'
     @border_x = PADDING_X - DESTINATION_TILE_SIZE
     @border_y = PADDING_Y - DESTINATION_TILE_SIZE
     @border_size = SIZE + DESTINATION_TILE_SIZE + 1
 
     args.state.budget = 5
-    Baddies.new.spawn_baddie
+    Baddies.new.spawn_enemies
     args.state.level = 1
     args.state.info_message = "Welcome to Level #{args.state.level}."
     args.state.score = 0
@@ -309,6 +312,10 @@ class Game
     if @player_moved && $player_choice == 'archer'
       if args.state.tick_count % 10 == 0
         @player_moved = false
+        if $bad_guys == 'Undead'
+          @enviroment.reject! { |e| e.tile_key == :dark }
+          generate_darkness
+        end
         player_movement
         args.state.combat_log << "You move so fast it seems the world is standing still"
       end
@@ -347,7 +354,8 @@ class Game
     args.state.goodies.reject! { |g| g.dead }
     args.state.others.reject! { |o| o.dead }
     args.state.huts.reject! { |h| h.dead }
-    Baddies.new.spawn_baddie
+    Baddies.new.spawn_enemies
+
   end
 
   def player_movement
@@ -506,6 +514,10 @@ class Game
         goody.y = new_spot.y unless !(in_village?(new_spot))
       end
     end
+    if $bad_guys == 'Undead'
+      @enviroment.reject! { |e| e.tile_key == :dark }
+      generate_darkness
+    end
   end 
 
   def baddie_movement
@@ -516,7 +528,7 @@ class Game
       new_spot = path.move_step
       blocking_friend = find_same_square_group(new_spot.x, new_spot.y, args.state.enemies)
       blocking_opponent = find_same_square_group(new_spot.x, new_spot.y, args.state.goodies + args.state.others + args.state.huts)
-      hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows)
+      hit_arrow = find_same_square_group(new_spot.x, new_spot.y, args.state.arrows) unless enemy.type == 'Spirit'
       if enemy.type == "Orc Shaman" && args.state.tick_count % 3 == 0
         close_friends = args.state.enemies.select { |ally| proximity_to_target(enemy, ally) < 6}
         close_friends.each do |friend|
@@ -525,6 +537,10 @@ class Game
       elsif enemy.type == "Goblin Bowman" && args.state.tick_count % 4 == 0
         aim = path.take_aim
         fire_bolt(enemy, aim)
+        next
+      
+      elsif enemy.type == "Necromancer" && args.state.tick_count % 3 == 0
+        Baddies.new().spawn_zombie_rat(enemy)
         next
 
       end
@@ -679,8 +695,10 @@ class Game
       if blocking_friend || found_wall || !still_in_map?(arrow.x, arrow.y)
         arrow.dead = true
       elsif blocking_opponent
-        args.state.combat_log << @combat.your_arrow(blocking_opponent, arrow)
-        arrow.dead = true
+        if blocking_opponent.type != 'Spirit'
+          args.state.combat_log << @combat.your_arrow(blocking_opponent, arrow)
+          arrow.dead = true
+        end
       end
     end
     args.state.arrows.reject! { |arrow| arrow.dead }
@@ -836,6 +854,74 @@ class Game
     end
   end
 
+  def generate_darkness
+    x_spot = 0
+    y_spot = 0
+    x_spot = 0
+    y_spot = 0
+    until x_spot == WIDTH + 1 do 
+        until y_spot == HEIGHT do
+          dark = { x: x_spot, y: y_spot, tile_key: :dark }
+          if !find_same_square_group(dark.x, dark.y, args.state.arrows) && not_visible?(dark)
+            @enviroment << dark 
+          end
+          y_spot += 1
+        end
+      x_spot += 1
+      y_spot = 0
+    end
+  end
+
+  def not_visible?(dark)
+    x_along = 0
+    y_along = 0
+    until x_along == 5
+      until y_along == 5
+        if dark.x == args.state.player.x + x_along && y_along + x_along < 5
+          if dark.y == args.state.player.y + y_along
+            return false
+          elsif dark.y == args.state.player.y - y_along
+            return false
+          end
+        elsif dark.x == args.state.player.x - x_along && y_along + x_along < 5  
+          if dark.y == args.state.player.y + y_along
+            return false
+          elsif dark.y == args.state.player.y - y_along
+            return false
+          end
+        end
+        y_along += 1
+      end
+      y_along = 0
+      x_along += 1
+    end
+    @allies.each do |goody|
+      x_along = 0
+      y_along = 0
+      until x_along == 3
+        until y_along == 3
+          if dark.x == goody.x + x_along && y_along + x_along < 4
+            if dark.y == goody.y + y_along
+              return false
+            elsif dark.y == goody.y - y_along
+              return false
+            end
+          elsif dark.x == goody.x - x_along && y_along + x_along < 4  
+            if dark.y == goody.y + y_along
+              return false
+            elsif dark.y == goody.y - y_along
+              return false
+            end
+          end
+          y_along += 1
+        end
+        y_along = 0
+        x_along += 1
+      end
+    end    
+    true
+  end
+
   def paint_village
     x_spot = 19
     y_spot = 11
@@ -968,6 +1054,7 @@ class Game
   end
 
   def render_stuff
+
     frame = 1.frame_index(count: 5, hold_for: 15, repeat: true)
     args.outputs.sprites << @decorations.map do |d|
       tile_in_game(d[:x], d[:y], d[:tile_key], frame)
@@ -984,7 +1071,7 @@ class Game
       tile_in_game(o[:x], o[:y], o[:tile_key], frame)
     end
     
-    # render the enviroment comes after enemies to let them hide in bushes
+    # render the enviroment comes after enemies to let them hide in bushes/darkness
     args.outputs.sprites << @enviroment.map do |object|
       tile_in_game(object[:x], object[:y], object[:tile_key], frame)
     end

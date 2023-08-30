@@ -2,9 +2,9 @@ test ^ 210 ^ archer
 test ^ 201 ^ dwarf
 Aquillo ^ 113 ^ archer
 test ^ 109 ^ wizard
+Kestrel ^ 102 ^ hero
 hi ^ 100 ^ dwarf
 test ^ 100 ^ hero
+hi ^ 51 ^ wizard
 hi ^ 33 ^ archer
-Frodo ^ 10 ^ hero
-Samwise ^ 9 ^ warrior
-Merry ^ 8 ^ archer
+hi ^ 20 ^ archer
